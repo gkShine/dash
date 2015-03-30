@@ -7,5 +7,5 @@ jquery1.10.3中文版
 
 docset feed url:
 ```
-https://github.com/gkShine/dash/tree/master/jquery/jquery-zh.xml
+https://raw.githubusercontent.com/gkShine/dash/tree/master/jquery/jquery-zh.xml
 ```
