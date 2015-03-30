@@ -7,5 +7,5 @@ Laravel5.0.0中文版
 
 docset feed url:
 ```
-https://raw.githubusercontent.com/gkShine/dash/tree/master/laravel/laravel-zh.xml
+https://raw.githubusercontent.com/gkShine/dash/master/laravel/laravel-zh.xml
 ```

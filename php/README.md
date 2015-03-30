@@ -7,5 +7,5 @@ PHP5.6.6中文版
 
 docset feed url:
 ```
-https://raw.githubusercontent.com/gkShine/dash/tree/master/php/php-zh.xml
+https://raw.githubusercontent.com/gkShine/dash/master/php/php-zh.xml
 ```
