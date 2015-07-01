@@ -1,0 +1,167 @@
+<!doctype html>
+<html class="no-js">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <title>Progress | Amaze UI Dash Docsets</title>
+  <link rel="stylesheet" href="../assets/css/amazeui.min.css">
+  <link rel="stylesheet" href="../assets/css/app.css">
+  <script src="../assets/js/jquery.min.js"></script>
+  <script src="../assets/js/amazeui.min.js"></script>
+  
+</head>
+<body class="am-doc">
+<section class="doc-main am-padding-lg">
+    <h1><a name="Progress" class="anchor" href="#Progress"><span class="header-link"></span></a>Progress</h1><hr>
+<p>进度条组件，<code>.am-progress</code> 为容器，<code>.am-progress-bar</code> 为进度显示信息。</p>
+<h2><a name="%E5%9F%BA%E6%9C%AC%E6%A0%B7%E5%BC%8F" class="anchor" href="#%E5%9F%BA%E6%9C%AC%E6%A0%B7%E5%BC%8F"><span class="header-link"></span></a>基本样式</h2><div class="doc-example"><div class="am-progress">
+  <div class="am-progress-bar" style="width: 30%"></div>
+</div>
+
+<div class="am-progress">
+  <div class="am-progress-bar" style="width: 40%">40%</div>
+</div></div><div class="doc-code demo-highlight"><pre><code class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-progress"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-progress-bar"</span> <span class="hljs-attribute">style</span>=<span class="hljs-value">"width: 30%"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-progress"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-progress-bar"</span> <span class="hljs-attribute">style</span>=<span class="hljs-value">"width: 40%"</span>&gt;</span>40%<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span></code></pre></div><h2><a name="%E8%BF%9B%E5%BA%A6%E6%9D%A1%E9%A2%9C%E8%89%B2" class="anchor" href="#%E8%BF%9B%E5%BA%A6%E6%9D%A1%E9%A2%9C%E8%89%B2"><span class="header-link"></span></a>进度条颜色</h2><p>进度条默认为全局主色，在进度条上添加相应的类可设置的颜色：</p>
+<ul>
+<li><code>.am-progress-bar-secondary</code></li>
+<li><code>.am-progress-bar-success</code></li>
+<li><code>.am-progress-bar-warning</code></li>
+<li><code>.am-progress-bar-danger</code></li>
+</ul>
+<div class="doc-example"><div class="am-progress">
+  <div class="am-progress-bar" style="width: 15%"></div>
+</div>
+
+<div class="am-progress">
+  <div class="am-progress-bar am-progress-bar-secondary" style="width: 30%"></div>
+</div>
+
+<div class="am-progress">
+  <div class="am-progress-bar am-progress-bar-success" style="width: 45%"></div>
+</div>
+
+<div class="am-progress">
+  <div class="am-progress-bar am-progress-bar-warning" style="width: 60%"></div>
+</div>
+
+<div class="am-progress">
+  <div class="am-progress-bar am-progress-bar-danger" style="width: 75%"></div>
+</div></div><div class="doc-code demo-highlight"><pre><code class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-progress"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-progress-bar"</span> <span class="hljs-attribute">style</span>=<span class="hljs-value">"width: 15%"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-progress"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-progress-bar am-progress-bar-secondary"</span> <span class="hljs-attribute">style</span>=<span class="hljs-value">"width: 30%"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-progress"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-progress-bar am-progress-bar-success"</span> <span class="hljs-attribute">style</span>=<span class="hljs-value">"width: 45%"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-progress"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-progress-bar am-progress-bar-warning"</span> <span class="hljs-attribute">style</span>=<span class="hljs-value">"width: 60%"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-progress"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-progress-bar am-progress-bar-danger"</span> <span class="hljs-attribute">style</span>=<span class="hljs-value">"width: 75%"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span></code></pre></div><h2><a name="%E8%BF%9B%E5%BA%A6%E6%9D%A1%E9%AB%98%E5%BA%A6" class="anchor" href="#%E8%BF%9B%E5%BA%A6%E6%9D%A1%E9%AB%98%E5%BA%A6"><span class="header-link"></span></a>进度条高度</h2><p>在 <code>.am-progress</code> 添加 <code>.am-progress-xs</code> <code>.am-progress-sm</code> 可以设置进度条高度。</p>
+<div class="doc-example"><div class="am-progress am-progress-xs">
+    <div class="am-progress-bar" style="width: 80%"></div>
+</div>
+
+<div class="am-progress am-progress-sm">
+    <div class="am-progress-bar" style="width: 60%"></div>
+</div>
+
+<div class="am-progress">
+    <div class="am-progress-bar" style="width: 40%"></div>
+</div></div><div class="doc-code demo-highlight"><pre><code class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-progress am-progress-xs"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-progress-bar"</span> <span class="hljs-attribute">style</span>=<span class="hljs-value">"width: 80%"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-progress am-progress-sm"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-progress-bar"</span> <span class="hljs-attribute">style</span>=<span class="hljs-value">"width: 60%"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-progress"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-progress-bar"</span> <span class="hljs-attribute">style</span>=<span class="hljs-value">"width: 40%"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span></code></pre></div><h2><a name="%E8%BF%9B%E5%BA%A6%E6%9D%A1%E6%9D%A1%E7%BA%B9" class="anchor" href="#%E8%BF%9B%E5%BA%A6%E6%9D%A1%E6%9D%A1%E7%BA%B9"><span class="header-link"></span></a>进度条条纹</h2><p>在进度条容器上添加 <code>.am-progress-striped</code> 显示条纹效果，可结合进度条颜色 class 使用。</p>
+<div class="doc-example"><div class="am-progress am-progress-striped">
+  <div class="am-progress-bar am-progress-bar-danger" style="width: 80%"></div>
+</div>
+<div class="am-progress am-progress-striped">
+  <div class="am-progress-bar am-progress-bar-warning" style="width: 60%"></div>
+</div>
+<div class="am-progress am-progress-striped">
+  <div class="am-progress-bar am-progress-bar-success" style="width: 45%"></div>
+</div>
+<div class="am-progress am-progress-striped">
+  <div class="am-progress-bar am-progress-bar-secondary" style="width: 30%"></div>
+</div>
+
+<div class="am-progress am-progress-striped">
+  <div class="am-progress-bar" style="width: 15%"></div>
+</div></div><div class="doc-code demo-highlight"><pre><code class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-progress am-progress-striped"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-progress-bar am-progress-bar-danger"</span> <span class="hljs-attribute">style</span>=<span class="hljs-value">"width: 80%"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-progress am-progress-striped"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-progress-bar am-progress-bar-warning"</span> <span class="hljs-attribute">style</span>=<span class="hljs-value">"width: 60%"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-progress am-progress-striped"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-progress-bar am-progress-bar-success"</span> <span class="hljs-attribute">style</span>=<span class="hljs-value">"width: 45%"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-progress am-progress-striped"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-progress-bar am-progress-bar-secondary"</span> <span class="hljs-attribute">style</span>=<span class="hljs-value">"width: 30%"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-progress am-progress-striped"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-progress-bar"</span> <span class="hljs-attribute">style</span>=<span class="hljs-value">"width: 15%"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span></code></pre></div><h2><a name="%E8%BF%9B%E5%BA%A6%E6%9D%A1%E5%8A%A8%E7%94%BB" class="anchor" href="#%E8%BF%9B%E5%BA%A6%E6%9D%A1%E5%8A%A8%E7%94%BB"><span class="header-link"></span></a>进度条动画</h2><p>进度条容器上添加 <code>.am-active</code> 激活进度条动画（CSS Animation）。</p>
+<div class="doc-example"><div class="am-progress am-progress-striped am-progress-sm am-active ">
+  <div class="am-progress-bar am-progress-bar-secondary"  style="width: 57%"></div>
+</div></div><div class="doc-code demo-highlight"><pre><code class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-progress am-progress-striped am-progress-sm am-active "</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-progress-bar am-progress-bar-secondary"</span>  <span class="hljs-attribute">style</span>=<span class="hljs-value">"width: 57%"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span></code></pre></div><h2><a name="%E8%BF%9B%E5%BA%A6%E6%9D%A1%E5%A0%86%E5%8F%A0" class="anchor" href="#%E8%BF%9B%E5%BA%A6%E6%9D%A1%E5%A0%86%E5%8F%A0"><span class="header-link"></span></a>进度条堆叠</h2><div class="doc-example"><div class="am-progress">
+  <div class="am-progress-bar"  style="width: 65%">Male</div>
+  <div class="am-progress-bar am-progress-bar-success"  style="width: 15%">Female</div>
+  <div class="am-progress-bar am-progress-bar-warning"  style="width: 20%">Other</div>
+</div></div><div class="doc-code demo-highlight"><pre><code class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-progress"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-progress-bar"</span>  <span class="hljs-attribute">style</span>=<span class="hljs-value">"width: 65%"</span>&gt;</span>Male<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-progress-bar am-progress-bar-success"</span>  <span class="hljs-attribute">style</span>=<span class="hljs-value">"width: 15%"</span>&gt;</span>Female<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-progress-bar am-progress-bar-warning"</span>  <span class="hljs-attribute">style</span>=<span class="hljs-value">"width: 20%"</span>&gt;</span>Other<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span></code></pre></div>
+
+  <nav class="amp-pager">
+  </nav>
+</section>
+
+<script>
+  var _hmt = _hmt || [];
+  (function() {
+    var hm = document.createElement("script");
+    hm.src = "//hm.baidu.com/hm.js?b424d39312c46404f15e22574a531fbb";
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(hm);
+  })();
+
+  (function(w, d, s) {
+    function gs(){
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){ (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o), m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(w , d, s ,'//www.google-analytics.com/analytics.js','ga');
+      ga('create', 'UA-34196034-8', 'amazeui.org');
+      ga('send', 'pageview');
+    }
+    if (w.addEventListener) { w.addEventListener('load', gs, false); }
+    else if (w.attachEvent) { w.attachEvent('onload',gs); }
+  }(window, document, 'script'));
+</script>
+</body>
+</html>

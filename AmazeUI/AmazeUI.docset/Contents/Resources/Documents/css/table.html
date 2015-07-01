@@ -1,0 +1,373 @@
+<!doctype html>
+<html class="no-js">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <title>Table | Amaze UI Dash Docsets</title>
+  <link rel="stylesheet" href="../assets/css/amazeui.min.css">
+  <link rel="stylesheet" href="../assets/css/app.css">
+  <script src="../assets/js/jquery.min.js"></script>
+  <script src="../assets/js/amazeui.min.js"></script>
+  
+</head>
+<body class="am-doc">
+<section class="doc-main am-padding-lg">
+    <h1><a name="Table" class="anchor" href="#Table"><span class="header-link"></span></a>Table</h1><hr>
+<p>使用时注意 <code>&lt;table&gt;</code> HTML 结构的完整性。</p>
+<h2><a name="%E5%9F%BA%E6%9C%AC%E6%A0%B7%E5%BC%8F" class="anchor" href="#%E5%9F%BA%E6%9C%AC%E6%A0%B7%E5%BC%8F"><span class="header-link"></span></a>基本样式</h2><p>添加 <code>.am-table</code>。</p>
+<div class="doc-example"><table class="am-table">
+    <thead>
+        <tr>
+            <th>网站名称</th>
+            <th>网址</th>
+            <th>创建时间</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Amaze UI</td>
+            <td>http://amazeui.org</td>
+            <td>2012-10-01</td>
+        </tr>
+        <tr>
+            <td>Amaze UI</td>
+            <td>http://amazeui.org</td>
+            <td>2012-10-01</td>
+        </tr>
+        <tr class="am-active">
+            <td>Amaze UI(Active)</td>
+            <td>http://amazeui.org</td>
+            <td>2012-10-01</td>
+        </tr>
+    <tr>
+      <td>Amaze UI</td>
+      <td>http://amazeui.org</td>
+      <td>2012-10-01</td>
+    </tr>
+    </tbody>
+  <tbody>
+  <tr>
+    <td>Amaze UI</td>
+    <td>http://amazeui.org</td>
+    <td>2012-10-01</td>
+  </tr>
+  </tbody>
+</table></div><div class="doc-code demo-highlight"><pre><code class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">table</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-table"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">thead</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">tr</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">th</span>&gt;</span>网站名称<span class="hljs-tag">&lt;/<span class="hljs-title">th</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">th</span>&gt;</span>网址<span class="hljs-tag">&lt;/<span class="hljs-title">th</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">th</span>&gt;</span>创建时间<span class="hljs-tag">&lt;/<span class="hljs-title">th</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-title">tr</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">thead</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">tbody</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">tr</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">td</span>&gt;</span>Amaze UI<span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">td</span>&gt;</span>http://amazeui.org<span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">td</span>&gt;</span>2012-10-01<span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-title">tr</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">tr</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">td</span>&gt;</span>Amaze UI<span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">td</span>&gt;</span>http://amazeui.org<span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">td</span>&gt;</span>2012-10-01<span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-title">tr</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">tr</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-active"</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">td</span>&gt;</span>Amaze UI(Active)<span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">td</span>&gt;</span>http://amazeui.org<span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">td</span>&gt;</span>2012-10-01<span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-title">tr</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">tr</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">td</span>&gt;</span>Amaze UI<span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">td</span>&gt;</span>http://amazeui.org<span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">td</span>&gt;</span>2012-10-01<span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-title">tr</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">tr</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">td</span>&gt;</span>Amaze UI<span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">td</span>&gt;</span>http://amazeui.org<span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">td</span>&gt;</span>2012-10-01<span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-title">tr</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">tbody</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">table</span>&gt;</span></code></pre></div><h2><a name="%E5%9F%BA%E6%9C%AC%E8%BE%B9%E6%A1%86" class="anchor" href="#%E5%9F%BA%E6%9C%AC%E8%BE%B9%E6%A1%86"><span class="header-link"></span></a>基本边框</h2><p>添加 <code>.am-table-bordered</code> 类。</p>
+<div class="doc-example"><table class="am-table am-table-bordered">
+    <thead>
+        <tr>
+            <th>网站名称</th>
+            <th>网址</th>
+            <th>创建时间</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Amaze UI</td>
+            <td>http://amazeui.org</td>
+            <td>2012-10-01</td>
+        </tr>
+        <tr>
+            <td>Amaze UI</td>
+            <td>http://amazeui.org</td>
+            <td>2012-10-01</td>
+        </tr>
+        <tr>
+            <td>Amaze UI</td>
+            <td>http://amazeui.org</td>
+            <td>2012-10-01</td>
+        </tr>
+        <tr>
+            <td>Amaze UI</td>
+            <td>http://amazeui.org</td>
+            <td>2012-10-01</td>
+        </tr>
+        <tr>
+            <td>Amaze UI</td>
+            <td>http://amazeui.org</td>
+            <td>2012-10-01</td>
+        </tr>
+    </tbody>
+</table></div><div class="doc-code demo-highlight"><pre><code class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">table</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-table am-table-bordered"</span>&gt;</span>
+    ...
+<span class="hljs-tag">&lt;/<span class="hljs-title">table</span>&gt;</span></code></pre></div><h2><a name="%E5%9C%86%E8%A7%92%E8%BE%B9%E6%A1%86" class="anchor" href="#%E5%9C%86%E8%A7%92%E8%BE%B9%E6%A1%86"><span class="header-link"></span></a>圆角边框</h2><p>同时添加 <code>.am-table-bordered</code> 、 <code>.am-table-radius</code>，外层圆角边框通过 <code>box-shadow</code> 实现。</p>
+<div class="doc-example"><table class="am-table am-table-bordered am-table-radius am-table-striped">
+    <thead>
+        <tr>
+            <th>网站名称</th>
+            <th>网址</th>
+            <th>创建时间</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Amaze UI</td>
+            <td>http://amazeui.org</td>
+            <td>2012-10-01</td>
+        </tr>
+        <tr>
+            <td>Amaze UI</td>
+            <td>http://amazeui.org</td>
+            <td>2012-10-01</td>
+        </tr>
+        <tr>
+            <td>Amaze UI</td>
+            <td>http://amazeui.org</td>
+            <td>2012-10-01</td>
+        </tr>
+        <tr>
+            <td>Amaze UI</td>
+            <td>http://amazeui.org</td>
+            <td>2012-10-01</td>
+        </tr>
+        <tr>
+            <td>Amaze UI</td>
+            <td>http://amazeui.org</td>
+            <td>2012-10-01</td>
+        </tr>
+    </tbody>
+</table></div><div class="doc-code demo-highlight"><pre><code class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">table</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-table am-table-bordered am-table-radius am-table-striped"</span>&gt;</span>
+    ...
+<span class="hljs-tag">&lt;/<span class="hljs-title">table</span>&gt;</span></code></pre></div><h2><a name="%E5%8D%95%E5%85%83%E6%A0%BC%E7%8A%B6%E6%80%81" class="anchor" href="#%E5%8D%95%E5%85%83%E6%A0%BC%E7%8A%B6%E6%80%81"><span class="header-link"></span></a>单元格状态</h2><p>表示表格状态的 class 添加到 <code>tr</code> 整行整行，添加到 <code>td</code> 高亮单元格。</p>
+<ul>
+<li><code>.am-active</code> 激活；</li>
+<li><code>.am-disabled</code> 禁用；</li>
+<li><code>.am-primary</code> 蓝色高亮；</li>
+<li><code>.am-success</code> 绿色高亮；</li>
+<li><code>.am-warning</code> 橙色高亮；</li>
+<li><code>.am-danger</code> 红色高亮。</li>
+</ul>
+<div class="doc-example"><table class="am-table am-table-bordered am-table-radius">
+  <thead>
+  <tr>
+    <th>Class</th>
+    <th>状态描述</th>
+    <th>目标元素</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr>
+    <td>.am-active</td>
+    <td class="am-active">激活</td>
+    <td>td</td>
+  </tr>
+  <tr class="am-active">
+    <td>.am-active</td>
+    <td>激活</td>
+    <td>tr</td>
+  </tr>
+  <tr>
+    <td>.am-disabled</td>
+    <td class="am-disabled">禁用</td>
+    <td>td</td>
+  </tr>
+  <tr class="am-disabled">
+    <td>.am-disabled</td>
+    <td>禁用</td>
+    <td>tr</td>
+  </tr>
+  <tr>
+    <td class="am-primary">.am-primary</td>
+    <td>蓝色高亮</td>
+    <td>td</td>
+  </tr>
+  <tr class="am-primary">
+    <td>.am-primary</td>
+    <td>蓝色高亮</td>
+    <td>tr</td>
+  </tr>
+  <tr>
+    <td class="am-success">.am-success</td>
+    <td>绿色高亮</td>
+    <td>td</td>
+  </tr>
+  <tr class="am-success">
+    <td>.am-success</td>
+    <td>绿色高亮</td>
+    <td>tr</td>
+  </tr>
+  <tr>
+    <td class="am-warning">.am-warning</td>
+    <td>橙色高亮</td>
+    <td>td</td>
+  </tr>
+  <tr class="am-warning">
+    <td>.am-warning</td>
+    <td>橙色高亮</td>
+    <td>tr</td>
+  </tr>
+  <tr>
+    <td class="am-danger">.am-danger</td>
+    <td>橙色高亮</td>
+    <td>td</td>
+  </tr>
+  <tr class="am-danger">
+    <td>.am-danger</td>
+    <td>橙色高亮</td>
+    <td>tr</td>
+  </tr>
+  </tbody>
+</table></div><h2><a name="%E5%85%B6%E4%BB%96%E6%95%88%E6%9E%9C" class="anchor" href="#%E5%85%B6%E4%BB%96%E6%95%88%E6%9E%9C"><span class="header-link"></span></a>其他效果</h2><ul>
+<li><code>.am-table-striped</code> 斑马纹效果</li>
+<li><code>.am-table-hover</code> hover 状态</li>
+</ul>
+<div class="doc-example"><table class="am-table am-table-striped am-table-hover">
+    <thead>
+        <tr>
+            <th>网站名称</th>
+            <th>网址</th>
+            <th>创建时间</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Amaze UI</td>
+            <td>http://amazeui.org</td>
+            <td>2012-10-01</td>
+        </tr>
+        <tr>
+            <td>Amaze UI</td>
+            <td>http://amazeui.org</td>
+            <td>2012-10-01</td>
+        </tr>
+        <tr>
+            <td>Amaze UI</td>
+            <td>http://amazeui.org</td>
+            <td>2012-10-01</td>
+        </tr>
+        <tr>
+            <td>Amaze UI</td>
+            <td>http://amazeui.org</td>
+            <td>2012-10-01</td>
+        </tr>
+        <tr>
+            <td>Amaze UI</td>
+            <td>http://amazeui.org</td>
+            <td>2012-10-01</td>
+        </tr>
+    </tbody>
+</table></div><div class="doc-code demo-highlight"><pre><code class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">table</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-table am-table-striped am-table-hover"</span>&gt;</span>
+    ...
+<span class="hljs-tag">&lt;/<span class="hljs-title">table</span>&gt;</span></code></pre></div><h2><a name="%E6%89%80%E6%9C%89%E6%A0%B7%E5%BC%8F%E5%8F%A0%E5%8A%A0" class="anchor" href="#%E6%89%80%E6%9C%89%E6%A0%B7%E5%BC%8F%E5%8F%A0%E5%8A%A0"><span class="header-link"></span></a>所有样式叠加</h2><div class="doc-example"><table class="am-table am-table-bordered am-table-striped am-table-hover">
+    <thead>
+        <tr>
+            <th>网站名称</th>
+            <th>网址</th>
+            <th>创建时间</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Amaze UI</td>
+            <td>http://amazeui.org</td>
+            <td>2012-10-01</td>
+        </tr>
+        <tr>
+            <td>Amaze UI</td>
+            <td>http://amazeui.org</td>
+            <td>2012-10-01</td>
+        </tr>
+        <tr class="am-active">
+            <td>Amaze UI(Active)</td>
+            <td>http://amazeui.org</td>
+            <td>2012-10-01</td>
+        </tr>
+        <tr>
+            <td>Amaze UI</td>
+            <td>http://amazeui.org</td>
+            <td>2012-10-01</td>
+        </tr>
+        <tr>
+            <td>Amaze UI</td>
+            <td>http://amazeui.org</td>
+            <td>2012-10-01</td>
+        </tr>
+    </tbody>
+</table></div><div class="doc-code demo-highlight"><pre><code class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">table</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-table am-table-bordered am-table-striped am-table-hover"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">thead</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">tr</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">th</span>&gt;</span>网站名称<span class="hljs-tag">&lt;/<span class="hljs-title">th</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">th</span>&gt;</span>网址<span class="hljs-tag">&lt;/<span class="hljs-title">th</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">th</span>&gt;</span>创建时间<span class="hljs-tag">&lt;/<span class="hljs-title">th</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-title">tr</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">thead</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">tbody</span>&gt;</span>
+        ...
+        <span class="hljs-tag">&lt;<span class="hljs-title">tr</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-active"</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">td</span>&gt;</span>Amaze UI(Active)<span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">td</span>&gt;</span>http://amazeui.org<span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">td</span>&gt;</span>2012-10-01<span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-title">tr</span>&gt;</span>
+        ...
+    <span class="hljs-tag">&lt;/<span class="hljs-title">tbody</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">table</span>&gt;</span></code></pre></div><h2><a name="%E5%8F%82%E8%80%83%E8%B5%84%E6%BA%90" class="anchor" href="#%E5%8F%82%E8%80%83%E8%B5%84%E6%BA%90"><span class="header-link"></span></a>参考资源</h2><ul>
+<li>[表格排序 jQuery Table Sort] (<a href="https://github.com/kylefox/jquery-tablesort">https://github.com/kylefox/jquery-tablesort</a>)</li>
+<li><a href="https://github.com/filamentgroup/tablesaw">Tablesaw - A set of jQuery plugins for responsive tables</a></li>
+<li><a href="http://fooplugins.com/plugins/footable-jquery/">FooTable - jQuery plugin to make HTML tables responsive</a></li>
+</ul>
+
+
+  <nav class="amp-pager">
+  </nav>
+</section>
+
+<script>
+  var _hmt = _hmt || [];
+  (function() {
+    var hm = document.createElement("script");
+    hm.src = "//hm.baidu.com/hm.js?b424d39312c46404f15e22574a531fbb";
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(hm);
+  })();
+
+  (function(w, d, s) {
+    function gs(){
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){ (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o), m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(w , d, s ,'//www.google-analytics.com/analytics.js','ga');
+      ga('create', 'UA-34196034-8', 'amazeui.org');
+      ga('send', 'pageview');
+    }
+    if (w.addEventListener) { w.addEventListener('load', gs, false); }
+    else if (w.attachEvent) { w.attachEvent('onload',gs); }
+  }(window, document, 'script'));
+</script>
+</body>
+</html>

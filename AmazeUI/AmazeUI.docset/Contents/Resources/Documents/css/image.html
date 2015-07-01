@@ -1,0 +1,90 @@
+<!doctype html>
+<html class="no-js">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <title>Image | Amaze UI Dash Docsets</title>
+  <link rel="stylesheet" href="../assets/css/amazeui.min.css">
+  <link rel="stylesheet" href="../assets/css/app.css">
+  <script src="../assets/js/jquery.min.js"></script>
+  <script src="../assets/js/amazeui.min.js"></script>
+  
+</head>
+<body class="am-doc">
+<section class="doc-main am-padding-lg">
+    <h1><a name="Image" class="anchor" href="#Image"><span class="header-link"></span></a>Image</h1><hr>
+<p>定义图片样式。</p>
+<h2><a name="%E5%9F%BA%E7%A1%80%E6%A0%B7%E5%BC%8F" class="anchor" href="#%E5%9F%BA%E7%A1%80%E6%A0%B7%E5%BC%8F"><span class="header-link"></span></a>基础样式</h2><p>基础样式定义在 <code>base</code> 中。</p>
+<div class="doc-code demo-highlight"><pre><code class="css"><span class="hljs-tag">img</span> <span class="hljs-rules">{
+  <span class="hljs-rule"><span class="hljs-attribute">box-sizing</span>:<span class="hljs-value"> border-box</span></span>;
+  <span class="hljs-rule"><span class="hljs-attribute">max-width</span>:<span class="hljs-value"> <span class="hljs-number">100%</span></span></span>;
+  <span class="hljs-rule"><span class="hljs-attribute">height</span>:<span class="hljs-value"> auto</span></span>;
+  <span class="hljs-rule"><span class="hljs-attribute">vertical-align</span>:<span class="hljs-value"> middle</span></span>;
+  <span class="hljs-rule"><span class="hljs-attribute">border</span>:<span class="hljs-value"> <span class="hljs-number">0</span></span></span>;
+<span class="hljs-rule">}</span></span></code></pre></div><h2><a name="%E5%AE%BD%E5%BA%A6%E8%87%AA%E9%80%82%E5%BA%94" class="anchor" href="#%E5%AE%BD%E5%BA%A6%E8%87%AA%E9%80%82%E5%BA%94"><span class="header-link"></span></a>宽度自适应</h2><p>如上面的代码所示， <code>base</code> 里已经设置了 <code>max-width: 100%</code>，图片会自动适应到容器的宽度（但不会超过图片原始宽度），不需要添加额外的 class（<a href="http://jsbin.com/ciduf/1">演示</a>）。如果要让图片始终和容器一样宽，需要设置 <code>width: 100%</code>。</p>
+<div class="doc-example"><img src="http://7jpqbr.com1.z0.glb.clouddn.com/bw-2014-06-19.jpg" alt=""/></div><div class="doc-code demo-highlight"><pre><code class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">img</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">"http://7jpqbr.com1.z0.glb.clouddn.com/bw-2014-06-19.jpg"</span> <span class="hljs-attribute">alt</span>=<span class="hljs-value">""</span>/&gt;</span></code></pre></div><h2><a name="%E5%A2%9E%E5%BC%BA%E6%A0%B7%E5%BC%8F" class="anchor" href="#%E5%A2%9E%E5%BC%BA%E6%A0%B7%E5%BC%8F"><span class="header-link"></span></a>增强样式</h2><h3><a name="%E5%9C%86%E8%A7%92%E6%A0%B7%E5%BC%8F" class="anchor" href="#%E5%9C%86%E8%A7%92%E6%A0%B7%E5%BC%8F"><span class="header-link"></span></a>圆角样式</h3><p>为<code>&lt;img&gt;</code>元素设置不同的 class，增强其样式。</p>
+<ul>
+<li><code>.am-radius</code>     圆角</li>
+<li><code>.am-round</code>      椭圆</li>
+<li><code>.am-circle</code>     圆形，一般用于正方形的图片(你要觉得椭圆好看，用在长方形上也可以)</li>
+</ul>
+<div class="doc-example"><p><img class="am-radius" alt="140*140" src="http://7jpqbr.com1.z0.glb.clouddn.com/bw-2014-06-19.jpg?imageView/1/w/1000/h/1000/q/80" width="140" height="140" />
+<img class="am-round" alt="140*140" src="http://7jpqbr.com1.z0.glb.clouddn.com/bw-2014-06-19.jpg?imageView/1/w/1000/h/600/q/80" width="200" height="120"/>
+<img class="am-circle" src="http://7jpqbr.com1.z0.glb.clouddn.com/bw-2014-06-19.jpg?imageView/1/w/1000/h/1000/q/80" width="140" height="140"/></p></div><div class="doc-code demo-highlight"><pre><code class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">img</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-radius"</span> <span class="hljs-attribute">alt</span>=<span class="hljs-value">"140*140"</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">"http://7jpqbr.com1.z0.glb.clouddn.com/bw-2014-06-19.jpg?imageView/1/w/1000/h/1000/q/80"</span> <span class="hljs-attribute">width</span>=<span class="hljs-value">"140"</span> <span class="hljs-attribute">height</span>=<span class="hljs-value">"140"</span> /&gt;</span>
+
+  <span class="hljs-tag">&lt;<span class="hljs-title">img</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-round"</span> <span class="hljs-attribute">alt</span>=<span class="hljs-value">"140*140"</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">"http://7jpqbr.com1.z0.glb.clouddn.com/bw-2014-06-19.jpg?imageView/1/w/1000/h/600/q/80"</span> <span class="hljs-attribute">width</span>=<span class="hljs-value">"200"</span> <span class="hljs-attribute">height</span>=<span class="hljs-value">"120"</span>/&gt;</span>
+
+  <span class="hljs-tag">&lt;<span class="hljs-title">img</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-circle"</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">"http://7jpqbr.com1.z0.glb.clouddn.com/bw-2014-06-19.jpg?imageView/1/w/1000/h/1000/q/80"</span> <span class="hljs-attribute">width</span>=<span class="hljs-value">"140"</span> <span class="hljs-attribute">height</span>=<span class="hljs-value">"140"</span>/&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span></code></pre></div><h3><a name="%E8%BE%B9%E6%A1%86" class="anchor" href="#%E8%BE%B9%E6%A1%86"><span class="header-link"></span></a>边框</h3><ul>
+<li><code>.am-img-thumbnail</code>   边框</li>
+</ul>
+<div class="doc-example"><img class="am-img-thumbnail" alt="140*140" src="http://7jpqbr.com1.z0.glb.clouddn.com/bw-2014-06-19.jpg?imageView/1/w/1000/h/1000/q/80" width="140" height="140" />
+
+<img class="am-img-thumbnail am-radius" alt="140*140" src="http://7jpqbr.com1.z0.glb.clouddn.com/bw-2014-06-19.jpg?imageView/1/w/1000/h/1000/q/80" width="140" height="140" />
+
+<img class="am-img-thumbnail am-circle" alt="140*140" src="http://7jpqbr.com1.z0.glb.clouddn.com/bw-2014-06-19.jpg?imageView/1/w/1000/h/1000/q/80" width="140" height="140" /></div><div class="doc-code demo-highlight"><pre><code class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">img</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">"..."</span> <span class="hljs-attribute">alt</span>=<span class="hljs-value">"..."</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-img-thumbnail"</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">img</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">"..."</span> <span class="hljs-attribute">alt</span>=<span class="hljs-value">"..."</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-img-thumbnail am-radius"</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">img</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">"..."</span> <span class="hljs-attribute">alt</span>=<span class="hljs-value">"..."</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-img-thumbnail am-circle"</span>&gt;</span></code></pre></div><!--
+## 响应式图片
+
+通过添加 `.am-img-responsive` class 让图片按比例缩放。
+
+`````html-
+<img class="am-img-responsive" alt="Responsive image" src="http://www.bing.com/az/hprichbg/rb/AdelaideFrog_EN-US12171255358_1366x768.jpg" />
+`````
+
+```html
+<img src="..." class="am-img-responsive" alt="Responsive image">
+```-->
+
+
+  <nav class="amp-pager">
+  </nav>
+</section>
+
+<script>
+  var _hmt = _hmt || [];
+  (function() {
+    var hm = document.createElement("script");
+    hm.src = "//hm.baidu.com/hm.js?b424d39312c46404f15e22574a531fbb";
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(hm);
+  })();
+
+  (function(w, d, s) {
+    function gs(){
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){ (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o), m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(w , d, s ,'//www.google-analytics.com/analytics.js','ga');
+      ga('create', 'UA-34196034-8', 'amazeui.org');
+      ga('send', 'pageview');
+    }
+    if (w.addEventListener) { w.addEventListener('load', gs, false); }
+    else if (w.attachEvent) { w.attachEvent('onload',gs); }
+  }(window, document, 'script'));
+</script>
+</body>
+</html>

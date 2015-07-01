@@ -1,0 +1,334 @@
+<!doctype html>
+<html class="no-js">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <title>本地存储 | Amaze UI Dash Docsets</title>
+  <link rel="stylesheet" href="../assets/css/amazeui.min.css">
+  <link rel="stylesheet" href="../assets/css/app.css">
+  <script src="../assets/js/jquery.min.js"></script>
+  <script src="../assets/js/amazeui.min.js"></script>
+  
+</head>
+<body class="am-doc">
+<section class="doc-main am-padding-lg">
+    <h1><a name="Store" class="anchor" href="#Store"><span class="header-link"></span></a>Store</h1><hr>
+<p>跨浏览器本地存储接口封装，源自 <a href="https://github.com/marcuswestin/store.js">store.js</a>，精简了针对 IE 6/7 的代码。</p>
+<p>LocalStorage 只能存储字符串，store.js 在存取的时候会自动 <code>stringify</code>、<code>parse</code>。</p>
+<h2><a name="%E5%AD%98%E5%82%A8%E6%8E%A5%E5%8F%A3" class="anchor" href="#%E5%AD%98%E5%82%A8%E6%8E%A5%E5%8F%A3"><span class="header-link"></span></a>存储接口</h2><p>通过 <code>$.AMUI.store</code> 调用。</p>
+<h3><a name="%E6%A3%80%E6%B5%8B%E6%98%AF%E5%90%A6%E6%94%AF%E6%8C%81%EF%BC%88%E5%BC%80%E5%90%AF%EF%BC%89%20LocalStorage" class="anchor" href="#%E6%A3%80%E6%B5%8B%E6%98%AF%E5%90%A6%E6%94%AF%E6%8C%81%EF%BC%88%E5%BC%80%E5%90%AF%EF%BC%89%20LocalStorage"><span class="header-link"></span></a>检测是否支持（开启） LocalStorage</h3><p>爱上一匹野马之前，先想想你家有没有草原；使用之前，当然要先检测一下。</p>
+<div class="doc-code demo-highlight"><pre><code class="javascript"><span class="hljs-keyword">var</span> store = $.AMUI.store;
+
+<span class="hljs-keyword">if</span> (!store.enabled) {
+  alert(<span class="hljs-string">'Local storage is not supported by your browser. Please disable "Private Mode", or upgrade to a modern browser.'</span>);
+  <span class="hljs-keyword">return</span>;
+}
+
+<span class="hljs-keyword">var</span> user = store.get(<span class="hljs-string">'user'</span>);
+<span class="hljs-comment">// ... and so on ...</span></code></pre></div><p>Safari 的<code>无痕浏览</code>模式或者用户禁用了本地存储时，<code>store.enabled</code> 将返回 <code>false</code>。</p>
+<p><strong>浏览器如何禁用 LocalStorage</strong>：</p>
+<ul>
+<li>Firefox： 地址栏输入 <code>about:config</code>, 将 <code>dom.storage.enabled</code> 的值设置为 <code>false</code>；</li>
+<li>Chrome: <code>设置</code> → <code>隐私设置</code> → <code>内容设置</code> → <code>阻止网站设置任何数据</code>。</li>
+</ul>
+<h3><a name="%E6%8E%A5%E5%8F%A3%E5%88%97%E8%A1%A8" class="anchor" href="#%E6%8E%A5%E5%8F%A3%E5%88%97%E8%A1%A8"><span class="header-link"></span></a>接口列表</h3><p><a href="https://developer.mozilla.org/en-US/docs/Web/Guide/API/DOM/Storage">LocalStorage</a> 受<a href="https://developer.mozilla.org/en-US/docs/Web/Security/Same-origin_policy">同源策略</a>限制，以下操作仅限于同源下的数据。</p>
+<ul>
+<li><code>store.set(key, val)</code>: 存储 <code>key</code> 的值为 <code>val</code>；</li>
+<li><code>store.get(key)</code>: 获取 <code>key</code> 的值；</li>
+<li><code>store.remove(key)</code>: 移除 <code>key</code> 的记录；</li>
+<li><code>store.clear()</code>: 清空存储；</li>
+<li><code>store.getAll()</code>: 返回所有存储；</li>
+<li><code>store.forEach()</code>: 遍历所有存储。</li>
+</ul>
+<div class="doc-code demo-highlight"><pre><code class="javascript"><span class="hljs-keyword">var</span> store = $.AMUI.store;
+
+<span class="hljs-comment">// 存储 'username' 的值为 'marcus'</span>
+store.set(<span class="hljs-string">'username'</span>, <span class="hljs-string">'marcus'</span>)
+
+<span class="hljs-comment">// 获取 'username'</span>
+store.get(<span class="hljs-string">'username'</span>)
+
+<span class="hljs-comment">// 移除 'username' 字段</span>
+store.remove(<span class="hljs-string">'username'</span>)
+
+<span class="hljs-comment">// 清除所有本地存储</span>
+store.clear()
+
+<span class="hljs-comment">// 存储对象 - 自动调用 JSON.stringify</span>
+store.set(<span class="hljs-string">'user'</span>, { name: <span class="hljs-string">'marcus'</span>, likes: <span class="hljs-string">'javascript'</span> })
+
+<span class="hljs-comment">// 获取存储的对象 - 自动执行 JSON.parse</span>
+<span class="hljs-keyword">var</span> user = store.get(<span class="hljs-string">'user'</span>)
+alert(user.name + <span class="hljs-string">' likes '</span> + user.likes)
+
+<span class="hljs-comment">// 从所有存储中获取值</span>
+store.getAll().user.name == <span class="hljs-string">'marcus'</span>
+
+<span class="hljs-comment">// 遍历所有存储</span>
+store.forEach(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(key, val)</span> </span>{
+  <span class="hljs-built_in">console</span>.log(key, <span class="hljs-string">'=='</span>, val)
+})</code></pre></div><h2><a name="%E6%B5%8F%E8%A7%88%E5%99%A8%E6%94%AF%E6%8C%81" class="anchor" href="#%E6%B5%8F%E8%A7%88%E5%99%A8%E6%94%AF%E6%8C%81"><span class="header-link"></span></a>浏览器支持</h2><p>绝大多数浏览器（包括 IE 8）都<a href="http://caniuse.com/#search=localStorage">原生支持 LocalStorage</a>。</p>
+<p>你的浏览器测试结果为： <strong id="errorOutput" class="am-text-danger"></strong>
+<strong id="store-test-success" class="am-text-success"></strong></p>
+<p>不同浏览器对本地存储单条记录的长度限定不同，具体可以通过以下链接测试：</p>
+<ul>
+<li><a href="http://dev-test.nemikor.com/web-storage/support-test/">Web Storage Support Test</a></li>
+<li><a href="https://arty.name/localstorage.html">Test of localStorage limits/quota</a></li>
+</ul>
+<h2><a name="%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9" class="anchor" href="#%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9"><span class="header-link"></span></a>注意事项</h2><h3><a name="%E5%8E%9F%E7%94%9F%E6%96%B9%E6%B3%95%E4%B8%8E%20store.js%20%E7%9A%84%E5%B7%AE%E5%BC%82" class="anchor" href="#%E5%8E%9F%E7%94%9F%E6%96%B9%E6%B3%95%E4%B8%8E%20store.js%20%E7%9A%84%E5%B7%AE%E5%BC%82"><span class="header-link"></span></a>原生方法与 store.js 的差异</h3><p>使用原生方法操作：</p>
+<div class="doc-code demo-highlight"><pre><code class="javascript">localStorage.myage = <span class="hljs-number">24</span>
+localStorage.myage !== <span class="hljs-number">24</span> <span class="hljs-comment">// true</span>
+localStorage.myage === <span class="hljs-string">'24'</span> <span class="hljs-comment">// true</span>
+
+localStorage.user = { name: <span class="hljs-string">'marcus'</span>, likes: <span class="hljs-string">'javascript'</span> }
+localStorage.user === <span class="hljs-string">"[object Object]"</span> <span class="hljs-comment">// true</span>
+
+localStorage.tags = [<span class="hljs-string">'javascript'</span>, <span class="hljs-string">'localStorage'</span>, <span class="hljs-string">'store.js'</span>]
+localStorage.tags.length === <span class="hljs-number">32</span> <span class="hljs-comment">// true</span>
+localStorage.tags === <span class="hljs-string">"javascript,localStorage,store.js"</span> <span class="hljs-comment">// true</span></code></pre></div><p>使用 store.js 序列化后的结果:</p>
+<div class="doc-code demo-highlight"><pre><code class="javascript">store.set(<span class="hljs-string">'myage'</span>, <span class="hljs-number">24</span>)
+store.get(<span class="hljs-string">'myage'</span>) === <span class="hljs-number">24</span> <span class="hljs-comment">// true</span>
+
+store.set(<span class="hljs-string">'user'</span>, { name: <span class="hljs-string">'marcus'</span>, likes: <span class="hljs-string">'javascript'</span> })
+alert(<span class="hljs-string">"Hi my name is "</span> + store.get(<span class="hljs-string">'user'</span>).name + <span class="hljs-string">"!"</span>) <span class="hljs-comment">// 仍然返回对象</span>
+
+store.set(<span class="hljs-string">'tags'</span>, [<span class="hljs-string">'javascript'</span>, <span class="hljs-string">'localStorage'</span>, <span class="hljs-string">'store.js'</span>])
+alert(<span class="hljs-string">"We've got "</span> + store.get(<span class="hljs-string">'tags'</span>).length + <span class="hljs-string">" tags here"</span>) <span class="hljs-comment">// 仍然返回数组</span></code></pre></div><h3><a name="%E8%87%AA%E5%8A%A8%E8%BF%87%E6%9C%9F%E5%AE%9E%E7%8E%B0" class="anchor" href="#%E8%87%AA%E5%8A%A8%E8%BF%87%E6%9C%9F%E5%AE%9E%E7%8E%B0"><span class="header-link"></span></a>自动过期实现</h3><p>LocalStorage 并没有提供过期时间接口，只能通过存储时间做比对实现。</p>
+<div class="doc-code demo-highlight"><pre><code class="javascript"><span class="hljs-keyword">var</span> store = $.AMUI.store;
+
+<span class="hljs-keyword">var</span> storeWithExpiration = {
+  set: <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(key, val, exp)</span> </span>{
+    store.set(key, {val:val, exp:exp, time:<span class="hljs-keyword">new</span> <span class="hljs-built_in">Date</span>().getTime()});
+  },
+
+  get: <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(key)</span> </span>{
+    <span class="hljs-keyword">var</span> info = store.get(key)
+    <span class="hljs-keyword">if</span> (!info) {
+      <span class="hljs-keyword">return</span> <span class="hljs-literal">null</span>;
+    }
+
+    <span class="hljs-keyword">if</span> (<span class="hljs-keyword">new</span> <span class="hljs-built_in">Date</span>().getTime() - info.time &gt; info.exp) {
+      <span class="hljs-keyword">return</span> <span class="hljs-literal">null</span>;
+    }
+
+    <span class="hljs-keyword">return</span> info.val
+  }
+}；
+
+storeWithExpiration.set(<span class="hljs-string">'foo'</span>, <span class="hljs-string">'bar'</span>, <span class="hljs-number">1000</span>);
+
+setTimeout(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> </span>{
+  <span class="hljs-built_in">console</span>.log(storeWithExpiration.get(<span class="hljs-string">'foo'</span>));
+}, <span class="hljs-number">500</span>) <span class="hljs-comment">// -&gt; "bar"</span>
+
+setTimeout(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> </span>{
+  <span class="hljs-built_in">console</span>.log(storeWithExpiration.get(<span class="hljs-string">'foo'</span>));
+}, <span class="hljs-number">1500</span>) <span class="hljs-comment">// -&gt; null</span></code></pre></div><h2><a name="%E5%8F%82%E8%80%83%E8%B5%84%E6%BA%90" class="anchor" href="#%E5%8F%82%E8%80%83%E8%B5%84%E6%BA%90"><span class="header-link"></span></a>参考资源</h2><ul>
+<li><a href="https://github.com/zendesk/cross-storage">Cross domain local storage</a></li>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/Guide/API/DOM/Storage#Compatibility">使用 cookie 实现 LocalStorage</a></li>
+<li><a href="https://github.com/mozilla/localForage">localForage</a></li>
+<li><a href="https://github.com/pouchdb/pouchdb">PouchDB</a></li>
+<li><a href="https://github.com/Wisembly/basil.js">Basil.js</a></li>
+</ul>
+<script>
+  $(function() {
+    var store = $.AMUI.store;
+
+    var tests = {
+      outputError: null,
+      assert: assert,
+      runFirstPass: runFirstPass,
+      runSecondPass: runSecondPass,
+      failed: false
+    };
+
+    function assert(truthy, msg) {
+      if (!truthy) {
+        tests.outputError('bad assert: ' + msg);
+        if (store.disabled) {
+          tests.outputError('<br>Note that store.disabled == true')
+        }
+        tests.failed = true
+      }
+    }
+
+    function runFirstPass() {
+      store.clear();
+
+      store.get('unsetValue') // see https://github.com/marcuswestin/store.js/issues/63
+
+      store.set('foo', 'bar')
+      assert(store.get('foo') == 'bar', "stored key 'foo' not equal to stored value 'bar'")
+
+      store.remove('foo')
+      assert(store.get('foo') == null, "removed key 'foo' not null")
+
+      assert(store.set('foo', 'value') == 'value', "store#set returns the stored value")
+
+      store.set('foo', 'bar1')
+      store.set('foo', 'bar2')
+      assert(store.get('foo') == 'bar2', "key 'foo' is not equal to second value set 'bar2'")
+
+      store.set('foo', 'bar')
+      store.set('bar', 'foo')
+      store.remove('foo')
+      assert(store.get('bar') == 'foo', "removing key 'foo' also removed key 'bar'")
+
+      store.set('foo', 'bar');
+      store.set('bar', 'foo');
+      store.clear();
+      assert(store.get('foo') == null && store.get('bar') == null, "keys foo and bar not cleared after store cleared")
+
+      store.transact('foosact', function(val) {
+        assert(typeof val == 'object', "new key is not an object at beginning of transaction");
+        val.foo = 'foo';
+      });
+      store.transact('foosact', function(val) {
+        assert(val.foo == 'foo', "first transaction did not register");
+        val.bar = 'bar'
+      });
+      assert(store.get('foosact').bar == 'bar', "second transaction did not register")
+
+      store.set('foo', {name: 'marcus', arr: [1, 2, 3]})
+      assert(typeof store.get('foo') == 'object', "type of stored object 'foo' is not 'object'")
+      assert(store.get('foo') instanceof Object, "stored object 'foo' is not an instance of Object")
+      assert(store.get('foo').name == 'marcus', "property 'name' of stored object 'foo' is not 'marcus'")
+      assert(store.get('foo').arr instanceof Array, "Array property 'arr' of stored object 'foo' is not an instance of Array")
+      assert(store.get('foo').arr.length == 3, "The length of Array property 'arr' stored on object 'foo' is not 3")
+
+      assert(store.enabled = !store.disabled, "Store.enabled is not the reverse of .disabled");
+
+      store.remove('circularReference')
+      var circularOne = {}
+      var circularTwo = {one: circularOne}
+      circularOne.two = circularTwo
+      var threw = false
+      try {
+        store.set('circularReference', circularOne)
+      }
+      catch (e) {
+        threw = true
+      }
+      assert(threw, "storing object with circular reference did not throw")
+      assert(!store.get('circularReference'), "attempting to store object with circular reference which should have faile affected store state")
+
+      // If plain local storage was used before store.js, we should attempt to JSON.parse them into javascript values.
+      // Store values using vanilla localStorage, then read them out using store.js
+      if (typeof localStorage != 'undefined') {
+        var promoteValues = {
+          'int': 42,
+          'bool': true,
+          'float': 3.141592653,
+          'string': "Don't Panic",
+          'odd_string': "{ZYX'} abc:;::)))"
+        }
+        for (key in promoteValues) {
+          localStorage[key] = promoteValues[key]
+        }
+        for (key in promoteValues) {
+          assert(store.get(key) == promoteValues[key], key + " was not correctly promoted to valid JSON")
+          store.remove(key)
+        }
+      }
+
+      // The following stored values get tested in doSecondPass after a page reload
+      store.set('firstPassFoo', 'bar')
+      store.set('firstPassObj', {woot: true})
+
+      var all = store.getAll()
+      assert(all.firstPassFoo == 'bar', 'getAll gets firstPassFoo')
+      assert(countProperties(all) == 4, 'getAll gets all 4 values')
+    }
+
+    function runSecondPass() {
+      assert(store.get('firstPassFoo') == 'bar', "first pass key 'firstPassFoo' not equal to stored value 'bar'")
+
+      var all = store.getAll()
+      assert(all.firstPassFoo == 'bar', "getAll still gets firstPassFoo on second pass")
+      assert(countProperties(all) == 4, "getAll gets all 4 values")
+
+      store.clear();
+      assert(store.get('firstPassFoo') == null, "first pass key 'firstPassFoo' not null after store cleared")
+
+      var all = store.getAll()
+      assert(countProperties(all) == 0, "getAll returns 0 properties after store.clear() has been called")
+    }
+
+    function countProperties(obj) {
+      var count = 0
+      for (var key in obj) {
+        if (obj.hasOwnProperty(key)) {
+          count++
+        }
+      }
+      return count
+    }
+
+    var doc = document,
+      errorOutput = doc.getElementById('errorOutput'),
+      isSecondPass = (doc.location.hash == '#secondPass');
+
+    tests.outputError = function outputError(msg) {
+      var prefix = (isSecondPass ? 'second' : 'first') + ' pass '
+      errorOutput.appendChild(doc.createElement('div')).innerHTML = prefix + msg
+    };
+
+    try {
+      if (isSecondPass) {
+        tests.runSecondPass()
+      } else {
+        tests.runFirstPass()
+      }
+    } catch (e) {
+      console.log(e);
+      tests.assert(false, 'Tests should not throw: "' + JSON.stringify(e) + '"')
+    }
+
+    if (!tests.failed) {
+      if (!isSecondPass) {
+        doc.location.hash = '#secondPass';
+        doc.location.reload()
+      } else {
+        doc.location.hash = '#';
+        $('#store-test-success').html('测试通过！');
+      }
+    }
+  });
+</script>
+
+
+  <nav class="amp-pager">
+        <ul class="am-pagination">
+          <li class="am-pagination-prev"><a href="javascript/iscroll-lite.html">&laquo; Prev</a>
+          </li>
+              <li class="am-pagination-next"><a href="javascript/geolocation.html">Next &raquo;</a>
+              </li>
+        </ul>
+  </nav>
+</section>
+
+<script>
+  var _hmt = _hmt || [];
+  (function() {
+    var hm = document.createElement("script");
+    hm.src = "//hm.baidu.com/hm.js?b424d39312c46404f15e22574a531fbb";
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(hm);
+  })();
+
+  (function(w, d, s) {
+    function gs(){
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){ (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o), m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(w , d, s ,'//www.google-analytics.com/analytics.js','ga');
+      ga('create', 'UA-34196034-8', 'amazeui.org');
+      ga('send', 'pageview');
+    }
+    if (w.addEventListener) { w.addEventListener('load', gs, false); }
+    else if (w.attachEvent) { w.attachEvent('onload',gs); }
+  }(window, document, 'script'));
+</script>
+</body>
+</html>

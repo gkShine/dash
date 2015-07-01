@@ -1,0 +1,128 @@
+<!doctype html>
+<html class="no-js">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <title>固定元素 | Amaze UI Dash Docsets</title>
+  <link rel="stylesheet" href="../assets/css/amazeui.min.css">
+  <link rel="stylesheet" href="../assets/css/app.css">
+  <script src="../assets/js/jquery.min.js"></script>
+  <script src="../assets/js/amazeui.min.js"></script>
+  
+</head>
+<body class="am-doc">
+<section class="doc-main am-padding-lg">
+    <h1><a name="Sticky" class="anchor" href="#Sticky"><span class="header-link"></span></a>Sticky</h1><hr>
+<p>当窗口滚动至元素上边距离时，将元素固定在窗口顶部。</p>
+<h2><a name="%E5%9F%BA%E6%9C%AC%E6%BC%94%E7%A4%BA" class="anchor" href="#%E5%9F%BA%E6%9C%AC%E6%BC%94%E7%A4%BA"><span class="header-link"></span></a>基本演示</h2><h3><a name="%E5%9F%BA%E6%9C%AC%E5%BD%A2%E5%BC%8F" class="anchor" href="#%E5%9F%BA%E6%9C%AC%E5%BD%A2%E5%BC%8F"><span class="header-link"></span></a>基本形式</h3><p>在元素上添加 <code>data-am-sticky</code> 属性。</p>
+<div class="doc-example"><div data-am-sticky>
+  <button class="am-btn am-btn-primary am-btn-block">Stick to top</button>
+</div></div><div class="doc-code demo-highlight"><pre><code class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">data-am-sticky</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">button</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-btn am-btn-primary am-btn-block"</span>&gt;</span>Stick to top<span class="hljs-tag">&lt;/<span class="hljs-title">button</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span></code></pre></div><h3><a name="%E8%AE%BE%E7%BD%AE%E4%B8%8A%E8%BE%B9%E8%B7%9D" class="anchor" href="#%E8%AE%BE%E7%BD%AE%E4%B8%8A%E8%BE%B9%E8%B7%9D"><span class="header-link"></span></a>设置上边距</h3><p>元素固定到窗口顶部后，默认上边距为 0，可以在设置上边距 <code>data-am-sticky=&quot;{top:100}&quot;</code> 。</p>
+<div class="doc-example"><div data-am-sticky="{top:80}">
+  <button class="am-btn am-btn-primary">Stick 80px below the top</button>
+</div></div><div class="doc-code demo-highlight"><pre><code class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">data-am-sticky</span>=<span class="hljs-value">"{top:80}"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">button</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-btn am-btn-primary"</span>&gt;</span>Stick 80px below the top<span class="hljs-tag">&lt;/<span class="hljs-title">button</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span></code></pre></div><h3><a name="%E5%8A%A8%E7%94%BB%E6%95%88%E6%9E%9C" class="anchor" href="#%E5%8A%A8%E7%94%BB%E6%95%88%E6%9E%9C"><span class="header-link"></span></a>动画效果</h3><p>使用 <a href="http://amazeui.org/css/animation">CSS3 动画</a> 实现动画效果。</p>
+<div class="doc-example"><div data-am-sticky="{animation: 'slide-top'}">
+  <button class="am-btn am-btn-success am-btn-block">固定到顶部动画效果</button>
+</div></div><div class="doc-code demo-highlight"><pre><code class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">data-am-sticky</span>=<span class="hljs-value">"{animation: 'slide-top'}"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">button</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-btn am-btn-success am-btn-block"</span>&gt;</span>固定到顶部动画效果<span class="hljs-tag">&lt;/<span class="hljs-title">button</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span></code></pre></div><h2><a name="%E8%B0%83%E7%94%A8%E6%96%B9%E5%BC%8F" class="anchor" href="#%E8%B0%83%E7%94%A8%E6%96%B9%E5%BC%8F"><span class="header-link"></span></a>调用方式</h2><h3><a name="%E9%80%9A%E8%BF%87%20Data%20API" class="anchor" href="#%E9%80%9A%E8%BF%87%20Data%20API"><span class="header-link"></span></a>通过 Data API</h3><p>如上面的演示所示，在元素上添加 <code>data-am-sticky</code> 属性。</p>
+<h3><a name="%E9%80%9A%E8%BF%87%20JS" class="anchor" href="#%E9%80%9A%E8%BF%87%20JS"><span class="header-link"></span></a>通过 JS</h3><p>通过 <code>$.sticky(options)</code> 设置。</p>
+<div class="doc-example"><div id="my-sticky">
+  <button class="am-btn am-btn-danger">Stick via JavaScript & 150px below the top</button>
+</div>
+<script>
+$(function() {
+$('#my-sticky').sticky({
+    top: 150,
+    bottom: function() {
+      return $('.amz-footer').height();
+    }
+  });
+});
+</script></div><div class="doc-code demo-highlight"><pre><code class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"my-sticky"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">button</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-btn am-btn-danger"</span>&gt;</span>Stick via JavaScript<span class="hljs-tag">&lt;/<span class="hljs-title">button</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">script</span>&gt;</span><span class="javascript">
+$(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> </span>{
+  $(<span class="hljs-string">'#my-sticky'</span>).sticky({
+    top: <span class="hljs-number">150</span>
+  })
+});
+</span><span class="hljs-tag">&lt;/<span class="hljs-title">script</span>&gt;</span></code></pre></div><h3><a name="%E9%80%89%E9%A1%B9" class="anchor" href="#%E9%80%89%E9%A1%B9"><span class="header-link"></span></a>选项</h3><table class="am-table am-table-bd am-table-striped">
+  <thead>
+  <tr>
+    <th style="width: 60px;">参数</th>
+    <th style="width: 70px;">类型</th>
+    <th style="width: 50px;">默认</th>
+    <th>描述</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr>
+    <td><code>top</code></td>
+    <td>数值</td>
+    <td><code>0</code></td>
+    <td>距离顶部位置</td>
+  </tr>
+  <tr>
+    <td><code>animation</code></td>
+    <td>字符串</td>
+    <td><code>''</code></td>
+    <td>动画名称</td>
+  </tr>
+  <tr>
+    <td><code>bottom</code></td>
+    <td>数值 <br/> 或返回数值的函数</td>
+    <td><code>0</code></td>
+    <td>距离底部小于该数值时不再往下滚动，避免覆盖下面的元素</td>
+  </tr>
+  </tbody>
+</table>
+
+<h2><a name="%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9" class="anchor" href="#%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9"><span class="header-link"></span></a>注意事项</h2><ul>
+<li>Sticky 插件是监听窗口滚动事件，当滚动距离超过元素上边距时，添加 <code>.am-sticky</code> 类，将元素的 <code>position</code> 设置为 <code>fixed</code>，同时设置一个 <code>top</code> 值（默认为 0）。</li>
+<li>插件初始化的时候会给在元素外面包裹 <code>.am-sticky-placeholder</code> 作为占位符避免页面抖动，有可能会影响使用使用子选择的样式。</li>
+<li><strong>已知问题</strong>：如果设置了动画，窗口快速 <code>resize</code> 时，动画会执行多次。</li>
+</ul>
+<div style="height: 400px"></div>
+
+
+  <nav class="amp-pager">
+        <ul class="am-pagination">
+          <li class="am-pagination-prev"><a href="javascript/smooth-scroll.html">&laquo; Prev</a>
+          </li>
+              <li class="am-pagination-next"><a href="javascript/tabs.html">Next &raquo;</a>
+              </li>
+        </ul>
+  </nav>
+</section>
+
+<script>
+  var _hmt = _hmt || [];
+  (function() {
+    var hm = document.createElement("script");
+    hm.src = "//hm.baidu.com/hm.js?b424d39312c46404f15e22574a531fbb";
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(hm);
+  })();
+
+  (function(w, d, s) {
+    function gs(){
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){ (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o), m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(w , d, s ,'//www.google-analytics.com/analytics.js','ga');
+      ga('create', 'UA-34196034-8', 'amazeui.org');
+      ga('send', 'pageview');
+    }
+    if (w.addEventListener) { w.addEventListener('load', gs, false); }
+    else if (w.attachEvent) { w.attachEvent('onload',gs); }
+  }(window, document, 'script'));
+</script>
+</body>
+</html>

@@ -1,0 +1,170 @@
+<!doctype html>
+<html class="no-js">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <title>全屏切换 | Amaze UI Dash Docsets</title>
+  <link rel="stylesheet" href="../assets/css/amazeui.min.css">
+  <link rel="stylesheet" href="../assets/css/app.css">
+  <script src="../assets/js/jquery.min.js"></script>
+  <script src="../assets/js/amazeui.min.js"></script>
+  
+</head>
+<body class="am-doc">
+<section class="doc-main am-padding-lg">
+    <h1><a name="Fullscreen" class="anchor" href="#Fullscreen"><span class="header-link"></span></a>Fullscreen</h1><hr>
+<p>JavaScript <a href="https://developer.mozilla.org/en/DOM/Using_full-screen_mode">Fullscreen API</a> 跨浏览器兼容封装（<a href="http://caniuse.com/fullscreen">Fullscreen
+API 兼容性列表</a>），免去苦逼写各种浏览器前缀的麻烦。源自 <a href="https://github.com/sindresorhus/screenfull.js">screenfull.js</a>。</p>
+<h2><a name="%E6%96%B9%E6%B3%95" class="anchor" href="#%E6%96%B9%E6%B3%95"><span class="header-link"></span></a>方法</h2><p>以下方法通过 <code>$.AMUI.fullscreen</code> 接口调用。</p>
+<h3><a name="%3Ccode%3E.request()%3C%2Fcode%3E" class="anchor" href="#%3Ccode%3E.request()%3C%2Fcode%3E"><span class="header-link"></span></a><code>.request()</code></h3><p>使元素全屏。接受一个 DOM 元素作为参数，默认为 <code>html</code>。</p>
+<p><code>&lt;iframe&gt;</code> 中需要添加 <code>allowfullscreen</code> 属性 (+ <code>webkitallowfullscreen</code> and <code>moz
+  allowfullscreen</code>)。</p>
+<div class="doc-code demo-highlight"><pre><code class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">iframe</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"frame1"</span> <span class="hljs-attribute">allowfullscreen</span> <span class="hljs-attribute">mozallowfullscreen</span> <span class="hljs-attribute">webkitallowfullscreen</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">"iframeTest.html"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">iframe</span>&gt;</span></code></pre></div><p>注意全屏 API 仅能通过用户事件（如 click、touch、key） 初始化。</p>
+<h3><a name="%3Ccode%3E.exit()%3C%2Fcode%3E" class="anchor" href="#%3Ccode%3E.exit()%3C%2Fcode%3E"><span class="header-link"></span></a><code>.exit()</code></h3><p>退出全屏模式。</p>
+<h3><a name="%3Ccode%3E.toggle()%3C%2Fcode%3E" class="anchor" href="#%3Ccode%3E.toggle()%3C%2Fcode%3E"><span class="header-link"></span></a><code>.toggle()</code></h3><p>全屏模式切换。</p>
+<h3><a name="%E4%BA%8B%E4%BB%B6%E7%9B%91%E5%90%AC" class="anchor" href="#%E4%BA%8B%E4%BB%B6%E7%9B%91%E5%90%AC"><span class="header-link"></span></a>事件监听</h3><h4><a name="%E5%85%A8%E5%B1%8F%E7%8A%B6%E6%80%81%E5%8F%98%E5%8C%96" class="anchor" href="#%E5%85%A8%E5%B1%8F%E7%8A%B6%E6%80%81%E5%8F%98%E5%8C%96"><span class="header-link"></span></a>全屏状态变化</h4><div class="doc-code demo-highlight"><pre><code class="javascript"><span class="hljs-keyword">var</span> fullscreen = $.AMUI.fullscreen;
+<span class="hljs-keyword">if</span> (fullscreen.enabled) {
+  <span class="hljs-built_in">document</span>.addEventListener(fullscreen.raw.fullscreenchange, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> </span>{
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'Am I fullscreen? '</span> + (fullscreen.isFullscreen ? <span class="hljs-string">'Yes'</span> : <span class="hljs-string">'No'</span>));
+  });
+}</code></pre></div><h4><a name="%E7%9B%91%E5%90%AC%E5%85%A8%E5%B1%8F%E9%94%99%E8%AF%AF" class="anchor" href="#%E7%9B%91%E5%90%AC%E5%85%A8%E5%B1%8F%E9%94%99%E8%AF%AF"><span class="header-link"></span></a>监听全屏错误</h4><div class="doc-code demo-highlight"><pre><code class="javascript"><span class="hljs-keyword">var</span> fullscreen = $.AMUI.fullscreen;
+<span class="hljs-keyword">if</span> (fullscreen.enabled) {
+  <span class="hljs-built_in">document</span>.addEventListener(fullscreen.raw.fullscreenerror, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(e)</span> </span>{
+    <span class="hljs-built_in">console</span>.error(<span class="hljs-string">'Failed to enable fullscreen'</span>, e);
+  });
+}</code></pre></div><h2><a name="%E5%B1%9E%E6%80%A7" class="anchor" href="#%E5%B1%9E%E6%80%A7"><span class="header-link"></span></a>属性</h2><h3><a name="%3Ccode%3E.isFullscreen%3C%2Fcode%3E" class="anchor" href="#%3Ccode%3E.isFullscreen%3C%2Fcode%3E"><span class="header-link"></span></a><code>.isFullscreen</code></h3><p>布尔值，是否处于全屏模式。</p>
+<h3><a name="%3Ccode%3E.element%3C%2Fcode%3E" class="anchor" href="#%3Ccode%3E.element%3C%2Fcode%3E"><span class="header-link"></span></a><code>.element</code></h3><p>返回当前处于全屏模式的元素，没有则返回 <code>null</code>。</p>
+<h3><a name="%3Ccode%3E.enabled%3C%2Fcode%3E" class="anchor" href="#%3Ccode%3E.enabled%3C%2Fcode%3E"><span class="header-link"></span></a><code>.enabled</code></h3><p>是否允许全屏模式。<code>&lt;iframe&gt;</code> 中的页面需要添加 <code>allowfullscreen</code> 属性 (+ <code>webkitallowfullscreen</code> and <code>moz
+    allowfullscreen</code>)。</p>
+<h3><a name="%3Ccode%3E.raw%3C%2Fcode%3E" class="anchor" href="#%3Ccode%3E.raw%3C%2Fcode%3E"><span class="header-link"></span></a><code>.raw</code></h3><p>返回包含原始方法名称的对象，对象 <code>key</code> 包括： <code>requestFullscreen</code>, <code>exitFullscreen</code>, <code>fullscreenElement</code>, <code>fullscreenEnabled</code>, <code>fullscreenchange</code>,<code>fullscreenerror</code></p>
+<div class="doc-code demo-highlight"><pre><code class="javascript">$(<span class="hljs-built_in">document</span>).on($.AMUI.fullscreen.raw.fullscreenchange, <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">()</span> </span>{
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'Fullscreen change'</span>);
+});</code></pre></div><h2><a name="%E4%BD%BF%E7%94%A8%E7%A4%BA%E4%BE%8B" class="anchor" href="#%E4%BD%BF%E7%94%A8%E7%A4%BA%E4%BE%8B"><span class="header-link"></span></a>使用示例</h2><h3><a name="%E5%85%A8%E5%B1%8F%E6%95%B4%E4%B8%AA%E9%A1%B5%E9%9D%A2" class="anchor" href="#%E5%85%A8%E5%B1%8F%E6%95%B4%E4%B8%AA%E9%A1%B5%E9%9D%A2"><span class="header-link"></span></a>全屏整个页面</h3><div class="doc-example"><button class="am-btn am-btn-primary" id="doc-fs-request">全屏窗口</button>
+<button class="am-btn am-btn-secondary" id="doc-fs-exit">退出全屏</button>
+<button class="am-btn am-btn-warning" id="doc-fs-toggle">全屏交替</button></div><div class="doc-code demo-highlight"><pre><code class="javascript">$(<span class="hljs-string">'#demo-full-page'</span>).on(<span class="hljs-string">'click'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">()</span> </span>{
+    <span class="hljs-keyword">if</span> ($.AMUI.fullscreen.enabled) {
+    $.AMUI.fullscreen.request();
+    } <span class="hljs-keyword">else</span> {
+        <span class="hljs-comment">// Ignore or do something else</span>
+    }
+});</code></pre></div><h3><a name="%E5%85%A8%E5%B1%8F%E6%98%BE%E7%A4%BA%E5%85%83%E7%B4%A0" class="anchor" href="#%E5%85%A8%E5%B1%8F%E6%98%BE%E7%A4%BA%E5%85%83%E7%B4%A0"><span class="header-link"></span></a>全屏显示元素</h3><div class="doc-example"><style>
+  #demo-full-img:-webkit-full-screen {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+</style>
+<div>
+  <img id="demo-full-img" src="http://s.cn.bing.net/az/hprichbg/rb/WorkingFarmer_ZH-CN9182210796_1366x768.jpg"
+       width="340"
+       height="142"
+       alt=""/>
+  <br/>
+  点击图片全屏显示
+  <br/>
+  <span id="doc-fs-img"></span>
+</div></div><div class="doc-code demo-highlight"><pre><code class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">img</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"demo-full-img"</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">"http://s.cn.bing.net/az/hprichbg/rb/WorkingFarmer_ZH-CN9182210796_1366x768.jpg"</span>
+       <span class="hljs-attribute">width</span>=<span class="hljs-value">"340"</span>
+       <span class="hljs-attribute">height</span>=<span class="hljs-value">"142"</span>
+       <span class="hljs-attribute">alt</span>=<span class="hljs-value">""</span>/&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">br</span>/&gt;</span>
+  点击图片全屏显示
+  <span class="hljs-tag">&lt;<span class="hljs-title">br</span>/&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"doc-fs-img"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span></code></pre></div><div class="doc-code demo-highlight"><pre><code class="javascript"><span class="hljs-keyword">var</span> fullscreen = $.AMUI.fullscreen;
+
+$(<span class="hljs-string">'#demo-full-img'</span>).on(<span class="hljs-string">'click'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">()</span> </span>{
+  <span class="hljs-keyword">if</span> (fullscreen.enabled) {
+    fullscreen.request(<span class="hljs-keyword">this</span>);
+  }
+}).on(fullscreen.raw.fullscreenchange, <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">()</span> </span>{
+  <span class="hljs-comment">// 监听图片全屏状态</span>
+  <span class="hljs-keyword">var</span> text = <span class="hljs-string">'图片状态：'</span> + (fullscreen.isFullscreen ? <span class="hljs-string">'全屏'</span> : <span class="hljs-string">'非全屏'</span>);
+  $(<span class="hljs-string">'#doc-fs-img'</span>).html(text);
+});</code></pre></div><h3><a name="%E7%9B%91%E5%90%AC%E5%85%A8%E5%B1%8F%E7%8A%B6%E6%80%81%E6%94%B9%E5%8F%98" class="anchor" href="#%E7%9B%91%E5%90%AC%E5%85%A8%E5%B1%8F%E7%8A%B6%E6%80%81%E6%94%B9%E5%8F%98"><span class="header-link"></span></a>监听全屏状态改变</h3><div class="doc-example"><p>打开控制台，点击上面的演示看看</p>
+<script>
+$(function() {
+  var fullscreen = $.AMUI.fullscreen;
+
+  // demo1
+  $('#doc-fs-request').on('click', function () {
+    fullscreen.enabled && fullscreen.request();
+  });
+
+  $('#doc-fs-exit').on('click', function () {
+    fullscreen.enabled && fullscreen.exit();
+  });
+
+  $('#doc-fs-toggle').on('click', function () {
+    fullscreen.enabled && fullscreen.toggle();
+  });
+
+  // demo2
+  $('#demo-full-img').on('click', function () {
+    if (fullscreen.enabled) {
+      fullscreen.request(this);
+    }
+  }).on(fullscreen.raw.fullscreenchange, function () {
+    // 监听图片全屏状态
+    var text = '图片状态：<strong>' + (fullscreen.isFullscreen ? '全屏' : '非全屏')
+      + '</strong>';
+    $('#doc-fs-img').html(text);
+  });
+
+  // demo3
+  if (fullscreen.enabled) {
+    $(document).on(fullscreen.raw.fullscreenchange, function () {
+      console.log('Am I fullscreen? ' + (fullscreen.isFullscreen ? 'Yes' : 'No'));
+    });
+  }
+});
+</script></div><div class="doc-code demo-highlight"><pre><code class="javascript"><span class="hljs-keyword">if</span> (fullscreen.enabled) {
+    $(<span class="hljs-built_in">document</span>).on($.AMUI.fullscreen.raw.fullscreenchange, <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">()</span> </span>{
+        <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'Am I fullscreen? '</span> + ($.AMUI.fullscreen.isFullscreen ? <span class="hljs-string">'Yes'</span> : <span class="hljs-string">'No'</span>));
+    });
+}</code></pre></div><h2><a name="%E5%8F%82%E8%80%83%E8%B5%84%E6%BA%90" class="anchor" href="#%E5%8F%82%E8%80%83%E8%B5%84%E6%BA%90"><span class="header-link"></span></a>参考资源</h2><ul>
+<li><a href="http://hacks.mozilla.org/2012/01/using-the-fullscreen-api-in-web-browsers/">Using the Fullscreen API in web browsers</a></li>
+<li><a href="https://developer.mozilla.org/en/DOM/Using_full-screen_mode">MDN - Fullscreen API</a></li>
+<li><a href="http://dvcs.w3.org/hg/fullscreen/raw-file/tip/Overview.html">W3C Fullscreen spec</a></li>
+<li><a href="http://www.html5rocks.com/en/mobile/fullscreen/">Building an amazing fullscreen mobile experience</a></li>
+<li><a href="http://caniuse.com/fullscreen">Can I use Full Screen API?</a></li>
+</ul>
+<h2><a name="License" class="anchor" href="#License"><span class="header-link"></span></a>License</h2><p>MIT © <a href="http://sindresorhus.com">Sindre Sorhus</a></p>
+
+
+  <nav class="amp-pager">
+        <ul class="am-pagination">
+          <li class="am-pagination-prev"><a href="javascript/cookie.html">&laquo; Prev</a>
+          </li>
+              <li class="am-pagination-next"><a href="javascript/hammer.html">Next &raquo;</a>
+              </li>
+        </ul>
+  </nav>
+</section>
+
+<script>
+  var _hmt = _hmt || [];
+  (function() {
+    var hm = document.createElement("script");
+    hm.src = "//hm.baidu.com/hm.js?b424d39312c46404f15e22574a531fbb";
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(hm);
+  })();
+
+  (function(w, d, s) {
+    function gs(){
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){ (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o), m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(w , d, s ,'//www.google-analytics.com/analytics.js','ga');
+      ga('create', 'UA-34196034-8', 'amazeui.org');
+      ga('send', 'pageview');
+    }
+    if (w.addEventListener) { w.addEventListener('load', gs, false); }
+    else if (w.attachEvent) { w.attachEvent('onload',gs); }
+  }(window, document, 'script'));
+</script>
+</body>
+</html>

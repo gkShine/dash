@@ -1,0 +1,244 @@
+<!doctype html>
+<html class="no-js">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <title>Panel | Amaze UI Dash Docsets</title>
+  <link rel="stylesheet" href="../assets/css/amazeui.min.css">
+  <link rel="stylesheet" href="../assets/css/app.css">
+  <script src="../assets/js/jquery.min.js"></script>
+  <script src="../assets/js/amazeui.min.js"></script>
+  
+</head>
+<body class="am-doc">
+<section class="doc-main am-padding-lg">
+    <h1><a name="Panel" class="anchor" href="#Panel"><span class="header-link"></span></a>Panel</h1><hr>
+<p>面板组件带有轮廓、常用来放置带标题和文字的内容块。</p>
+<h2><a name="%E5%9F%BA%E6%9C%AC%E6%A0%B7%E5%BC%8F" class="anchor" href="#%E5%9F%BA%E6%9C%AC%E6%A0%B7%E5%BC%8F"><span class="header-link"></span></a>基本样式</h2><p>默认的 <code>.am-panel</code> 提供基本的阴影和边距，默认边框添加 <code>.am-panel-default</code>，内容放在 <code>.am-panel-bd</code> 里面。</p>
+<div class="doc-example"><div class="am-panel am-panel-default">
+    <div class="am-panel-bd">这是一个基本的面板组件。</div>
+</div></div><div class="doc-code demo-highlight"><pre><code class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-panel am-panel-default"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-panel-bd"</span>&gt;</span>这是一个基本的面板组件。<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span></code></pre></div><h2><a name="%E5%B8%A6%E6%A0%87%E9%A2%98%E7%9A%84%E9%9D%A2%E6%9D%BF" class="anchor" href="#%E5%B8%A6%E6%A0%87%E9%A2%98%E7%9A%84%E9%9D%A2%E6%9D%BF"><span class="header-link"></span></a>带标题的面板</h2><p><code>.am-panel-hd</code> 用来放置标题，建议使用 <code>h1</code> - <code>h6</code> 并添加 <code>.am-panel-title</code> class，更加语义化。</p>
+<div class="doc-example"><div class="am-panel am-panel-default">
+  <div class="am-panel-hd">面板标题</div>
+  <div class="am-panel-bd">
+    面板内容
+  </div>
+</div>
+
+<section class="am-panel am-panel-default">
+  <header class="am-panel-hd">
+    <h3 class="am-panel-title">面板标题</h3>
+  </header>
+  <div class="am-panel-bd">
+    面板内容
+  </div>
+</section></div><div class="doc-code demo-highlight"><pre><code class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-panel am-panel-default"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-panel-hd"</span>&gt;</span>面板标题<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-panel-bd"</span>&gt;</span>
+    面板内容
+  <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-title">section</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-panel am-panel-default"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">header</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-panel-hd"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">h3</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-panel-title"</span>&gt;</span>面板标题<span class="hljs-tag">&lt;/<span class="hljs-title">h3</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">header</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-panel-bd"</span>&gt;</span>
+    面板内容
+  <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">section</span>&gt;</span></code></pre></div><h2><a name="%E9%9D%A2%E6%9D%BF%E9%A2%9C%E8%89%B2" class="anchor" href="#%E9%9D%A2%E6%9D%BF%E9%A2%9C%E8%89%B2"><span class="header-link"></span></a>面板颜色</h2><p>添加不同的一下类可以设置不同的颜色。</p>
+<ul>
+<li><code>.am-panel-primary</code></li>
+<li><code>.am-panel-secondary</code></li>
+<li><code>.am-panel-success</code></li>
+<li><code>.am-panel-warning</code></li>
+<li><code>.am-panel-danger</code></li>
+</ul>
+<div class="doc-example"><div class="am-panel am-panel-primary">
+  <div class="am-panel-hd">
+    <h3 class="am-panel-title">面板标题</h3>
+  </div>
+  <div class="am-panel-bd">
+    面板内容
+  </div>
+</div>
+
+<div class="am-panel am-panel-secondary">
+  <div class="am-panel-hd">
+    <h3 class="am-panel-title">面板标题</h3>
+  </div>
+  <div class="am-panel-bd">
+    面板内容
+  </div>
+</div>
+
+<div class="am-panel am-panel-success">
+  <div class="am-panel-hd">
+    <h3 class="am-panel-title">面板标题</h3>
+  </div>
+  <div class="am-panel-bd">
+    面板内容
+  </div>
+</div>
+
+<div class="am-panel am-panel-warning">
+  <div class="am-panel-hd">
+    <h3 class="am-panel-title">面板标题</h3>
+  </div>
+  <div class="am-panel-bd">
+    面板内容
+  </div>
+</div>
+
+<div class="am-panel am-panel-danger">
+  <div class="am-panel-hd">
+    <h3 class="am-panel-title">面板标题</h3>
+  </div>
+  <div class="am-panel-bd">
+    面板内容
+  </div>
+</div></div><div class="doc-code demo-highlight"><pre><code class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-panel am-panel-primary"</span>&gt;</span>...<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-panel am-panel-secondary"</span>&gt;</span>...<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-panel am-panel-success"</span>&gt;</span>...<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-panel am-panel-warning"</span>&gt;</span>...<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-panel am-panel-danger"</span>&gt;</span>...<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span></code></pre></div><h2><a name="%E9%9D%A2%E6%9D%BF%E9%A1%B5%E8%84%9A" class="anchor" href="#%E9%9D%A2%E6%9D%BF%E9%A1%B5%E8%84%9A"><span class="header-link"></span></a>面板页脚</h2><p>面板页脚 <code>.am-panel-footer</code>，用于放置次要信息。页脚不会继承 <code>.am-panel-primary</code> - <code>.am-panel-danger</code> 等颜色样式。</p>
+<div class="doc-example"><section class="am-panel am-panel-default">
+  <main class="am-panel-bd">
+    面板内容
+  </main>
+  <footer class="am-panel-footer">面板页脚</footer>
+</section></div><div class="doc-code demo-highlight"><pre><code class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">section</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-panel am-panel-default"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">main</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-panel-bd"</span>&gt;</span>
+    面板内容
+  <span class="hljs-tag">&lt;/<span class="hljs-title">main</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">footer</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-panel-footer"</span>&gt;</span>面板页脚<span class="hljs-tag">&lt;/<span class="hljs-title">footer</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">section</span>&gt;</span></code></pre></div><h2><a name="%E7%BB%84%E5%90%88%E4%BD%BF%E7%94%A8" class="anchor" href="#%E7%BB%84%E5%90%88%E4%BD%BF%E7%94%A8"><span class="header-link"></span></a>组合使用</h2><h3><a name="%E9%9D%A2%E6%9D%BF%E5%B5%8C%E5%A5%97%E8%A1%A8%E6%A0%BC" class="anchor" href="#%E9%9D%A2%E6%9D%BF%E5%B5%8C%E5%A5%97%E8%A1%A8%E6%A0%BC"><span class="header-link"></span></a>面板嵌套表格</h3><p>将没有边框的表格 (<code>.am-table</code>) 直接放在 <code>.am-panel</code> 下面（不是放在 <code>.am-panel-bd</code> 里面）。</p>
+<div class="doc-example"><div class="am-panel am-panel-default">
+  <div class="am-panel-hd">
+    <h3 class="am-panel-title">面板标题</h3>
+  </div>
+  <div class="am-panel-bd">
+    这里是面板其他内容。
+  </div>
+  <table class="am-table">
+    <thead>
+    <tr>
+      <th>名称</th>
+      <th>网址</th>
+      <th>创建时间</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <td>Amaze UI</td>
+      <td>amazeui.org</td>
+      <td>2014-01-01</td>
+    </tr>
+    <tr>
+      <td>Amaze UI</td>
+      <td>amazeui.org</td>
+      <td>2014-01-01</td>
+    </tr>
+    <tr>
+      <td>Amaze UI</td>
+      <td>amazeui.org</td>
+      <td>2014-01-01</td>
+    </tr>
+    </tbody>
+  </table>
+  <div class="am-panel-footer">面板页脚</div>
+</div></div><div class="doc-code demo-highlight"><pre><code class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-panel am-panel-default"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-panel-hd"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">h3</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-panel-title"</span>&gt;</span>面板标题<span class="hljs-tag">&lt;/<span class="hljs-title">h3</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-panel-bd"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span>这里是面板其他内容。<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">table</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-table"</span>&gt;</span>
+    ...
+  <span class="hljs-tag">&lt;/<span class="hljs-title">table</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-panel-footer"</span>&gt;</span>...<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span></code></pre></div><h3><a name="%E9%9D%A2%E6%9D%BF%E5%B5%8C%E5%A5%97%E5%88%97%E8%A1%A8" class="anchor" href="#%E9%9D%A2%E6%9D%BF%E5%B5%8C%E5%A5%97%E5%88%97%E8%A1%A8"><span class="header-link"></span></a>面板嵌套列表</h3><div class="doc-example"><div class="am-panel am-panel-default">
+  <div class="am-panel-hd">
+    <h3 class="am-panel-title">面板标题</h3>
+  </div>
+  <div class="am-panel-bd">
+    这里是面板其他内容。
+  </div>
+
+  <ul class="am-list am-list-static">
+    <li>每个人都有一个死角， 自己走不出来，别人也闯不进去。</li>
+    <li>我把最深沉的秘密放在那里。</li>
+    <li>你不懂我，我不怪你。</li>
+    <li>每个人都有一道伤口， 或深或浅，盖上布，以为不存在。</li>
+  </ul>
+  <div class="am-panel-footer">...</div>
+</div></div><div class="doc-code demo-highlight"><pre><code class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-panel am-panel-default"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-panel-hd"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">h3</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-panel-title"</span>&gt;</span>面板标题<span class="hljs-tag">&lt;/<span class="hljs-title">h3</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-panel-bd"</span>&gt;</span>
+    这里是面板其他内容。
+  <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+
+  <span class="hljs-tag">&lt;<span class="hljs-title">ul</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-list am-list-static"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span>...<span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">ul</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-panel-footer"</span>&gt;</span>...<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span></code></pre></div><h2><a name="%E9%9D%A2%E6%9D%BF%E7%BE%A4%E7%BB%84" class="anchor" href="#%E9%9D%A2%E6%9D%BF%E7%BE%A4%E7%BB%84"><span class="header-link"></span></a>面板群组</h2><p>将多个面板放在 <code>.am-panel-group</code> 里面，可结合 JS 制作折叠面板（手风琴面板）。</p>
+<div class="doc-example"><div class="am-panel-group">
+  <section class="am-panel am-panel-default">
+    <header class="am-panel-hd">面板标题</header>
+    <main class="am-panel-bd">
+      面板内容
+    </main>
+  </section>
+
+  <section class="am-panel am-panel-default">
+    <header class="am-panel-hd">面板标题</header>
+    <div class="am-panel-collapse">
+      <main class="am-panel-bd">
+        面板内容
+      </main>
+    </div>
+  </section>
+
+  <section class="am-panel am-panel-default">
+    <header class="am-panel-hd">面板标题</header>
+    <main class="am-panel-bd">
+      面板内容
+    </main>
+  </section>
+</div></div>
+
+  <nav class="amp-pager">
+  </nav>
+</section>
+
+<script>
+  var _hmt = _hmt || [];
+  (function() {
+    var hm = document.createElement("script");
+    hm.src = "//hm.baidu.com/hm.js?b424d39312c46404f15e22574a531fbb";
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(hm);
+  })();
+
+  (function(w, d, s) {
+    function gs(){
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){ (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o), m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(w , d, s ,'//www.google-analytics.com/analytics.js','ga');
+      ga('create', 'UA-34196034-8', 'amazeui.org');
+      ga('send', 'pageview');
+    }
+    if (w.addEventListener) { w.addEventListener('load', gs, false); }
+    else if (w.attachEvent) { w.attachEvent('onload',gs); }
+  }(window, document, 'script'));
+</script>
+</body>
+</html>

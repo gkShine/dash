@@ -1,0 +1,321 @@
+<!doctype html>
+<html class="no-js">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <title>下拉组件 | Amaze UI Dash Docsets</title>
+  <link rel="stylesheet" href="../assets/css/amazeui.min.css">
+  <link rel="stylesheet" href="../assets/css/app.css">
+  <script src="../assets/js/jquery.min.js"></script>
+  <script src="../assets/js/amazeui.min.js"></script>
+  
+</head>
+<body class="am-doc">
+<section class="doc-main am-padding-lg">
+    <h1><a name="Dropdown" class="anchor" href="#Dropdown"><span class="header-link"></span></a>Dropdown</h1><hr>
+<h2><a name="%E4%BD%BF%E7%94%A8%E6%BC%94%E7%A4%BA" class="anchor" href="#%E4%BD%BF%E7%94%A8%E6%BC%94%E7%A4%BA"><span class="header-link"></span></a>使用演示</h2><h3><a name="%E4%B8%8B%E6%8B%89%E5%88%97%E8%A1%A8" class="anchor" href="#%E4%B8%8B%E6%8B%89%E5%88%97%E8%A1%A8"><span class="header-link"></span></a>下拉列表</h3><div class="doc-example"><div class="am-dropdown" data-am-dropdown>
+  <button class="am-btn am-btn-primary am-dropdown-toggle" data-am-dropdown-toggle>下拉列表 <span class="am-icon-caret-down"></span></button>
+  <ul class="am-dropdown-content">
+    <li class="am-dropdown-header">标题</li>
+    <li><a href="#">快乐的方式不只一种</a></li>
+    <li class="am-active"><a href="#">最荣幸是</a></li>
+    <li><a href="#">谁都是造物者的光荣</a></li>
+    <li class="am-disabled"><a href="#">就站在光明的角落</a></li>
+    <li class="am-divider"></li>
+    <li><a href="#">天空海阔 要做最坚强的泡沫</a></li>
+  </ul>
+</div></div><div class="doc-code demo-highlight"><pre><code class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-dropdown"</span> <span class="hljs-attribute">data-am-dropdown</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">button</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-btn am-btn-primary am-dropdown-toggle"</span> <span class="hljs-attribute">data-am-dropdown-toggle</span>&gt;</span>下拉列表 <span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-icon-caret-down"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">button</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">ul</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-dropdown-content"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">li</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-dropdown-header"</span>&gt;</span>标题<span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"#"</span>&gt;</span>快乐的方式不只一种<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">li</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-active"</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"#"</span>&gt;</span>最荣幸是<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"#"</span>&gt;</span>谁都是造物者的光荣<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">li</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-disabled"</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"#"</span>&gt;</span>就站在光明的角落<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">li</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-divider"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"#"</span>&gt;</span>天空海阔 要做最坚强的泡沫<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">ul</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span></code></pre></div><h3><a name="%E4%B8%8A%E6%8B%89%E5%88%97%E8%A1%A8" class="anchor" href="#%E4%B8%8A%E6%8B%89%E5%88%97%E8%A1%A8"><span class="header-link"></span></a>上拉列表</h3><p>在 <code>.am-dropdown</code> 上添加 <code>.am-dropdown-up</code> class，在上面弹出内容。</p>
+<div class="doc-example"><div class="am-dropdown am-dropdown-up" data-am-dropdown>
+  <button class="am-btn am-btn-danger am-dropdown-toggle" data-am-dropdown-toggle>上拉列表 <span class="am-icon-caret-up"></span></button>
+  <ul class="am-dropdown-content">
+    <li class="am-dropdown-header">标题</li>
+    <li><a href="#">快乐的方式不只一种</a></li>
+    <li class="am-active"><a href="#">最荣幸是</a></li>
+    <li><a href="#">谁都是造物者的光荣</a></li>
+    <li class="am-disabled"><a href="#">就站在光明的角落</a></li>
+    <li class="am-divider"></li>
+    <li><a href="#">天空海阔 要做最坚强的泡沫</a></li>
+  </ul>
+</div></div><div class="doc-code demo-highlight"><pre><code class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-dropdown am-dropdown-up"</span> <span class="hljs-attribute">data-am-dropdown</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">button</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-btn am-btn-danger am-dropdown-toggle"</span> <span class="hljs-attribute">data-am-dropdown-toggle</span>&gt;</span>上拉列表 <span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-icon-caret-up"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">button</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">ul</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-dropdown-content"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">li</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-dropdown-header"</span>&gt;</span>标题<span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"#"</span>&gt;</span>快乐的方式不只一种<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">li</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-active"</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"#"</span>&gt;</span>最荣幸是<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"#"</span>&gt;</span>谁都是造物者的光荣<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">li</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-disabled"</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"#"</span>&gt;</span>就站在光明的角落<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">li</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-divider"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"#"</span>&gt;</span>天空海阔 要做最坚强的泡沫<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">ul</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span></code></pre></div><h3><a name="%E4%B8%8B%E6%8B%89%E5%86%85%E5%AE%B9" class="anchor" href="#%E4%B8%8B%E6%8B%89%E5%86%85%E5%AE%B9"><span class="header-link"></span></a>下拉内容</h3><div class="doc-example"><div class="am-dropdown" data-am-dropdown>
+  <button class="am-btn am-btn-success am-dropdown-toggle">下拉内容 <span class="am-icon-caret-down"></span></button>
+  <div class="am-dropdown-content">
+    <h2>I am what I am</h2>
+    <p>
+      多么高兴 在琉璃屋中快乐生活
+      对世界说 甚么是光明和磊落
+      我就是我 是颜色不一样的烟火
+    </p>
+  </div>
+</div></div><div class="doc-code demo-highlight"><pre><code class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-dropdown"</span> <span class="hljs-attribute">data-am-dropdown</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">button</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-btn am-btn-success am-dropdown-toggle"</span>&gt;</span>Dropdown <span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-icon-caret-down"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">button</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-dropdown-content"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">h2</span>&gt;</span>I am what I am<span class="hljs-tag">&lt;/<span class="hljs-title">h2</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span>
+      多么高兴 在琉璃屋中快乐生活
+      对世界说 甚么是光明和磊落
+      我就是我 是颜色不一样的烟火
+    <span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span></code></pre></div><h3><a name="%E5%AE%BD%E5%BA%A6%E9%80%82%E5%BA%94" class="anchor" href="#%E5%AE%BD%E5%BA%A6%E9%80%82%E5%BA%94"><span class="header-link"></span></a>宽度适应</h3><p>下拉内容 <code>.am-dropdown-content</code> 为绝对定位，宽度会根据内容缩放（最小为 <code>160px</code>）。</p>
+<p>在 <code>data-am-dropdown</code> 里指定要适应到的元素，下拉内容的宽度会设置为该元素的宽度。当然可以直接在 CSS 里设置下拉内容的宽度。</p>
+<div class="doc-example"><div id="doc-dropdown-justify">
+  <div class="am-dropdown" data-am-dropdown="{justify: '#doc-dropdown-justify'}">
+    <button class="am-btn am-btn-success am-dropdown-toggle">宽度适应下拉 <span class="am-icon-caret-down"></span></button>
+    <div class="am-dropdown-content">
+      <h2>I am what I am</h2>
+      <p>
+        多么高兴 在琉璃屋中快乐生活
+        对世界说 甚么是光明和磊落
+        我就是我 是颜色不一样的烟火
+      </p>
+    </div>
+  </div>
+</div></div><div class="doc-code demo-highlight"><pre><code class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"doc-dropdown-justify"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-dropdown"</span> <span class="hljs-attribute">data-am-dropdown</span>=<span class="hljs-value">"{justify: '#doc-dropdown-justify'}"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">button</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-btn am-btn-success am-dropdown-toggle"</span>&gt;</span>宽度适应下拉 <span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-icon-caret-down"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">button</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-dropdown-content"</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">h2</span>&gt;</span>I am what I am<span class="hljs-tag">&lt;/<span class="hljs-title">h2</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span>
+        多么高兴 在琉璃屋中快乐生活
+        对世界说 甚么是光明和磊落
+        我就是我 是颜色不一样的烟火
+      <span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span></code></pre></div><!--
+### 与 Header 嵌套使用
+
+`````html-
+<header data-am-widget="header" class="am-header am-header-default">
+  <h1 class="am-header-title">
+    <a>Title</a>
+  </h1>
+
+  <div class="am-header-right am-header-nav am-dropdown" data-am-dropdown>
+    <a class="am-dropdown-toggle" href="javascript: void(0)" data-am-dropdown-toggle>
+      <i class="am-header-icon am-icon-bars"></i>
+    </a>
+    <ul class="am-dropdown-content">
+      <li class="am-dropdown-header">标题</li>
+      <li><a href="#">快乐的方式不只一种</a></li>
+      <li class="am-active"><a href="#">最荣幸是</a></li>
+      <li><a href="#">谁都是造物者的光荣</a></li>
+      <li class="am-disabled"><a href="#">就站在光明的角落</a></li>
+      <li class="am-divider"></li>
+      <li><a href="#">天空海阔 要做最坚强的泡沫</a></li>
+    </ul>
+  </div>
+</header>
+`````-->
+
+<h2><a name="%E8%B0%83%E7%94%A8%E6%96%B9%E5%BC%8F" class="anchor" href="#%E8%B0%83%E7%94%A8%E6%96%B9%E5%BC%8F"><span class="header-link"></span></a>调用方式</h2><h3><a name="%E9%80%9A%E8%BF%87%20Data%20API" class="anchor" href="#%E9%80%9A%E8%BF%87%20Data%20API"><span class="header-link"></span></a>通过 Data API</h3><p>如上面的演示所示，根据示例组织好 HTML 结构，然后在 <code>.am-dropdown</code> 上添加 <code>data-am-dropdown</code> 属性，相关选项可以设置在该属性的值里。</p>
+<h3><a name="%E9%80%9A%E8%BF%87%20JS" class="anchor" href="#%E9%80%9A%E8%BF%87%20JS"><span class="header-link"></span></a>通过 JS</h3><p>按照示例组织好 HTML 结构（不加 <code>data-am-dropdown</code> 属性），然后通过 JS 来调用。</p>
+<div class="doc-example"><div id="doc-dropdown-justify-js" style="width: 400px">
+  <div class="am-dropdown" id="doc-dropdown-js">
+    <button class="am-btn am-btn-danger am-dropdown-toggle">通过 JS 调用 <span class="am-icon-caret-down"></span></button>
+    <div class="am-dropdown-content">
+      <h2>I am what I am</h2>
+      <p>
+        多么高兴 在琉璃屋中快乐生活
+        对世界说 甚么是光明和磊落
+        我就是我 是颜色不一样的烟火
+      </p>
+    </div>
+  </div>
+</div>
+<script>
+  $(function() {
+    $('#doc-dropdown-js').dropdown({justify: '#doc-dropdown-justify-js'});
+  });
+</script></div><div class="doc-code demo-highlight"><pre><code class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"doc-dropdown-justify-js"</span> <span class="hljs-attribute">style</span>=<span class="hljs-value">"width: 400px"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-dropdown"</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"doc-dropdown-js"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">button</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-btn am-btn-danger am-dropdown-toggle"</span>&gt;</span>通过 JS 调用 <span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-icon-caret-down"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">button</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-dropdown-content"</span>&gt;</span>...<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">script</span>&gt;</span><span class="javascript">
+  $(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> </span>{
+    $(<span class="hljs-string">'#doc-dropdown-js'</span>).dropdown({justify: <span class="hljs-string">'#doc-dropdown-justify-js'</span>});
+  });
+</span><span class="hljs-tag">&lt;/<span class="hljs-title">script</span>&gt;</span></code></pre></div><h4><a name="%E6%96%B9%E6%B3%95" class="anchor" href="#%E6%96%B9%E6%B3%95"><span class="header-link"></span></a>方法</h4><ul>
+<li><code>$(element).dropdown(options)</code> 激活下拉功能；</li>
+<li><code>$(element).dropdown(&#39;toggle&#39;)</code> 下拉状态交替；</li>
+<li><code>$(element).dropdown(&#39;close&#39;)</code> 隐藏下拉菜单；</li>
+<li><code>$(element).dropdown(&#39;open&#39;)</code> 显示下拉菜单。</li>
+</ul>
+<div class="doc-example"><button class="am-btn am-btn-secondary" id="doc-dropdown-toggle">调用 Toggle</button>
+<button class="am-btn am-btn-success" id="doc-dropdown-open">调用 Open</button>
+<button class="am-btn am-btn-warning" id="doc-dropdown-close">调用 Close</button>
+<script>
+  $(function() {
+    var $dropdown = $('#doc-dropdown-js'),
+        data = $dropdown.data('amui.dropdown');
+
+    function scrollToDropdown() {
+      $(window).smoothScroll({position: $dropdown.offset().top});
+    }
+
+    $('#doc-dropdown-toggle').on('click', function(e) {
+      scrollToDropdown();
+      $dropdown.dropdown('toggle');
+      return false;
+    });
+
+    $('#doc-dropdown-open').on('click', function(e) {
+      scrollToDropdown();
+      data.active ? alert('已经打开了，施主又何必再纠缠呢！') : $dropdown.dropdown('open');
+      return false;
+    });
+
+    $('#doc-dropdown-close').on('click', function(e) {
+      scrollToDropdown();
+      data.active ? $dropdown.dropdown('close') : alert('没有开哪有关，没有失哪有得！');
+      return false;
+    });
+
+    $dropdown.on('open.dropdown.amui', function (e) {
+      console.log('open event triggered');
+    });
+  });
+</script></div><div class="doc-code demo-highlight"><pre><code class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">button</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-btn am-btn-secondary"</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"doc-dropdown-toggle"</span>&gt;</span>调用 Toggle<span class="hljs-tag">&lt;/<span class="hljs-title">button</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">button</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-btn am-btn-success"</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"doc-dropdown-open"</span>&gt;</span>调用 Open<span class="hljs-tag">&lt;/<span class="hljs-title">button</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">button</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-btn am-btn-warning"</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"doc-dropdown-close"</span>&gt;</span>调用 Close<span class="hljs-tag">&lt;/<span class="hljs-title">button</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">script</span>&gt;</span><span class="javascript">
+  $(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> </span>{
+    <span class="hljs-keyword">var</span> $dropdown = $(<span class="hljs-string">'#doc-dropdown-js'</span>),
+        data = $dropdown.data(<span class="hljs-string">'amui.dropdown'</span>);
+    $(<span class="hljs-string">'#doc-dropdown-toggle'</span>).on(<span class="hljs-string">'click'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(e)</span> </span>{
+      $dropdown.dropdown(<span class="hljs-string">'toggle'</span>);
+      <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;
+    });
+
+    $(<span class="hljs-string">'#doc-dropdown-open'</span>).on(<span class="hljs-string">'click'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(e)</span> </span>{
+      data.active ? alert(<span class="hljs-string">'已经打开了，施主又何必再纠缠呢！'</span>) : $dropdown.dropdown(<span class="hljs-string">'open'</span>);
+      <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;
+    });
+
+    $(<span class="hljs-string">'#doc-dropdown-close'</span>).on(<span class="hljs-string">'click'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(e)</span> </span>{
+      data.active ? $dropdown.dropdown(<span class="hljs-string">'close'</span>) : alert(<span class="hljs-string">'没有开哪有关，没有失哪有得！'</span>);
+      <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;
+    });
+
+    $dropdown.on(<span class="hljs-string">'open.dropdown.amui'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">(e)</span> </span>{
+      <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'open event triggered'</span>);
+    });
+  });
+</span><span class="hljs-tag">&lt;/<span class="hljs-title">script</span>&gt;</span></code></pre></div><h4><a name="%E5%8F%82%E6%95%B0%E8%AF%B4%E6%98%8E" class="anchor" href="#%E5%8F%82%E6%95%B0%E8%AF%B4%E6%98%8E"><span class="header-link"></span></a>参数说明</h4><table class="am-table am-table-bd am-table-striped">
+  <thead>
+  <tr>
+    <th style="width: 60px;">参数</th>
+    <th style="width: 70px;">类型</th>
+    <th style="width: 110px;">默认</th>
+    <th>描述</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr>
+    <td><code>boundary</code></td>
+    <td>选择器</td>
+    <td><code>window</code></td>
+    <td>下拉内容边界，避免下拉内容超过边界被遮盖截断</td>
+  </tr>
+  <tr>
+    <td><code>justify</code></td>
+    <td>选择器</td>
+    <td><code>undefined</code></td>
+    <td>下拉内容适应宽度的元素</td>
+  </tr>
+  </tbody>
+</table>
+
+<h4><a name="%E8%87%AA%E5%AE%9A%E4%B9%89%E4%BA%8B%E4%BB%B6" class="anchor" href="#%E8%87%AA%E5%AE%9A%E4%B9%89%E4%BA%8B%E4%BB%B6"><span class="header-link"></span></a>自定义事件</h4><p>下拉框的自定义事件在 <code>.am-dropdown</code> 上触发。</p>
+<table class="am-table am-table-bd am-table-striped">
+  <thead>
+  <tr>
+    <th>事件名称</th>
+    <th>描述</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr>
+    <td><code>open.dropdown.amui</code></td>
+    <td>调用显示下拉框方法时立即触发</td>
+  </tr>
+  <tr>
+    <td><code>opened.dropdown.amui</code></td>
+    <td>下拉框显示完成时触发</td>
+  </tr>
+  <tr>
+    <td><code>close.dropdown.amui</code></td>
+    <td>调用隐藏方法时触发</td>
+  </tr>
+  <tr>
+    <td><code>closed.dropdown.amui</code></td>
+    <td>下拉框关闭完成时触发</td>
+  </tr>
+  </tbody>
+</table>
+
+<div class="doc-code demo-highlight"><pre><code class="javascript">$(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> </span>{
+  $dropdown.on(<span class="hljs-string">'open.dropdown.amui'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">(e)</span> </span>{
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'open event triggered'</span>);
+  });
+});</code></pre></div>
+
+  <nav class="amp-pager">
+        <ul class="am-pagination">
+          <li class="am-pagination-prev"><a href="javascript/collapse.html">&laquo; Prev</a>
+          </li>
+              <li class="am-pagination-next"><a href="javascript/modal.html">Next &raquo;</a>
+              </li>
+        </ul>
+  </nav>
+</section>
+
+<script>
+  var _hmt = _hmt || [];
+  (function() {
+    var hm = document.createElement("script");
+    hm.src = "//hm.baidu.com/hm.js?b424d39312c46404f15e22574a531fbb";
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(hm);
+  })();
+
+  (function(w, d, s) {
+    function gs(){
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){ (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o), m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(w , d, s ,'//www.google-analytics.com/analytics.js','ga');
+      ga('create', 'UA-34196034-8', 'amazeui.org');
+      ga('send', 'pageview');
+    }
+    if (w.addEventListener) { w.addEventListener('load', gs, false); }
+    else if (w.attachEvent) { w.attachEvent('onload',gs); }
+  }(window, document, 'script'));
+</script>
+</body>
+</html>

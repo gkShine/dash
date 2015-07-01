@@ -1,0 +1,218 @@
+<!doctype html>
+<html class="no-js">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <title>开始使用 | Amaze UI Dash Docsets</title>
+  <link rel="stylesheet" href="assets/css/amazeui.min.css">
+  <link rel="stylesheet" href="assets/css/app.css">
+  <script src="assets/js/jquery.min.js"></script>
+  <script src="assets/js/amazeui.min.js"></script>
+  
+</head>
+<body class="am-doc">
+<section class="doc-main am-padding-lg">
+    <h1><a name="%E5%BC%80%E5%A7%8B%E4%BD%BF%E7%94%A8%20Amaze%20UI" class="anchor" href="#%E5%BC%80%E5%A7%8B%E4%BD%BF%E7%94%A8%20Amaze%20UI"><span class="header-link"></span></a>开始使用 Amaze UI</h1><hr>
+<p>Amaze UI 是一个轻量级（所有 CSS 和 JS gzip 后 100 kB 左右）、 <a href="http://cbrac.co/113eY5h"><strong>Mobile first</strong></a> 的前端框架，
+基于开源社区流行前端框架编写（<a href="https://github.com/allmobilize/amazeui#%E5%8F%82%E8%80%83%E4%BD%BF%E7%94%A8%E7%9A%84%E5%BC%80%E6%BA%90%E9%A1%B9%E7%9B%AE">使用、参考的项目列表</a>）。</p>
+<h2><a name="%E8%8E%B7%E5%8F%96%20Amaze%20UI" class="anchor" href="#%E8%8E%B7%E5%8F%96%20Amaze%20UI"><span class="header-link"></span></a>获取 Amaze UI</h2><h3><a name="%E4%B8%8B%E8%BD%BD%E6%96%87%E4%BB%B6" class="anchor" href="#%E4%B8%8B%E8%BD%BD%E6%96%87%E4%BB%B6"><span class="header-link"></span></a>下载文件</h3><div class="am-g">
+  <div class="am-u-md-8 am-u-md-centered">
+    <a id="doc-dl-btn" href="http://amazeui.org/download?ver=2.2.0" class="am-btn am-btn-block am-btn-success am-btn-lg" onclick="window.ga && ga('send', 'pageview', '/download/AmazeUI.zip');
+"><i class="am-icon-download"></i> Amaze UI v2.2.0</a>
+  </div>
+</div>
+
+<p><strong>离线文档：</strong></p>
+<div class="am-g">
+  <div class="am-u-sm-6"><a href="http://amazeui.org/download?ver=docs" class="am-btn am-btn-block am-btn-primary">HTML 版离线文档</a></div>
+  <div class="am-u-sm-6"><a href="http://amazeui.org/download?ver=dash" class="am-btn am-btn-block am-btn-warning">Dash Docsets</a></div>
+</div>
+
+<p>项目地址：</p>
+<ul>
+<li><a href="https://github.com/amazeui/docs">Amaze UI Docs</a></li>
+<li><a href="https://github.com/amazeui/docs-generator">Amaze UI Dash Docsets Generator</a></li>
+</ul>
+<p><strong>代码片段：</strong></p>
+<div class="am-g">
+  <div class="am-u-sm-6"><a href="http://amazeui.org/download?ver=jetbrains" class="am-btn am-btn-block am-btn-secondary">JetBrains 系列编辑器</a></div>
+  <div class="am-u-sm-6"><a href="http://amazeui.org/download?ver=sublime" class="am-btn am-btn-block am-btn-danger">Sublime</a></div>
+</div>
+
+<p>详见 <a href="https://github.com/amazeui/snippets">Amaze UI Snippets</a>。</p>
+<p><strong>Starter Kit：</strong></p>
+<p>Gulp、NPM 构建的前端开发工作流，点击<a href="https://github.com/amazeui/starter-kit">访问项目主页</a>。</p>
+<h3><a name="%E4%BD%BF%E7%94%A8%20CDN" class="anchor" href="#%E4%BD%BF%E7%94%A8%20CDN"><span class="header-link"></span></a>使用 CDN</h3><p>Amaze UI CDN： 域名解析服务由 DNSPod 提供，CDN 存储由又拍云提供。</p>
+<div class="doc-code demo-highlight"><pre><code class="xml">http://cdn.amazeui.org/amazeui/2.2.0/css/amazeui.css
+http://cdn.amazeui.org/amazeui/2.2.0/css/amazeui.min.css
+http://cdn.amazeui.org/amazeui/2.2.0/js/amazeui.js
+http://cdn.amazeui.org/amazeui/2.2.0/js/amazeui.min.js
+http://cdn.amazeui.org/amazeui/2.2.0/js/amazeui.legacy.js
+http://cdn.amazeui.org/amazeui/2.2.0/js/amazeui.legacy.min.js
+http://cdn.amazeui.org/amazeui/2.2.0/js/amazeui.widgets.helper.js
+http://cdn.amazeui.org/amazeui/2.2.0/js/amazeui.widgets.helper.min.js</code></pre></div><h3><a name="%E4%BD%BF%E7%94%A8%20Bower" class="anchor" href="#%E4%BD%BF%E7%94%A8%20Bower"><span class="header-link"></span></a>使用 Bower</h3><div class="doc-code demo-highlight"><pre><code class="xml">bower install amazeui</code></pre></div><h3><a name="%E7%A7%BB%E6%A4%8D%E7%9A%84%E6%8F%92%E4%BB%B6%EF%BC%88%E4%BD%BF%E7%94%A8%E7%A4%BA%E4%BE%8B%EF%BC%89" class="anchor" href="#%E7%A7%BB%E6%A4%8D%E7%9A%84%E6%8F%92%E4%BB%B6%EF%BC%88%E4%BD%BF%E7%94%A8%E7%A4%BA%E4%BE%8B%EF%BC%89"><span class="header-link"></span></a>移植的插件（使用示例）</h3><ul>
+<li><a href="https://github.com/amazeui/datetimepicker">DateTimePicker - 日期时间选择</a></li>
+<li><a href="https://github.com/amazeui/echo">Echo.js - 图片懒加载</a></li>
+<li><a href="https://github.com/amazeui/lazyload">Lazyload - 图片懒加载</a></li>
+<li><a href="https://github.com/amazeui/chosen">Chosen - 下拉选框增强</a></li>
+<li><a href="https://github.com/amazeui/chosen">Masonry - 瀑布流</a></li>
+</ul>
+<h3><a name="%E8%8E%B7%E5%8F%96%E6%BA%90%E7%A0%81" class="anchor" href="#%E8%8E%B7%E5%8F%96%E6%BA%90%E7%A0%81"><span class="header-link"></span></a>获取源码</h3><p>你可以从 GitHub 项目主页获取源代码。</p>
+<iframe src="http://ghbtns.com/github-btn.html?user=allmobilize&repo=amazeui&type=watch&count=true&size=large" allowtransparency="true" frameborder="0" scrolling="0" width="156px" height="30px"></iframe>
+
+<iframe src="http://ghbtns.com/github-btn.html?user=allmobilize&repo=amazeui&type=fork&count=true&size=large" allowtransparency="true" frameborder="0" scrolling="0" width="156px" height="30px"></iframe>
+
+<h2><a name="%E6%96%87%E4%BB%B6%E5%8F%8A%E7%89%88%E6%9C%AC%E8%AF%B4%E6%98%8E" class="anchor" href="#%E6%96%87%E4%BB%B6%E5%8F%8A%E7%89%88%E6%9C%AC%E8%AF%B4%E6%98%8E"><span class="header-link"></span></a>文件及版本说明</h2><h3><a name="%E6%96%87%E4%BB%B6%E8%AF%B4%E6%98%8E" class="anchor" href="#%E6%96%87%E4%BB%B6%E8%AF%B4%E6%98%8E"><span class="header-link"></span></a>文件说明</h3><ul>
+<li><code>amazeui.css</code> / <code>amazeui.js</code>：包含 Amaze UI 所有的 CSS、JS。</li>
+<li><code>amazeui.flat.css</code>：圆角版 Amaze UI CSS，演示参见 <code>1.x</code>。</li>
+<li><code>amazeui.legacy.js</code>：为 IE 8 打包的 JS。</li>
+<li><code>amazeui.widgets.helper.js</code>： <strong>供使用 Handlebars 的用户使用，其他用户请忽略</strong>，内含 Web 组件必须的 Handlebars helper 及 Web 组件模板 partials。</li>
+</ul>
+<p>以上每个文件都有对应的 minified 文件。</p>
+<h3><a name="%E7%89%88%E6%9C%AC%E5%8F%B7%E8%AF%B4%E6%98%8E" class="anchor" href="#%E7%89%88%E6%9C%AC%E5%8F%B7%E8%AF%B4%E6%98%8E"><span class="header-link"></span></a>版本号说明</h3><p>Amaze UI 遵循 <a href="http://semver.org/lang/zh-CN/">Semantic Versioning</a> 规范，版本格式采用 <code>主版本号.次版本号.修订号</code> 的形式，版本号递增规则如下：</p>
+<ul>
+<li>主版本号：做了不兼容的API 修改，如整体风格变化、大规模重构等；</li>
+<li>次版本号：做了向下兼容的功能性新增；</li>
+<li><p>修订号：做了向下兼容的问题修正、细节调整等。</p>
+</li>
+<li><p><a href="https://github.com/allmobilize/amazeui/wiki/Migration-form-1.x-to-2.x"><strong>1.x 到 2.x 变更记录暨升级指南</strong></a></p>
+</li>
+</ul>
+<h2><a name="%E4%B8%8B%E8%BD%BD%E5%8C%85%E7%9B%AE%E5%BD%95%E7%BB%93%E6%9E%84" class="anchor" href="#%E4%B8%8B%E8%BD%BD%E5%8C%85%E7%9B%AE%E5%BD%95%E7%BB%93%E6%9E%84"><span class="header-link"></span></a>下载包目录结构</h2><p>下载包种包含 Amaze UI 的 CSS、JS 文件，以及示例文件：</p>
+<ul>
+<li><code>index.html</code> - 空白 HTML 模板；</li>
+<li><code>blog.html</code> - 博客页面模板（<a href="/examples/blog.html">预览</a>）；</li>
+<li><code>landing.html</code> - Landing Page 模板（<a href="/examples/landing.html">预览</a>）；</li>
+<li><code>login.html</code> - 登录界面模板（<a href="/examples/login.html">预览</a>）；</li>
+<li><code>sidebar.html</code> - 带边栏的文章模板（<a href="/examples/sidebar.html">预览</a>）；</li>
+<li><code>admin-*.html</code> - 简单的管理后台界面（<a href="/examples/admin-index.html">预览</a>）</li>
+<li>在 <code>app.css</code> 中编写 CSS；</li>
+<li>在 <code>app.js</code> 中编写 JavaScript；</li>
+<li>图片资源可以放在 <code>i</code> 目录下。</li>
+</ul>
+<pre>AmazeUI
+|-- assets
+|   |-- css
+|   |   |-- amazeui.css             // Amaze UI 所有样式文件
+|   |   |-- amazeui.min.css           // 约 42 kB (gzipped)
+|   |   `-- app.css
+|   |-- i
+|   |   |-- app-icon72x72@2x.png
+|   |   |-- favicon.png
+|   |   `-- startup-640x1096.png
+|   `-- js
+|       |-- amazeui.js
+|       |-- amazeui.min.js                // 约 56 kB (gzipped)
+|       |-- amazeui.widgets.helper.js
+|       |-- amazeui.widgets.helper.min.js
+|       |-- app.js
+|       `-- handlebars.min.js
+|-- blog.html
+|-- index.html
+|-- landing.html
+|-- login.html
+|-- sidebar.html
+`-- widget.html</pre><h2><a name="%E5%88%9B%E5%BB%BA%E4%B8%80%E4%B8%AA%E9%A1%B5%E9%9D%A2" class="anchor" href="#%E5%88%9B%E5%BB%BA%E4%B8%80%E4%B8%AA%E9%A1%B5%E9%9D%A2"><span class="header-link"></span></a>创建一个页面</h2><ol>
+<li>新建一个 HTML 文档，将下面的代码粘贴到文档中；</li>
+<li>查看 CSS 组件及 JS 插件，拷贝符合的演示代码，粘贴到 <code>&lt;body&gt;</code> 区域，并按需调整；</li>
+<li>一个简单的页面完成。</li>
+</ol>
+<div class="doc-code demo-highlight"><pre><code class="xml"><span class="hljs-doctype">&lt;!doctype html&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">html</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"no-js"</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">head</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">meta</span> <span class="hljs-attribute">charset</span>=<span class="hljs-value">"utf-8"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">meta</span> <span class="hljs-attribute">http-equiv</span>=<span class="hljs-value">"X-UA-Compatible"</span> <span class="hljs-attribute">content</span>=<span class="hljs-value">"IE=edge"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">meta</span> <span class="hljs-attribute">name</span>=<span class="hljs-value">"description"</span> <span class="hljs-attribute">content</span>=<span class="hljs-value">""</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">meta</span> <span class="hljs-attribute">name</span>=<span class="hljs-value">"keywords"</span> <span class="hljs-attribute">content</span>=<span class="hljs-value">""</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">meta</span> <span class="hljs-attribute">name</span>=<span class="hljs-value">"viewport"</span>
+        <span class="hljs-attribute">content</span>=<span class="hljs-value">"width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">title</span>&gt;</span>Hello Amaze UI<span class="hljs-tag">&lt;/<span class="hljs-title">title</span>&gt;</span>
+
+  <span class="hljs-comment">&lt;!-- Set render engine for 360 browser --&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">meta</span> <span class="hljs-attribute">name</span>=<span class="hljs-value">"renderer"</span> <span class="hljs-attribute">content</span>=<span class="hljs-value">"webkit"</span>&gt;</span>
+
+  <span class="hljs-comment">&lt;!-- No Baidu Siteapp--&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">meta</span> <span class="hljs-attribute">http-equiv</span>=<span class="hljs-value">"Cache-Control"</span> <span class="hljs-attribute">content</span>=<span class="hljs-value">"no-siteapp"</span>/&gt;</span>
+
+  <span class="hljs-tag">&lt;<span class="hljs-title">link</span> <span class="hljs-attribute">rel</span>=<span class="hljs-value">"icon"</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"image/png"</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"assets/i/favicon.png"</span>&gt;</span>
+
+  <span class="hljs-comment">&lt;!-- Add to homescreen for Chrome on Android --&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">meta</span> <span class="hljs-attribute">name</span>=<span class="hljs-value">"mobile-web-app-capable"</span> <span class="hljs-attribute">content</span>=<span class="hljs-value">"yes"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">link</span> <span class="hljs-attribute">rel</span>=<span class="hljs-value">"icon"</span> <span class="hljs-attribute">sizes</span>=<span class="hljs-value">"192x192"</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"assets/i/app-icon72x72@2x.png"</span>&gt;</span>
+
+  <span class="hljs-comment">&lt;!-- Add to homescreen for Safari on iOS --&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">meta</span> <span class="hljs-attribute">name</span>=<span class="hljs-value">"apple-mobile-web-app-capable"</span> <span class="hljs-attribute">content</span>=<span class="hljs-value">"yes"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">meta</span> <span class="hljs-attribute">name</span>=<span class="hljs-value">"apple-mobile-web-app-status-bar-style"</span> <span class="hljs-attribute">content</span>=<span class="hljs-value">"black"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">meta</span> <span class="hljs-attribute">name</span>=<span class="hljs-value">"apple-mobile-web-app-title"</span> <span class="hljs-attribute">content</span>=<span class="hljs-value">"Amaze UI"</span>/&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">link</span> <span class="hljs-attribute">rel</span>=<span class="hljs-value">"apple-touch-icon-precomposed"</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"assets/i/app-icon72x72@2x.png"</span>&gt;</span>
+
+  <span class="hljs-comment">&lt;!-- Tile icon for Win8 (144x144 + tile color) --&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">meta</span> <span class="hljs-attribute">name</span>=<span class="hljs-value">"msapplication-TileImage"</span> <span class="hljs-attribute">content</span>=<span class="hljs-value">"assets/i/app-icon72x72@2x.png"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">meta</span> <span class="hljs-attribute">name</span>=<span class="hljs-value">"msapplication-TileColor"</span> <span class="hljs-attribute">content</span>=<span class="hljs-value">"#0e90d2"</span>&gt;</span>
+
+  <span class="hljs-tag">&lt;<span class="hljs-title">link</span> <span class="hljs-attribute">rel</span>=<span class="hljs-value">"stylesheet"</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"assets/css/amazeui.min.css"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">link</span> <span class="hljs-attribute">rel</span>=<span class="hljs-value">"stylesheet"</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"assets/css/app.css"</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">head</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">body</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span>
+  Hello Amaze UI.
+<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
+
+<span class="hljs-comment">&lt;!--在这里编写你的代码--&gt;</span>
+
+<span class="hljs-comment">&lt;!--[if (gte IE 9)|!(IE)]&gt;&lt;!--&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">script</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">"assets/js/jquery.min.js"</span>&gt;</span><span class="javascript"></span><span class="hljs-tag">&lt;/<span class="hljs-title">script</span>&gt;</span>
+<span class="hljs-comment">&lt;!--&lt;![endif]--&gt;</span>
+<span class="hljs-comment">&lt;!--[if lte IE 8 ]&gt;
+&lt;script src="http://libs.baidu.com/jquery/1.11.1/jquery.min.js"&gt;&lt;/script&gt;
+&lt;![endif]--&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">body</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">html</span>&gt;</span></code></pre></div><h2><a name="%E5%8F%82%E4%B8%8E%E8%AE%A8%E8%AE%BA" class="anchor" href="#%E5%8F%82%E4%B8%8E%E8%AE%A8%E8%AE%BA"><span class="header-link"></span></a>参与讨论</h2><p>有任何使用问题，请在评论中留言，也欢迎大家发表意见、建议。</p>
+<p><strong>感谢大家对 Amaze UI 的关注和支持！</strong></p>
+<script>
+  function pyRegisterCvt(){
+    var w=window,d=document,e=encodeURIComponent;
+    var b=location.href,c=d.referrer,f,g=d.cookie,h=g.match(/(^|;)\s*ipycookie=([^;]*)/),i=g.match(/(^|;)\s*ipysession=([^;]*)/);
+    if (w.parent!=w){f=b;b=c;c=f;};u='//stats.ipinyou.com/cvt?a='+e('9J.H5.EtdEOxc6fV-EiorJDjFOTP')+'&c='+e(h?h[2]:'')+'&s='+e(i?i[2].match(/jump\%3D(\d+)/)[1]:'')+'&u='+e(b)+'&r='+e(c)+'&rd='+(new Date()).getTime()+'&e=';
+    (new Image()).src=u;
+  }
+
+  $(function() {
+    $('#doc-dl-btn').on('click', pyRegisterCvt);
+  });
+</script>
+
+
+  <nav class="amp-pager">
+            <ul class="am-pagination">
+              <li class="am-pagination-next"><a href="getting-started/layouts.html">Next &raquo;</a>
+              </li>
+            </ul>
+  </nav>
+</section>
+
+<script>
+  var _hmt = _hmt || [];
+  (function() {
+    var hm = document.createElement("script");
+    hm.src = "//hm.baidu.com/hm.js?b424d39312c46404f15e22574a531fbb";
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(hm);
+  })();
+
+  (function(w, d, s) {
+    function gs(){
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){ (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o), m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(w , d, s ,'//www.google-analytics.com/analytics.js','ga');
+      ga('create', 'UA-34196034-8', 'amazeui.org');
+      ga('send', 'pageview');
+    }
+    if (w.addEventListener) { w.addEventListener('load', gs, false); }
+    else if (w.attachEvent) { w.attachEvent('onload',gs); }
+  }(window, document, 'script'));
+</script>
+</body>
+</html>

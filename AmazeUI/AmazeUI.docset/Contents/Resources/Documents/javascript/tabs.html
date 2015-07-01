@@ -1,0 +1,248 @@
+<!doctype html>
+<html class="no-js">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <title>选项卡 | Amaze UI Dash Docsets</title>
+  <link rel="stylesheet" href="../assets/css/amazeui.min.css">
+  <link rel="stylesheet" href="../assets/css/app.css">
+  <script src="../assets/js/jquery.min.js"></script>
+  <script src="../assets/js/amazeui.min.js"></script>
+  
+</head>
+<body class="am-doc">
+<section class="doc-main am-padding-lg">
+    <h1><a name="Tabs" class="anchor" href="#Tabs"><span class="header-link"></span></a>Tabs</h1><hr>
+<p>选项卡插件，基于 CSS3 <code>transition</code> 实现水平平滑滚动；CSS3 动画实现回弹效果（触控操作时）。</p>
+<h2><a name="%E4%BD%BF%E7%94%A8%E6%BC%94%E7%A4%BA" class="anchor" href="#%E4%BD%BF%E7%94%A8%E6%BC%94%E7%A4%BA"><span class="header-link"></span></a>使用演示</h2><h3><a name="%E5%86%85%E5%AE%B9%E9%AB%98%E5%BA%A6%E4%B8%80%E6%A0%B7" class="anchor" href="#%E5%86%85%E5%AE%B9%E9%AB%98%E5%BA%A6%E4%B8%80%E6%A0%B7"><span class="header-link"></span></a>内容高度一样</h3><div class="doc-example"><div class="am-tabs" data-am-tabs>
+  <ul class="am-tabs-nav am-nav am-nav-tabs">
+    <li class="am-active"><a href="javascript: void(0)">流浪</a></li>
+    <li><a href="javascript: void(0)">流浪</a></li>
+    <li><a href="javascript: void(0)">再流浪</a></li>
+  </ul>
+
+  <div class="am-tabs-bd">
+    <div class="am-tab-panel am-active">
+      我就这样告别山下的家，我实在不愿轻易让眼泪留下。我以为我并不差不会害怕，我就这样自己照顾自己长大。我不想因为现实把头低下，我以为我并不差能学会虚假。怎样才能够看穿面具里的谎话？别让我的真心散的像沙。如果有一天我变得更复杂，还能不能唱出歌声里的那幅画？
+    </div>
+    <div class="am-tab-panel">
+      我就这样告别山下的家，我实在不愿轻易让眼泪留下。我以为我并不差不会害怕，我就这样自己照顾自己长大。我不想因为现实把头低下，我以为我并不差能学会虚假。怎样才能够看穿面具里的谎话？别让我的真心散的像沙。如果有一天我变得更复杂，还能不能唱出歌声里的那幅画？
+    </div>
+    <div class="am-tab-panel">
+      我就这样告别山下的家，我实在不愿轻易让眼泪留下。我以为我并不差不会害怕，我就这样自己照顾自己长大。我不想因为现实把头低下，我以为我并不差能学会虚假。怎样才能够看穿面具里的谎话？别让我的真心散的像沙。如果有一天我变得更复杂，还能不能唱出歌声里的那幅画？
+    </div>
+  </div>
+</div></div><div class="doc-code demo-highlight"><pre><code class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-tabs"</span> <span class="hljs-attribute">data-am-tabs</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">ul</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-tabs-nav am-nav am-nav-tabs"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">li</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-active"</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"javascript: void(0)"</span>&gt;</span>流浪<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"javascript: void(0)"</span>&gt;</span>流浪<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"javascript: void(0)"</span>&gt;</span>再流浪<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">ul</span>&gt;</span>
+
+  <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-tabs-bd"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-tab-panel am-active"</span>&gt;</span>
+      ...
+    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-tab-panel"</span>&gt;</span>
+      ...
+    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-tab-panel"</span>&gt;</span>
+      ...
+    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span></code></pre></div><h3><a name="%E9%AB%98%E5%BA%A6%E9%80%82%E5%BA%94" class="anchor" href="#%E9%AB%98%E5%BA%A6%E9%80%82%E5%BA%94"><span class="header-link"></span></a>高度适应</h3><div class="doc-example"><div class="am-tabs" data-am-tabs>
+  <ul class="am-tabs-nav am-nav am-nav-tabs">
+    <li class="am-active"><a href="#tab1">恣意</a></li>
+    <li><a href="#tab2">等候</a></li>
+    <li><a href="#tab3">流浪</a></li>
+  </ul>
+
+  <div class="am-tabs-bd">
+    <div class="am-tab-panel am-fade am-in am-active" id="tab1">
+      置身人群中<br>你只需要被淹没 享受 沉默<br>退到人群后<br>你只需给予双手 微笑 等候
+    </div>
+    <div class="am-tab-panel am-fade" id="tab2">
+      走在忠孝东路<br>徘徊在茫然中<br>在我的人生旅途<br>选择了多少错误<br>我在睡梦中惊醒<br>感叹悔言无尽<br>恨我不能说服自己<br>接受一切教训<br>让生命去等候<br>等候下一个漂流<br>让生命去等候<br>等候下一个伤口
+    </div>
+    <div class="am-tab-panel am-fade" id="tab3">
+      我就这样告别山下的家，我实在不愿轻易让眼泪留下。我以为我并不差不会害怕，我就这样自己照顾自己长大。我不想因为现实把头低下，我以为我并不差能学会虚假。怎样才能够看穿面具里的谎话？别让我的真心散的像沙。如果有一天我变得更复杂，还能不能唱出歌声里的那幅画？
+    </div>
+  </div>
+</div></div><div class="doc-code demo-highlight"><pre><code class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-tabs"</span> <span class="hljs-attribute">data-am-tabs</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">ul</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-tabs-nav am-nav am-nav-tabs"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">li</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-active"</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"#tab1"</span>&gt;</span>恣意<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"#tab2"</span>&gt;</span>等候<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"#tab3"</span>&gt;</span>流浪<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">ul</span>&gt;</span>
+
+  <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-tabs-bd"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-tab-panel am-fade am-in am-active"</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"tab1"</span>&gt;</span>
+      置身人群中<span class="hljs-tag">&lt;<span class="hljs-title">br</span>&gt;</span>你只需要被淹没 享受 沉默<span class="hljs-tag">&lt;<span class="hljs-title">br</span>&gt;</span>退到人群后<span class="hljs-tag">&lt;<span class="hljs-title">br</span>&gt;</span>你只需给予双手 微笑 等候
+    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-tab-panel am-fade"</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"tab2"</span>&gt;</span>
+      走在忠孝东路<span class="hljs-tag">&lt;<span class="hljs-title">br</span>&gt;</span>徘徊在茫然中<span class="hljs-tag">&lt;<span class="hljs-title">br</span>&gt;</span>在我的人生旅途<span class="hljs-tag">&lt;<span class="hljs-title">br</span>&gt;</span>选择了多少错误<span class="hljs-tag">&lt;<span class="hljs-title">br</span>&gt;</span>我在睡梦中惊醒<span class="hljs-tag">&lt;<span class="hljs-title">br</span>&gt;</span>感叹悔言无尽<span class="hljs-tag">&lt;<span class="hljs-title">br</span>&gt;</span>恨我不能说服自己<span class="hljs-tag">&lt;<span class="hljs-title">br</span>&gt;</span>接受一切教训<span class="hljs-tag">&lt;<span class="hljs-title">br</span>&gt;</span>让生命去等候<span class="hljs-tag">&lt;<span class="hljs-title">br</span>&gt;</span>等候下一个漂流<span class="hljs-tag">&lt;<span class="hljs-title">br</span>&gt;</span>让生命去等候<span class="hljs-tag">&lt;<span class="hljs-title">br</span>&gt;</span>等候下一个伤口
+    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-tab-panel am-fade"</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"tab3"</span>&gt;</span>
+      我就这样告别山下的家，我实在不愿轻易让眼泪留下。我以为我并不差不会害怕，我就这样自己照顾自己长大。我不想因为现实把头低下，我以为我并不差能学会虚假。怎样才能够看穿面具里的谎话？别让我的真心散的像沙。如果有一天我变得更复杂，还能不能唱出歌声里的那幅画？
+    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span></code></pre></div><h3><a name="%E7%A6%81%E7%94%A8%E8%A7%A6%E6%8E%A7%E6%93%8D%E4%BD%9C" class="anchor" href="#%E7%A6%81%E7%94%A8%E8%A7%A6%E6%8E%A7%E6%93%8D%E4%BD%9C"><span class="header-link"></span></a>禁用触控操作</h3><p>部分用户反应在过长的 Tabs 中滚动页面时会意外触发 Tab 切换事件，用户可以选择禁用触控操作。</p>
+<div class="doc-example"><div class="am-tabs" data-am-tabs="{noSwipe: 1}">
+  <ul class="am-tabs-nav am-nav am-nav-tabs">
+    <li class="am-active"><a href="#tab2-1">恣意</a></li>
+    <li><a href="#tab2-2">等候</a></li>
+    <li><a href="#tab2-3">流浪</a></li>
+  </ul>
+
+  <div class="am-tabs-bd">
+    <div class="am-tab-panel am-fade am-in am-active" id="tab2-1">
+      置身人群中<br>你只需要被淹没 享受 沉默<br>退到人群后<br>你只需给予双手 微笑 等候
+    </div>
+    <div class="am-tab-panel am-fade" id="tab2-2">
+      走在忠孝东路<br>徘徊在茫然中<br>在我的人生旅途<br>选择了多少错误<br>我在睡梦中惊醒<br>感叹悔言无尽<br>恨我不能说服自己<br>接受一切教训<br>让生命去等候<br>等候下一个漂流<br>让生命去等候<br>等候下一个伤口
+    </div>
+    <div class="am-tab-panel am-fade" id="tab2-3">
+      我就这样告别山下的家，我实在不愿轻易让眼泪留下。我以为我并不差不会害怕，我就这样自己照顾自己长大。我不想因为现实把头低下，我以为我并不差能学会虚假。怎样才能够看穿面具里的谎话？别让我的真心散的像沙。如果有一天我变得更复杂，还能不能唱出歌声里的那幅画？
+    </div>
+  </div>
+</div></div><div class="doc-code demo-highlight"><pre><code class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-tabs"</span> <span class="hljs-attribute">data-am-tabs</span>=<span class="hljs-value">"{noSwipe: 1}"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">ul</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-tabs-nav am-nav am-nav-tabs"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">li</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-active"</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"#tab2-1"</span>&gt;</span>恣意<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"#tab2-2"</span>&gt;</span>等候<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"#tab2-3"</span>&gt;</span>流浪<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">ul</span>&gt;</span>
+
+  <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-tabs-bd"</span>&gt;</span>
+    ...
+  <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span></code></pre></div><h2><a name="%E8%B0%83%E7%94%A8%E6%96%B9%E5%BC%8F" class="anchor" href="#%E8%B0%83%E7%94%A8%E6%96%B9%E5%BC%8F"><span class="header-link"></span></a>调用方式</h2><h3><a name="%E9%80%9A%E8%BF%87%20Data%20API" class="anchor" href="#%E9%80%9A%E8%BF%87%20Data%20API"><span class="header-link"></span></a>通过 Data API</h3><p>在选项卡容器 <code>.am-tabs</code> 上添加 <code>data-am-tabs</code> 属性。上面的演示即通过此种方式调用。</p>
+<div class="doc-code demo-highlight"><pre><code class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-tabs"</span> <span class="hljs-attribute">data-am-tabs</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">ul</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-tabs-nav am-nav am-nav-tabs"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">li</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-active"</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"#tab1"</span>&gt;</span>恣意<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"#tab2"</span>&gt;</span>等候<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"#tab3"</span>&gt;</span>流浪<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">ul</span>&gt;</span>
+
+  <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-tabs-bd"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-tab-panel am-active"</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"tab1"</span>&gt;</span>...<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-tab-panel"</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"tab2"</span>&gt;</span>...<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-tab-panel"</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"tab3"</span>&gt;</span>...<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span></code></pre></div><h3><a name="%E9%80%9A%E8%BF%87%20JS" class="anchor" href="#%E9%80%9A%E8%BF%87%20JS"><span class="header-link"></span></a>通过 JS</h3><h4><a name="%E6%96%B9%E6%B3%95" class="anchor" href="#%E6%96%B9%E6%B3%95"><span class="header-link"></span></a>方法</h4><p>通过 <code>$().tabs(options)</code> 开启选项卡的交互功能。</p>
+<div class="doc-example"><div class="am-tabs" id="doc-my-tabs">
+  <ul class="am-tabs-nav am-nav am-nav-tabs am-nav-justify">
+    <li class="am-active"><a href="">彩虹</a></li>
+    <li><a href="">画面</a></li>
+    <li><a href="">窗外</a></li>
+  </ul>
+  <div class="am-tabs-bd">
+    <div class="am-tab-panel am-active">外面是个下雨天，不由得就会想念</div>
+    <div class="am-tab-panel">像重复的广告片，总是闪烁的画面，那么地熟悉</div>
+    <div class="am-tab-panel">像窗外的雨，绿油油的树叶，自由地在说笑</div>
+  </div>
+</div>
+<script>
+  $(function() {
+    var $myTabs = $('#doc-my-tabs');
+
+    $myTabs.tabs();
+
+    $myTabs.find('a').on('opened.tabs.amui', function(e) {
+      console.log('[%s] 选项卡打开了', $(this).text());
+    })
+  })
+</script></div><div class="doc-code demo-highlight"><pre><code class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-tabs"</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"doc-my-tabs"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">ul</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-tabs-nav am-nav am-nav-tabs am-nav-justify"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">li</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-active"</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">""</span>&gt;</span>彩虹<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">""</span>&gt;</span>画面<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">""</span>&gt;</span>窗外<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">ul</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-tabs-bd"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-tab-panel am-active"</span>&gt;</span>...<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-tab-panel"</span>&gt;</span>...<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-tab-panel"</span>&gt;</span>...<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">script</span>&gt;</span><span class="javascript">
+  $(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> </span>{
+    $(<span class="hljs-string">'#doc-my-tabs'</span>).tabs();
+  })
+</span><span class="hljs-tag">&lt;/<span class="hljs-title">script</span>&gt;</span></code></pre></div><h4><a name="%E9%80%89%E9%A1%B9" class="anchor" href="#%E9%80%89%E9%A1%B9"><span class="header-link"></span></a>选项</h4><ul>
+<li><code>options.noSwipe</code> 是否禁用触控事件。</li>
+</ul>
+<div class="doc-code demo-highlight"><pre><code class="javascript">$(<span class="hljs-string">'#someTabs'</span>).tabs({noSwipe: <span class="hljs-number">1</span>});</code></pre></div><h4><a name="%E8%87%AA%E5%AE%9A%E4%B9%89%E4%BA%8B%E4%BB%B6" class="anchor" href="#%E8%87%AA%E5%AE%9A%E4%B9%89%E4%BA%8B%E4%BB%B6"><span class="header-link"></span></a>自定义事件</h4><p>自定义事件触发在标签上。</p>
+<table class="am-table am-table-bd am-table-striped">
+  <thead>
+  <tr>
+    <th>事件名称</th>
+    <th>描述</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr>
+    <td><code>open.tabs.amui</code></td>
+    <td>打开一个选项卡时立即触发</td>
+  </tr>
+  <tr>
+    <td><code>opened.tabs.amui</code></td>
+    <td>选项卡打开完成时触发（CSS 动画执行完成）</td>
+  </tr>
+  </tbody>
+</table>
+
+<div class="doc-code demo-highlight"><pre><code class="javascript">$(<span class="hljs-string">'#doc-my-tabs'</span>).find(<span class="hljs-string">'a'</span>).on(<span class="hljs-string">'opened.tabs.amui'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(e)</span> </span>{
+  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'[%s] 选项卡打开了'</span>, $(<span class="hljs-keyword">this</span>).text());
+})</code></pre></div><p>打开控制台操作<a href="#doc-my-tabs">上面的选项卡</a>查看事件监听输出的文字。</p>
+<h2><a name="FAQ" class="anchor" href="#FAQ"><span class="header-link"></span></a>FAQ</h2><h3><a name="Tab%20%E5%86%85%E5%AE%B9%E4%B8%8D%E8%83%BD%E9%80%89%E6%8B%A9%EF%BC%8C%E5%A6%82%E4%BD%95%E5%A4%84%E7%90%86%EF%BC%9F" class="anchor" href="#Tab%20%E5%86%85%E5%AE%B9%E4%B8%8D%E8%83%BD%E9%80%89%E6%8B%A9%EF%BC%8C%E5%A6%82%E4%BD%95%E5%A4%84%E7%90%86%EF%BC%9F"><span class="header-link"></span></a>Tab 内容不能选择，如何处理？</h3><p>这个问题由 <a href="http://hammerjs.github.io/tips/">Hammer.js</a> 引起。</p>
+<blockquote>
+<p>Hammer is setting a property to improve the UX of the panning on desktop.</p>
+</blockquote>
+<p>可以使用下面的样式覆盖掉 Hammer.js 的样式：</p>
+<div class="doc-code demo-highlight"><pre><code class="css"><span class="hljs-class">.am-tabs-bd</span> <span class="hljs-rules">{
+  <span class="hljs-rule"><span class="hljs-attribute">-moz-user-select</span>:<span class="hljs-value"> text <span class="hljs-important">!important</span></span></span>;
+  <span class="hljs-rule"><span class="hljs-attribute">-webkit-user-select</span>:<span class="hljs-value"> text <span class="hljs-important">!important</span></span></span>;
+  <span class="hljs-rule"><span class="hljs-attribute">-ms-user-select</span>:<span class="hljs-value"> text <span class="hljs-important">!important</span></span></span>;
+  <span class="hljs-rule"><span class="hljs-attribute">user-select</span>:<span class="hljs-value"> text <span class="hljs-important">!important</span></span></span>;
+<span class="hljs-rule">}</span></span></code></pre></div><p>也可以选择禁用触控事件。</p>
+<!--
+## TODO
+
+- Ajax 载入选项卡内容支持
+-->
+
+
+  <nav class="amp-pager">
+        <ul class="am-pagination">
+          <li class="am-pagination-prev"><a href="javascript/sticky.html">&laquo; Prev</a>
+          </li>
+              <li class="am-pagination-next"><a href="javascript/datepicker.html">Next &raquo;</a>
+              </li>
+        </ul>
+  </nav>
+</section>
+
+<script>
+  var _hmt = _hmt || [];
+  (function() {
+    var hm = document.createElement("script");
+    hm.src = "//hm.baidu.com/hm.js?b424d39312c46404f15e22574a531fbb";
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(hm);
+  })();
+
+  (function(w, d, s) {
+    function gs(){
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){ (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o), m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(w , d, s ,'//www.google-analytics.com/analytics.js','ga');
+      ga('create', 'UA-34196034-8', 'amazeui.org');
+      ga('send', 'pageview');
+    }
+    if (w.addEventListener) { w.addEventListener('load', gs, false); }
+    else if (w.attachEvent) { w.attachEvent('onload',gs); }
+  }(window, document, 'script'));
+</script>
+</body>
+</html>

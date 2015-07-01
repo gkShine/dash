@@ -1,0 +1,334 @@
+<!doctype html>
+<html class="no-js">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <title>Comment 评论组件 | Amaze UI Dash Docsets</title>
+  <link rel="stylesheet" href="../assets/css/amazeui.min.css">
+  <link rel="stylesheet" href="../assets/css/app.css">
+  <script src="../assets/js/jquery.min.js"></script>
+  <script src="../assets/js/amazeui.min.js"></script>
+  
+</head>
+<body class="am-doc">
+<section class="doc-main am-padding-lg">
+    <h1><a name="Comment%20%E8%AF%84%E8%AE%BA%E7%BB%84%E4%BB%B6" class="anchor" href="#Comment%20%E8%AF%84%E8%AE%BA%E7%BB%84%E4%BB%B6"><span class="header-link"></span></a>Comment 评论组件</h1><hr>
+<p>评论组件由用户头像、评论元信息、评论内容组成（有点似曾相识？没错，很像 Github 的评论列表）。</p>
+<p>基本结构如下：</p>
+<div class="doc-code demo-highlight"><pre><code class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">article</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-comment"</span>&gt;</span> <span class="hljs-comment">&lt;!-- 评论容器 --&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">""</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">img</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-comment-avatar"</span> <span class="hljs-attribute">alt</span>=<span class="hljs-value">""</span>/&gt;</span> <span class="hljs-comment">&lt;!-- 评论者头像 --&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+
+  <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-comment-main"</span>&gt;</span> <span class="hljs-comment">&lt;!-- 评论内容容器 --&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">header</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-comment-hd"</span>&gt;</span>
+      <span class="hljs-comment">&lt;!--&lt;h3 class="am-comment-title"&gt;评论标题&lt;/h3&gt;--&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-comment-meta"</span>&gt;</span> <span class="hljs-comment">&lt;!-- 评论元数据 --&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"#link-to-user"</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-comment-author"</span>&gt;</span>..<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span> <span class="hljs-comment">&lt;!-- 评论者 --&gt;</span>
+        评论于 <span class="hljs-tag">&lt;<span class="hljs-title">time</span> <span class="hljs-attribute">datetime</span>=<span class="hljs-value">""</span>&gt;</span>...<span class="hljs-tag">&lt;/<span class="hljs-title">time</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">header</span>&gt;</span>
+
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-comment-bd"</span>&gt;</span>...<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span> <span class="hljs-comment">&lt;!-- 评论内容 --&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">article</span>&gt;</span></code></pre></div><p>其中 <code>.am-comment-title</code> 在使用中并不常见。</p>
+<h2><a name="%E4%BD%BF%E7%94%A8%E6%BC%94%E7%A4%BA" class="anchor" href="#%E4%BD%BF%E7%94%A8%E6%BC%94%E7%A4%BA"><span class="header-link"></span></a>使用演示</h2><h3><a name="%E5%8D%95%E6%9D%A1%E8%AF%84%E8%AE%BA" class="anchor" href="#%E5%8D%95%E6%9D%A1%E8%AF%84%E8%AE%BA"><span class="header-link"></span></a>单条评论</h3><div class="doc-example"><article class="am-comment">
+  <a href="#link-to-user-home">
+    <img src="http://amui.qiniudn.com/bw-2014-06-19.jpg?imageView/1/w/96/h/96" alt="" class="am-comment-avatar" width="48" height="48"/>
+  </a>
+
+  <div class="am-comment-main">
+    <header class="am-comment-hd">
+      <!--<h3 class="am-comment-title">评论标题</h3>-->
+      <div class="am-comment-meta">
+          <a href="#link-to-user" class="am-comment-author">某人</a>
+        评论于 <time datetime="2013-07-27T04:54:29-07:00" title="2013年7月27日 下午7:54 格林尼治标准时间+0800">2014-7-12 15:30</time>
+      </div>
+      <div class="am-comment-actions">
+        <a href=""><i class="am-icon-pencil"></i></a>
+        <a href=""><i class="am-icon-close"></i></a>
+      </div>
+    </header>
+
+    <div class="am-comment-bd">
+      <p>
+        那，那是一封写给南部母亲的信。我茫然站在骑楼下，我又看到永远的樱子走到街心。其实雨下得并不大，却是一生一世中最大的一场雨。而那封信是这样写的，年轻的樱子知不知道呢？
+      </p>
+      <blockquote>
+        妈：我打算在下个月和樱子结婚。
+      </blockquote>
+    </div>
+    <footer class="am-comment-footer">
+      <div class="am-comment-actions">
+        <a href=""><i class="am-icon-thumbs-up"></i></a>
+        <a href=""><i class="am-icon-thumbs-down"></i></a>
+        <a href=""><i class="am-icon-reply"></i></a>
+      </div>
+    </footer>
+  </div>
+</article>
+```
+
+```html
+<article class="am-comment">
+  <a href="#link-to-user-home">
+    <img src="" alt="" class="am-comment-avatar" width="48" height="48"/>
+  </a>
+
+  <div class="am-comment-main">
+    <header class="am-comment-hd">
+      <!--<h3 class="am-comment-title">评论标题</h3>-->
+      <div class="am-comment-meta">
+        <a href="#link-to-user" class="am-comment-author">某人</a>
+        评论于 <time datetime="2013-07-27T04:54:29-07:00" title="2013年7月27日 下午7:54 格林尼治标准时间+0800">2014-7-12 15:30</time>
+      </div>
+    </header>
+
+    <div class="am-comment-bd">
+      ...
+    </div>
+  </div>
+</article>
+```
+
+### 评论列表
+
+使用 `.am-comments-list` 包裹多个 `.am-comment` 即成评论列表。
+
+给`<ul>`元素添加`.am-comment-list`类来创建一个评论列表。
+
+
+`````html-
+<ul class="am-comments-list am-comments-list-flip">
+  <li class="am-comment">
+    <a href="#link-to-user-home">
+      <img src="http://amui.qiniudn.com/bw-2014-06-19.jpg?imageView/1/w/96/h/96" alt="" class="am-comment-avatar" width="48" height="48"/>
+    </a>
+
+    <div class="am-comment-main">
+      <header class="am-comment-hd">
+        <!--<h3 class="am-comment-title">这是我悲伤的评论</h3>-->
+        <div class="am-comment-meta">
+          <a href="#link-to-user" class="am-comment-author">某人</a>
+          评论于 <time datetime="2013-07-27T04:54:29-07:00" title="2013年7月27日 下午7:54 格林尼治标准时间+0800">2014-7-12 15:30</time>
+        </div>
+      </header>
+
+      <div class="am-comment-bd">
+        <p>
+          那，那是一封写给南部母亲的信。我茫然站在骑楼下，我又看到永远的樱子走到街心。其实雨下得并不大，却是一生一世中最大的一场雨。而那封信是这样写的，年轻的樱子知不知道呢？
+        </p>
+        <blockquote>
+          妈：我打算在下个月和樱子结婚。
+        </blockquote>
+      </div>
+    </div>
+  </li>
+
+  <li class="am-comment">
+    <a href="#link-to-user-home">
+      <img src="http://www.gravatar.com/avatar/1ecedeede84a44f371b9d8d656bb4265?d=mm&s=96" alt="" class="am-comment-avatar" width="48" height="48"/>
+    </a>
+
+    <div class="am-comment-main">
+      <header class="am-comment-hd">
+        <div class="am-comment-meta">
+          <a href="#link-to-user" class="am-comment-author">路人甲</a>
+          评论于 <time datetime="2013-07-27T04:54:29-07:00" title="2013年7月27日 下午7:54 格林尼治标准时间+0800">2014-7-13 0:03</time>
+        </div>
+      </header>
+
+      <div class="am-comment-bd">
+        <p>
+          She's gone 我早知道 <br/>
+          她将要 从我的生命中走掉 <br/>
+          不再停留多一秒
+        </p>
+      </div>
+    </div>
+  </li>
+
+  <li class="am-comment am-comment-primary">
+    <a href="#link-to-user-home">
+      <img src="http://www.gravatar.com/avatar/1ecedeede84abbf371b9d8d656bb4265?d=mm&s=96" alt="" class="am-comment-avatar" width="48" height="48"/>
+    </a>
+
+    <div class="am-comment-main">
+      <header class="am-comment-hd">
+        <div class="am-comment-meta">
+          <a href="#link-to-user" class="am-comment-author">路人乙</a>
+          评论于 <time datetime="2013-07-27T04:54:29-07:00" title="2013年7月27日 下午7:54 格林尼治标准时间+0800">2014-7-14 23:30</time>
+        </div>
+      </header>
+
+      <div class="am-comment-bd">
+        <p><a href="#lin-to-user">@某人</a>
+          撸主保重！
+        </p>
+      </div>
+    </div>
+  </li>
+
+  <li class="am-comment am-comment-flip am-comment-secondary">
+    <a href="#link-to-user-home">
+      <img src="http://amui.qiniudn.com/bw-2014-06-19.jpg?imageView/1/w/96/h/96" alt="" class="am-comment-avatar" width="48" height="48"/>
+    </a>
+
+    <div class="am-comment-main">
+      <header class="am-comment-hd">
+        <!--<h3 class="am-comment-title">这是我悲伤的评论</h3>-->
+        <div class="am-comment-meta">
+          <a href="#link-to-user" class="am-comment-author">某人</a>
+          评论于 <time datetime="2013-07-27T04:54:29-07:00" title="2013年7月27日 下午7:54 格林尼治标准时间+0800">2014-7-14 23:301</time>
+        </div>
+      </header>
+
+      <div class="am-comment-bd">
+        <p><a href="#lurenyi">@路人乙</a> 朕知道了！</p>
+      </div>
+    </div>
+  </li>
+
+  <li class="am-comment am-comment-highlight">
+    <a href="#link-to-user-home">
+      <img src="http://www.gravatar.com/avatar/1ecedeede84abbf371b9d8d656bb4265?d=mm&s=96" alt="" class="am-comment-avatar" width="48" height="48"/>
+    </a>
+
+    <div class="am-comment-main">
+      <header class="am-comment-hd">
+        <div class="am-comment-meta">
+          <a href="#link-to-user" class="am-comment-author">路人乙</a>
+          评论于 <time datetime="2013-07-27T04:54:29-07:00" title="2013年7月27日 下午7:54 格林尼治标准时间+0800">2014-7-14 23:32</time>
+        </div>
+      </header>
+
+      <div class="am-comment-bd">
+        <p><a href="#lin-to-user">@某人</a> 艹民告退！
+        </p>
+      </div>
+    </div>
+  </li>
+
+  <li class="am-comment am-comment-flip am-comment-danger">
+    <a href="#link-to-user-home">
+      <img src="http://amui.qiniudn.com/bw-2014-06-19.jpg?imageView/1/w/96/h/96" alt="" class="am-comment-avatar" width="48" height="48"/>
+    </a>
+
+    <div class="am-comment-main">
+      <header class="am-comment-hd">
+        <div class="am-comment-meta">
+          <a href="#link-to-user" class="am-comment-author">某人</a>
+          评论于 <time datetime="2013-07-27T04:54:29-07:00" title="2013年7月27日 下午7:54 格林尼治标准时间+0800">2014-7-14 23:301</time>
+        </div>
+      </header>
+
+      <div class="am-comment-bd">
+        <p><a href="#lurenyi">@路人乙</a> 滚！</p>
+      </div>
+    </div>
+  </li>
+
+  <li class="am-comment am-comment-warning">
+    <a href="#link-to-user-home">
+      <img src="http://www.gravatar.com/avatar/1ecedeede84abbf371b9d8d656bb4265?d=mm&s=96" alt="" class="am-comment-avatar" width="48" height="48"/>
+    </a>
+
+    <div class="am-comment-main">
+      <header class="am-comment-hd">
+        <div class="am-comment-meta">
+          <a href="#link-to-user" class="am-comment-author">路人乙</a>
+          评论于 <time datetime="2013-07-27T04:54:29-07:00" title="2013年7月27日 下午7:54 格林尼治标准时间+0800">2014-7-14 23:32</time>
+        </div>
+      </header>
+
+      <div class="am-comment-bd">
+        <p><a href="#lin-to-user">@某人</a> 你妹！
+        </p>
+      </div>
+    </div>
+  </li>
+
+  <li class="am-comment am-comment-flip am-comment-success">
+    <a href="#link-to-user-home">
+      <img src="http://amui.qiniudn.com/bw-2014-06-19.jpg?imageView/1/w/96/h/96" alt="" class="am-comment-avatar" width="48" height="48"/>
+    </a>
+
+    <div class="am-comment-main">
+      <header class="am-comment-hd">
+        <div class="am-comment-meta">
+          <a href="#link-to-user" class="am-comment-author">某人</a>
+          评论于 <time datetime="2013-07-27T04:54:29-07:00" title="2013年7月27日 下午7:54 格林尼治标准时间+0800">2014-7-14 23:301</time>
+        </div>
+      </header>
+
+      <div class="am-comment-bd">
+        <p><a href="#lurenyi">@路人乙</a> 你妹你妹！</p>
+      </div>
+    </div>
+  </li>
+</ul></div><div class="doc-code demo-highlight"><pre><code class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">ul</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-comments-list am-comments-list-flip"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">li</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-comment"</span>&gt;</span>
+    ...
+  <span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+
+  <span class="hljs-tag">&lt;<span class="hljs-title">li</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-comment"</span>&gt;</span>
+    ...
+  <span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+
+  ...
+
+  <span class="hljs-tag">&lt;<span class="hljs-title">li</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-comment am-comment-flip"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+
+  <span class="hljs-tag">&lt;<span class="hljs-title">li</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-comment am-comment-highlight"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">ul</span>&gt;</span></code></pre></div><h3><a name="%E8%AF%84%E8%AE%BA%E5%86%85%E5%AE%B9%E5%B7%A6%E5%8F%B3%E5%AF%B9%E9%BD%90" class="anchor" href="#%E8%AF%84%E8%AE%BA%E5%86%85%E5%AE%B9%E5%B7%A6%E5%8F%B3%E5%AF%B9%E9%BD%90"><span class="header-link"></span></a>评论内容左右对齐</h3><p>在评论列表 <code>.am-comments-list</code> 上增加 <code>.am-comments-list-flip</code> class，可以使左右交错的评论列表内容左右对齐（在 <code>medium-up</code> 区间有效）。</p>
+<p><strong>谢谢大家的建议</strong>。并非所有使用场景都使用左右交错的列表，所以加了单独的 class，供用户选择。</p>
+<h3><a name="%E8%AF%84%E8%AE%BA%E7%8A%B6%E6%80%81" class="anchor" href="#%E8%AF%84%E8%AE%BA%E7%8A%B6%E6%80%81"><span class="header-link"></span></a>评论状态</h3><p>在容器上添加评论状态 class（演示见上面列表里的最后几条）。</p>
+<ul>
+<li><code>.am-comment-flip</code> 在右边显示头像</li>
+<li><code>.am-comment-primary</code> 高亮评论（边框为主色）</li>
+<li><code>.am-comment-highlight</code> / <code>.am-comment-highlight</code> 高亮评论（边框为次色）</li>
+<li><code>.am-comment-success</code> 高亮评论（边框为绿色）</li>
+<li><code>.am-comment-warning</code> 高亮评论（边框为橙色）</li>
+<li><code>.am-comment-danger</code> 高亮评论（边框为红色）</li>
+</ul>
+<div class="doc-code demo-highlight"><pre><code class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">article</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-comment am-comment-flip"</span>&gt;</span>
+  ...
+<span class="hljs-tag">&lt;/<span class="hljs-title">article</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-title">article</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-comment am-comment-flip"</span>&gt;</span>
+  ...
+<span class="hljs-tag">&lt;/<span class="hljs-title">article</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-title">article</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-comment am-comment-flip am-comment-highlight"</span>&gt;</span>
+  ...
+<span class="hljs-tag">&lt;/<span class="hljs-title">article</span>&gt;</span></code></pre></div>
+
+  <nav class="amp-pager">
+  </nav>
+</section>
+
+<script>
+  var _hmt = _hmt || [];
+  (function() {
+    var hm = document.createElement("script");
+    hm.src = "//hm.baidu.com/hm.js?b424d39312c46404f15e22574a531fbb";
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(hm);
+  })();
+
+  (function(w, d, s) {
+    function gs(){
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){ (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o), m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(w , d, s ,'//www.google-analytics.com/analytics.js','ga');
+      ga('create', 'UA-34196034-8', 'amazeui.org');
+      ga('send', 'pageview');
+    }
+    if (w.addEventListener) { w.addEventListener('load', gs, false); }
+    else if (w.attachEvent) { w.attachEvent('onload',gs); }
+  }(window, document, 'script'));
+</script>
+</body>
+</html>

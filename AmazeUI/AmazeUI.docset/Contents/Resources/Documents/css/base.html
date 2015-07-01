@@ -1,0 +1,85 @@
+<!doctype html>
+<html class="no-js">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <title>Base | Amaze UI Dash Docsets</title>
+  <link rel="stylesheet" href="../assets/css/amazeui.min.css">
+  <link rel="stylesheet" href="../assets/css/app.css">
+  <script src="../assets/js/jquery.min.js"></script>
+  <script src="../assets/js/amazeui.min.js"></script>
+  
+</head>
+<body class="am-doc">
+<section class="doc-main am-padding-lg">
+    <h1><a name="Base" class="anchor" href="#Base"><span class="header-link"></span></a>Base</h1><hr>
+<p>Amaze UI 定义的一些基础样式。</p>
+<h2><a name="CSS%20%E7%9B%92%E6%A8%A1%E5%9E%8B" class="anchor" href="#CSS%20%E7%9B%92%E6%A8%A1%E5%9E%8B"><span class="header-link"></span></a>CSS 盒模型</h2><p>曾几何时，IE 6 及更低版本的<strong><em>非标准</em></strong>盒模型被喷得体无完肤。IE 原来的盒模型真的不好么？最终，时间给了另外一个答案。
+W3C 终认识到所谓标准盒模型在实际使用中的复杂性，于是在 CSS3 中增加 <code>box-sizing</code> 这一属性，允许用户自定义盒模型。</p>
+<blockquote>
+<p><strong>You tell me I&#39;m wrong, Then you better prove you&#39;re right.</strong></p>
+<p><small>King of Pop – Scream</small></p>
+</blockquote>
+<p>这就是 W3C 的证明。</p>
+<p>扯远了，Amaze UI 将所有元素的盒模型设置为 <code>border-box</code>。这下好了，妈妈再也不用担心你没计算好 <code>padding</code>、<code>border</code> 而使布局破相了。咱来写样式，不是来学算术。</p>
+<div class="doc-code demo-highlight"><pre><code class="css"> *,
+ *<span class="hljs-pseudo">:before</span>,
+ *<span class="hljs-pseudo">:after</span> <span class="hljs-rules">{
+   <span class="hljs-rule"><span class="hljs-attribute">-moz-box-sizing</span>:<span class="hljs-value"> border-box</span></span>;
+   <span class="hljs-rule"><span class="hljs-attribute">-webkit-box-sizing</span>:<span class="hljs-value"> border-box</span></span>;
+   <span class="hljs-rule"><span class="hljs-attribute">box-sizing</span>:<span class="hljs-value"> border-box</span></span>;
+ <span class="hljs-rule">}</span></span></code></pre></div><p><img src="/i/docs/box-sizing.png" alt="Box sizing"></p>
+<p>参考链接：</p>
+<ul>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/box-sizing">https://developer.mozilla.org/en-US/docs/Web/CSS/box-sizing</a></li>
+<li><a href="http://www.paulirish.com/2012/box-sizing-border-box-ftw/">http://www.paulirish.com/2012/box-sizing-border-box-ftw/</a></li>
+<li><a href="http://css-tricks.com/box-sizing/">Box Sizing</a></li>
+</ul>
+<h2><a name="%E5%AD%97%E5%8F%B7%E5%8F%8A%E5%8D%95%E4%BD%8D" class="anchor" href="#%E5%AD%97%E5%8F%B7%E5%8F%8A%E5%8D%95%E4%BD%8D"><span class="header-link"></span></a>字号及单位</h2><p>Amaze UI 将浏览器的基准字号设置为 <code>62.5%</code>，也就是 <code>10px</code>，现在 <code>1rem = 10px</code> —— 为了计算方便。然后在 <code>body</code> 上应用了 <code>font-size: 1.6rem;</code>，将页面字号设置为 <code>16px</code>。</p>
+<div class="doc-code demo-highlight"><pre><code class="css"><span class="hljs-tag">html</span> <span class="hljs-rules">{
+  <span class="hljs-rule"><span class="hljs-attribute">font-size</span>:<span class="hljs-value"> <span class="hljs-number">62.5%</span></span></span>;
+<span class="hljs-rule">}</span></span>
+
+<span class="hljs-tag">body</span> <span class="hljs-rules">{
+  <span class="hljs-rule"><span class="hljs-attribute">font-size</span>:<span class="hljs-value"> <span class="hljs-number">1.6rem</span></span></span>; <span class="hljs-comment">/* =16px */</span>
+<span class="hljs-rule">}</span></span></code></pre></div><p>与 <code>em</code> 根据上下文变化不同，<code>rem</code> 只跟基准设置关联，只要修改基准字号，所有使用 <code>rem</code> 作为单位的设置都会相应改变。</p>
+<p>当然，并非所有所有浏览器的默认字号都是 <code>16px</code>，所以在不同的浏览器上会有细微差异。</p>
+<p>另外，一些需要根据字号做相应变化的场景也使用了 <code>em</code>，需要像素级别精确的场景也使用了 <code>px</code>。</p>
+<p><strong>参考资源：</strong></p>
+<ul>
+<li><a href="http://snook.ca/archives/html_and_css/font-size-with-rem">FONT SIZING WITH REM</a></li>
+<li><a href="http://blog.typekit.com/2011/11/09/type-study-sizing-the-legible-letter/">Type study: Sizing the legible letter</a></li>
+<li><a href="https://offroadcode.com/prototypes/rem-calculator/">The rem checker</a></li>
+<li><a href="http://css-tricks.com/snippets/css/less-mixin-for-rem-font-sizing/">Mixins for Rem Font Sizing</a></li>
+</ul>
+
+
+  <nav class="amp-pager">
+  </nav>
+</section>
+
+<script>
+  var _hmt = _hmt || [];
+  (function() {
+    var hm = document.createElement("script");
+    hm.src = "//hm.baidu.com/hm.js?b424d39312c46404f15e22574a531fbb";
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(hm);
+  })();
+
+  (function(w, d, s) {
+    function gs(){
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){ (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o), m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(w , d, s ,'//www.google-analytics.com/analytics.js','ga');
+      ga('create', 'UA-34196034-8', 'amazeui.org');
+      ga('send', 'pageview');
+    }
+    if (w.addEventListener) { w.addEventListener('load', gs, false); }
+    else if (w.attachEvent) { w.attachEvent('onload',gs); }
+  }(window, document, 'script'));
+</script>
+</body>
+</html>

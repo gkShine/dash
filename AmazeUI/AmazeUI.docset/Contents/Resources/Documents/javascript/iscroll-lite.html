@@ -1,0 +1,72 @@
+<!doctype html>
+<html class="no-js">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <title>iScroll 元素滚动 | Amaze UI Dash Docsets</title>
+  <link rel="stylesheet" href="../assets/css/amazeui.min.css">
+  <link rel="stylesheet" href="../assets/css/app.css">
+  <script src="../assets/js/jquery.min.js"></script>
+  <script src="../assets/js/amazeui.min.js"></script>
+  
+</head>
+<body class="am-doc">
+<section class="doc-main am-padding-lg">
+    <h1><a name="iScroll%20Lite" class="anchor" href="#iScroll%20Lite"><span class="header-link"></span></a>iScroll Lite</h1><hr>
+<p>Amaze UI 默认打包了 iScroll <code>lite</code>（当前版本为 5.1.3），具体使用请<a href="http://iscrolljs.com/">参考官网</a>。</p>
+<blockquote>
+<p>iscroll-lite.js, it is a stripped down version of the main script. It doesn&#39;t support snap, scrollbars, mouse wheel, key bindings. But if all you need is scrolling (especially on mobile) iScroll lite is the smallest, fastest solution.</p>
+</blockquote>
+<p>通过 <code>$.AMUI.iScroll</code> 访问 <code>IScroll</code> 对象。</p>
+<div class="doc-code demo-highlight"><pre><code class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"wrapper"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">ul</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span>...<span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span>...<span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+    ...
+  <span class="hljs-tag">&lt;/<span class="hljs-title">ul</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span></code></pre></div><div class="doc-code demo-highlight"><pre><code class="javascript"><span class="hljs-keyword">var</span> IScroll = $.AMUI.iScroll;
+<span class="hljs-keyword">var</span> myScroll = <span class="hljs-keyword">new</span> IScroll(<span class="hljs-string">'#wrapper'</span>);</code></pre></div><p>iScroll 主要用来实现平滑的垂直、水平的拖动操作及控制。</p>
+<p>网上很多 iScroll 的例子都是基于 iScroll 4 实现的，<code>5.x</code> API 变动很大，许多 <code>4.x</code> 的例子都不能正常工作，需要做调整。</p>
+<ul>
+<li><a href="/widgets/m?_ver=2.x">iSroll 实现的固定顶部</a></li>
+<li><a href="/examples/iscroll.html">iScroll 5 实现的下拉刷新和上拉加载更多</a></li>
+<li><a href="http://davidwalsh.name/iphone-scrollbars">iPhone Scrollbars with iScroll (适用于 iScroll 4)</a></li>
+</ul>
+<p>更多例子请参见<a href="https://github.com/cubiq/iscroll/tree/master/demos">项目主页</a>，<strong>请注意，Amaze UI 打包的是 <code>lite</code> 版，有些 Demo 并不适用。</strong></p>
+
+
+  <nav class="amp-pager">
+        <ul class="am-pagination">
+          <li class="am-pagination-prev"><a href="javascript/hammer.html">&laquo; Prev</a>
+          </li>
+              <li class="am-pagination-next"><a href="javascript/store.html">Next &raquo;</a>
+              </li>
+        </ul>
+  </nav>
+</section>
+
+<script>
+  var _hmt = _hmt || [];
+  (function() {
+    var hm = document.createElement("script");
+    hm.src = "//hm.baidu.com/hm.js?b424d39312c46404f15e22574a531fbb";
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(hm);
+  })();
+
+  (function(w, d, s) {
+    function gs(){
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){ (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o), m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(w , d, s ,'//www.google-analytics.com/analytics.js','ga');
+      ga('create', 'UA-34196034-8', 'amazeui.org');
+      ga('send', 'pageview');
+    }
+    if (w.addEventListener) { w.addEventListener('load', gs, false); }
+    else if (w.attachEvent) { w.attachEvent('onload',gs); }
+  }(window, document, 'script'));
+</script>
+</body>
+</html>

@@ -1,0 +1,262 @@
+<!doctype html>
+<html class="no-js">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <title>Input Group | Amaze UI Dash Docsets</title>
+  <link rel="stylesheet" href="../assets/css/amazeui.min.css">
+  <link rel="stylesheet" href="../assets/css/app.css">
+  <script src="../assets/js/jquery.min.js"></script>
+  <script src="../assets/js/amazeui.min.js"></script>
+  
+</head>
+<body class="am-doc">
+<section class="doc-main am-padding-lg">
+    <h1><a name="Input%20Group" class="anchor" href="#Input%20Group"><span class="header-link"></span></a>Input Group</h1><hr>
+<p>Input group 基于 Form 组件和 Button 组件扩展，依赖这两个组件。</p>
+<p>在容器上添加 <code>.am-input-group</code>，在标签文字上添加 <code>.am-input-group-label</code>，具体请查看示例代码。</p>
+<h2><a name="%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8" class="anchor" href="#%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8"><span class="header-link"></span></a>基本使用</h2><h3><a name="%E8%BE%93%E5%85%A5%E6%A1%86%E4%B8%8E%E6%A0%87%E7%AD%BE" class="anchor" href="#%E8%BE%93%E5%85%A5%E6%A1%86%E4%B8%8E%E6%A0%87%E7%AD%BE"><span class="header-link"></span></a>输入框与标签</h3><p>下面的代码中演示了结合 Icon 组件及添加文字的样式。</p>
+<div class="doc-example"><div class="am-input-group">
+  <span class="am-input-group-label"><i class="am-icon-user"></i></span>
+  <input type="text" class="am-form-field" placeholder="Username">
+</div>
+
+<div class="am-input-group">
+  <span class="am-input-group-label"><i class="am-icon-lock"></i></span>
+  <input type="text" class="am-form-field" placeholder="Password">
+</div>
+
+<div class="am-input-group">
+  <input type="text" class="am-form-field">
+  <span class="am-input-group-label">.00</span>
+</div>
+
+<div class="am-input-group">
+  <span class="am-input-group-label">$</span>
+  <input type="text" class="am-form-field">
+  <span class="am-input-group-label">.00</span>
+</div></div><div class="doc-code demo-highlight"><pre><code class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-input-group"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-input-group-label"</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">i</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-icon-user"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">i</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"text"</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-form-field"</span> <span class="hljs-attribute">placeholder</span>=<span class="hljs-value">"Username"</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-input-group"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-input-group-label"</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">i</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-icon-lock"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">i</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"text"</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-form-field"</span> <span class="hljs-attribute">placeholder</span>=<span class="hljs-value">"Password"</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-input-group"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"text"</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-form-field"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-input-group-label"</span>&gt;</span>.00<span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-input-group"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-input-group-label"</span>&gt;</span>$<span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"text"</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-form-field"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-input-group-label"</span>&gt;</span>.00<span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span></code></pre></div><h3><a name="%E5%A4%8D%E9%80%89%2F%E5%8D%95%E9%80%89%E6%A1%86%E4%B8%8E%E8%BE%93%E5%85%A5%E6%A1%86" class="anchor" href="#%E5%A4%8D%E9%80%89%2F%E5%8D%95%E9%80%89%E6%A1%86%E4%B8%8E%E8%BE%93%E5%85%A5%E6%A1%86"><span class="header-link"></span></a>复选/单选框与输入框</h3><p>将单选框与复选框放入 <code>.am-input-group-label</code> 内。</p>
+<div class="doc-example"><div class="am-g">
+  <div class="am-u-lg-6">
+    <div class="am-input-group">
+      <span class="am-input-group-label">
+        <input type="checkbox">
+      </span>
+      <input type="text" class="am-form-field">
+    </div>
+  </div>
+  <div class="am-u-lg-6">
+    <div class="am-input-group">
+      <span class="am-input-group-label">
+        <input type="radio">
+      </span>
+      <input type="text" class="am-form-field">
+    </div>
+  </div>
+</div></div><div class="doc-code demo-highlight"><pre><code class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-g"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-u-lg-6"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-input-group"</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-input-group-label"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"checkbox"</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"text"</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-form-field"</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-u-lg-6"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-input-group"</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-input-group-label"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"radio"</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"text"</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-form-field"</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span></code></pre></div><h3><a name="%E8%BE%93%E5%85%A5%E6%A1%86%E7%BB%93%E5%90%88%20Button" class="anchor" href="#%E8%BE%93%E5%85%A5%E6%A1%86%E7%BB%93%E5%90%88%20Button"><span class="header-link"></span></a>输入框结合 Button</h3><p>需要用 <code>.am-input-group-btn</code> 包住按钮，而不是 <code>.am-input-group-label</code>。</p>
+<div class="doc-example"><div class="am-g">
+  <div class="am-u-lg-6">
+    <div class="am-input-group">
+      <span class="am-input-group-btn">
+        <button class="am-btn am-btn-default" type="button"><span class="am-icon-search"></span> </button>
+      </span>
+      <input type="text" class="am-form-field">
+    </div>
+  </div>
+  <div class="am-u-lg-6">
+    <div class="am-input-group">
+      <input type="text" class="am-form-field">
+      <span class="am-input-group-btn">
+        <button class="am-btn am-btn-default" type="button">手气还行</button>
+      </span>
+    </div>
+  </div>
+</div></div><div class="doc-code demo-highlight"><pre><code class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-g"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-u-lg-6"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-input-group"</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-input-group-btn"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">button</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-btn am-btn-default"</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"button"</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-icon-search"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span> <span class="hljs-tag">&lt;/<span class="hljs-title">button</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"text"</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-form-field"</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-u-lg-6"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-input-group"</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"text"</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-form-field"</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-input-group-btn"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">button</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-btn am-btn-default"</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"button"</span>&gt;</span>手气还行<span class="hljs-tag">&lt;/<span class="hljs-title">button</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span></code></pre></div><h2><a name="%E6%A0%B7%E5%BC%8F%E5%8F%98%E6%8D%A2" class="anchor" href="#%E6%A0%B7%E5%BC%8F%E5%8F%98%E6%8D%A2"><span class="header-link"></span></a>样式变换</h2><h3><a name="%E5%B0%BA%E5%AF%B8" class="anchor" href="#%E5%B0%BA%E5%AF%B8"><span class="header-link"></span></a>尺寸</h3><p>在 <code>.am-input-group</code> 添加标明尺寸的 class 即可。</p>
+<p>包含 <code>.am-input-group-lg</code>、<code>.am-input-group-sm</code>。</p>
+<div class="doc-example"><div class="am-input-group am-input-group-lg">
+  <span class="am-input-group-label">@</span>
+  <input type="text" class="am-form-field" placeholder="Large Username">
+</div>
+
+<div class="am-input-group">
+  <span class="am-input-group-label">@</span>
+  <input type="text" class="am-form-field" placeholder="Default Username">
+</div>
+
+<div class="am-input-group am-input-group-sm">
+  <span class="am-input-group-label">@</span>
+  <input type="text" class="am-form-field" placeholder="Small Username">
+</div></div><div class="doc-code demo-highlight"><pre><code class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-input-group am-input-group-lg"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-input-group-label"</span>&gt;</span>@<span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"text"</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-form-field"</span> <span class="hljs-attribute">placeholder</span>=<span class="hljs-value">"Username"</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-input-group"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-input-group-label"</span>&gt;</span>@<span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"text"</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-form-field"</span> <span class="hljs-attribute">placeholder</span>=<span class="hljs-value">"Username"</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-input-group am-input-group-sm"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-input-group-label"</span>&gt;</span>@<span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"text"</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-form-field"</span> <span class="hljs-attribute">placeholder</span>=<span class="hljs-value">"Username"</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span></code></pre></div><h3><a name="%E9%A2%9C%E8%89%B2" class="anchor" href="#%E9%A2%9C%E8%89%B2"><span class="header-link"></span></a>颜色</h3><div class="doc-example"><div class="am-input-group am-input-group-primary">
+  <span class="am-input-group-label"><i class="am-icon-user"></i></span>
+  <input type="text" class="am-form-field" placeholder="你的大名">
+</div>
+
+<div class="am-input-group am-input-group-secondary">
+  <span class="am-input-group-label"><i class="am-icon-credit-card"></i></span>
+  <input type="text" class="am-form-field" placeholder="你的银行卡号">
+</div>
+
+<div class="am-input-group am-input-group-success">
+  <span class="am-input-group-label"><i class="am-icon-money"></i></span>
+  <input type="text" class="am-form-field" placeholder="你的银行卡密码">
+</div>
+
+<div class="am-input-group am-input-group-warning">
+  <span class="am-input-group-label"><i class="am-icon-bank"></i></span>
+  <input type="text" class="am-form-field" placeholder="开户行">
+</div>
+
+<div class="am-input-group am-input-group-danger">
+  <span class="am-input-group-label"><i class="am-icon-location-arrow"></i></span>
+  <input type="text" class="am-form-field" placeholder="你所在城市">
+</div></div><div class="doc-code demo-highlight"><pre><code class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-input-group am-input-group-primary"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-input-group-label"</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">i</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-icon-user"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">i</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"text"</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-form-field"</span> <span class="hljs-attribute">placeholder</span>=<span class="hljs-value">"你的大名"</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-input-group am-input-group-secondary"</span>&gt;</span>
+  ...
+<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-input-group am-input-group-success"</span>&gt;</span>
+  ...
+<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-input-group am-input-group-warning"</span>&gt;</span>
+  ...
+<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-input-group am-input-group-danger"</span>&gt;</span>
+  ...
+<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span></code></pre></div><p>使用按钮时除了在容器上设置颜色 class 外，还需要设置按钮的样式。</p>
+<div class="doc-example"><div class="am-g">
+  <div class="am-u-lg-6">
+    <div class="am-input-group am-input-group-danger">
+      <span class="am-input-group-label">
+        <input type="checkbox">
+      </span>
+      <input type="text" class="am-form-field">
+    </div>
+  </div>
+  <div class="am-u-lg-6">
+    <div class="am-input-group am-input-group-primary">
+      <span class="am-input-group-btn">
+        <button class="am-btn am-btn-primary" type="button"><span class="am-icon-search"></span></button>
+      </span>
+      <input type="text" class="am-form-field">
+    </div>
+  </div>
+</div></div><div class="doc-code demo-highlight"><pre><code class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-g"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-u-lg-6"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-input-group am-input-group-danger"</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-input-group-label"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"checkbox"</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"text"</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-form-field"</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-u-lg-6"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-input-group am-input-group-primary"</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-input-group-btn"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">button</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-btn am-btn-primary"</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"button"</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-icon-search"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">button</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"text"</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-form-field"</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span></code></pre></div>
+
+  <nav class="amp-pager">
+  </nav>
+</section>
+
+<script>
+  var _hmt = _hmt || [];
+  (function() {
+    var hm = document.createElement("script");
+    hm.src = "//hm.baidu.com/hm.js?b424d39312c46404f15e22574a531fbb";
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(hm);
+  })();
+
+  (function(w, d, s) {
+    function gs(){
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){ (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o), m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(w , d, s ,'//www.google-analytics.com/analytics.js','ga');
+      ga('create', 'UA-34196034-8', 'amazeui.org');
+      ga('send', 'pageview');
+    }
+    if (w.addEventListener) { w.addEventListener('load', gs, false); }
+    else if (w.attachEvent) { w.attachEvent('onload',gs); }
+  }(window, document, 'script'));
+</script>
+</body>
+</html>

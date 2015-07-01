@@ -1,0 +1,199 @@
+<!doctype html>
+<html class="no-js">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <title>Animation | Amaze UI Dash Docsets</title>
+  <link rel="stylesheet" href="../assets/css/amazeui.min.css">
+  <link rel="stylesheet" href="../assets/css/app.css">
+  <script src="../assets/js/jquery.min.js"></script>
+  <script src="../assets/js/amazeui.min.js"></script>
+  
+</head>
+<body class="am-doc">
+<section class="doc-main am-padding-lg">
+    <h1><a name="Animation" class="anchor" href="#Animation"><span class="header-link"></span></a>Animation</h1><hr>
+<p>CSS3 动画封装，浏览器需支持 CSS3 动画。</p>
+<table class="am-table am-table-bordered am-table-striped">
+  <thead>
+  <tr>
+    <th>Class</th>
+    <th>描述</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr>
+    <td><code>.am-animation-fade</code></td>
+    <td>淡入</td>
+  </tr>
+  <tr>
+    <td><code>.am-animation-scale-up</code></td>
+    <td>逐渐放大</td>
+  </tr>
+  <tr>
+    <td><code>.am-animation-scale-down</code></td>
+    <td>逐渐缩小</td>
+  </tr>
+  <tr>
+    <td><code>.am-animation-slide-top</code></td>
+    <td>顶部滑入</td>
+  </tr>
+  <tr>
+    <td><code>.am-animation-slide-bottom</code></td>
+    <td>底部滑入</td>
+  </tr>
+  <tr>
+    <td><code>.am-animation-slide-left</code></td>
+    <td>左侧滑入</td>
+  </tr>
+  <tr>
+    <td><code>.am-animation-slide-right</code></td>
+    <td>右侧滑入</td>
+  </tr>
+  <tr>
+    <td><code>.am-animation-shake</code></td>
+    <td>左右摇动</td>
+  </tr>
+  <tr>
+    <td><code>.am-animation-spin</code></td>
+    <td> 无限旋转</td>
+  </tr>
+  </tbody>
+</table>
+
+<p>点击按钮查看动画效果。</p>
+<h2><a name="%E5%9F%BA%E6%9C%AC%E6%95%88%E6%9E%9C" class="anchor" href="#%E5%9F%BA%E6%9C%AC%E6%95%88%E6%9E%9C"><span class="header-link"></span></a>基本效果</h2><div class="doc-example"><div class="am-g doc-animations">
+  <div class="am-u-sm-6 am-u-md-3">
+    <button class="am-btn am-btn-primary am-btn-block" data-doc-animation="fade">Fade</button>
+  </div>
+
+  <div class="am-u-sm-6 am-u-md-3">
+    <button class="am-btn am-btn-secondary am-btn-block" data-doc-animation="scale-up">Scale Up</button>
+  </div>
+
+  <div class="am-u-sm-6 am-u-md-3">
+    <button class="am-btn am-btn-success am-btn-block" data-doc-animation="scale-down">Scale Down</button>
+  </div>
+
+  <div class="am-u-sm-6 am-u-md-3">
+    <button class="am-btn am-btn-warning am-btn-block" data-doc-animation="slide-top">Slide Top</button>
+  </div>
+</div>
+
+<div class="am-g doc-animations">
+  <div class="am-u-sm-6 am-u-md-3">
+    <button class="am-btn am-btn-primary am-btn-block" data-doc-animation="slide-bottom">Slide Bottom</button>
+  </div>
+
+  <div class="am-u-sm-6 am-u-md-3">
+    <button class="am-btn am-btn-secondary am-btn-block" data-doc-animation="slide-left">Slide Left</button>
+  </div>
+
+  <div class="am-u-sm-6 am-u-md-3">
+    <button class="am-btn am-btn-success am-btn-block" data-doc-animation="slide-right">Slide Right</button>
+  </div>
+
+  <div class="am-u-sm-6 am-u-md-3">
+    <button class="am-btn am-btn-warning am-btn-block" data-doc-animation="shake">Shake</button>
+  </div>
+</div>
+
+<span class="am-icon-cog am-animation-spin"></span></div><div class="doc-code demo-highlight"><pre><code class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-animation-fade"</span>&gt;</span>...<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-icon-cog am-animation-spin"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span></code></pre></div><h2><a name="%E5%8F%8D%E5%90%91%E5%8A%A8%E7%94%BB" class="anchor" href="#%E5%8F%8D%E5%90%91%E5%8A%A8%E7%94%BB"><span class="header-link"></span></a>反向动画</h2><p>添加 <code>.am-animation-reverse</code> class，让动画反向运行（通过把 <a href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/animation-direction"><code>animation-direction</code></a> 设置为 <code>reverse</code> 实现）。</p>
+<div class="doc-example"><div class="am-g doc-animations">
+  <div class="am-u-sm-6 am-u-md-3">
+    <button class="am-btn am-btn-primary am-btn-block am-animation-reverse" data-doc-animation="fade">Fade</button>
+  </div>
+
+  <div class="am-u-sm-6 am-u-md-3">
+    <button class="am-btn am-btn-secondary am-btn-block am-animation-reverse" data-doc-animation="scale-up">Scale Up</button>
+  </div>
+
+  <div class="am-u-sm-6 am-u-md-3">
+    <button class="am-btn am-btn-success am-btn-block am-animation-reverse" data-doc-animation="scale-down">Scale Down</button>
+  </div>
+
+  <div class="am-u-sm-6 am-u-md-3">
+    <button class="am-btn am-btn-warning am-btn-block am-animation-reverse" data-doc-animation="slide-top">Slide Top</button>
+  </div>
+</div>
+
+<div class="am-g doc-animations">
+  <div class="am-u-sm-6 am-u-md-3">
+    <button class="am-btn am-btn-primary am-btn-block am-animation-reverse" data-doc-animation="slide-bottom">Slide Bottom</button>
+  </div>
+
+  <div class="am-u-sm-6 am-u-md-3">
+    <button class="am-btn am-btn-secondary am-btn-block am-animation-reverse" data-doc-animation="slide-left">Slide Left</button>
+  </div>
+
+  <div class="am-u-sm-6 am-u-md-3">
+    <button class="am-btn am-btn-success am-btn-block am-animation-reverse" data-doc-animation="slide-right">Slide Right</button>
+  </div>
+
+  <div class="am-u-sm-6 am-u-md-3">
+    <button class="am-btn am-btn-warning am-btn-block am-animation-reverse" data-doc-animation="shake">Shake</button>
+  </div>
+</div>
+
+<span class="am-icon-cog am-animation-spin am-animation-reverse"></span>
+<script>
+$(function() {
+  $('.doc-animations').on('click', '[data-doc-animation]', function() {
+
+    var $clicked = $(this),
+      animation = 'am-animation-' + $clicked.data('docAnimation');
+
+    if($clicked.data('animation-idle')) {
+      clearTimeout($clicked.data('animation-idle'));
+    }
+
+    $clicked.removeClass(animation);
+
+    setTimeout(function(){
+      $clicked.addClass(animation);
+      $clicked.data('animation-idle', setTimeout(function(){
+        $clicked.removeClass(animation);
+        $clicked.data('animation-idle', false);
+      }, 500));
+    }, 50);
+  });
+});
+</script></div><div class="doc-code demo-highlight"><pre><code class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-animation-fade am-animation-reverse"</span>&gt;</span>...<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-icon-cog am-animation-spin am-animation-reverse"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span></code></pre></div><h2><a name="%E5%8F%82%E8%80%83%E8%B5%84%E6%BA%90" class="anchor" href="#%E5%8F%82%E8%80%83%E8%B5%84%E6%BA%90"><span class="header-link"></span></a>参考资源</h2><ul>
+<li><a href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/animation">CSS 动画</a></li>
+<li><a href="http://daneden.github.io/animate.css/">Animate.css</a></li>
+</ul>
+
+
+  <nav class="amp-pager">
+  </nav>
+</section>
+
+<script>
+  var _hmt = _hmt || [];
+  (function() {
+    var hm = document.createElement("script");
+    hm.src = "//hm.baidu.com/hm.js?b424d39312c46404f15e22574a531fbb";
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(hm);
+  })();
+
+  (function(w, d, s) {
+    function gs(){
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){ (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o), m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(w , d, s ,'//www.google-analytics.com/analytics.js','ga');
+      ga('create', 'UA-34196034-8', 'amazeui.org');
+      ga('send', 'pageview');
+    }
+    if (w.addEventListener) { w.addEventListener('load', gs, false); }
+    else if (w.attachEvent) { w.attachEvent('onload',gs); }
+  }(window, document, 'script'));
+</script>
+</body>
+</html>

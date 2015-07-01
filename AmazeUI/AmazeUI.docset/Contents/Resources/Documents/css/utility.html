@@ -1,0 +1,728 @@
+<!doctype html>
+<html class="no-js">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <title>Utility | Amaze UI Dash Docsets</title>
+  <link rel="stylesheet" href="../assets/css/amazeui.min.css">
+  <link rel="stylesheet" href="../assets/css/app.css">
+  <script src="../assets/js/jquery.min.js"></script>
+  <script src="../assets/js/amazeui.min.js"></script>
+  
+</head>
+<body class="am-doc">
+<section class="doc-main am-padding-lg">
+    <h1><a name="Utility" class="anchor" href="#Utility"><span class="header-link"></span></a>Utility</h1><hr>
+<p>一些常用样式的 class，与 LESS minxins 的区别在于：mixins 在样式中调用，而 utility 直接在 HTML 中引用。比如要对一个元素清除浮动，在元素上添加 <code>am-cf</code> 这个 class 即可。</p>
+<h2><a name="%E5%B8%83%E5%B1%80%E7%9B%B8%E5%85%B3" class="anchor" href="#%E5%B8%83%E5%B1%80%E7%9B%B8%E5%85%B3"><span class="header-link"></span></a>布局相关</h2><h3><a name="%E5%AE%B9%E5%99%A8" class="anchor" href="#%E5%AE%B9%E5%99%A8"><span class="header-link"></span></a>容器</h3><h4><a name="%E5%9F%BA%E6%9C%AC%E5%AE%B9%E5%99%A8" class="anchor" href="#%E5%9F%BA%E6%9C%AC%E5%AE%B9%E5%99%A8"><span class="header-link"></span></a>基本容器</h4><p><del><code>.am-container</code>，盒模型为 <code>border-box</code>，水平居中对齐，清除浮动。</del></p>
+<p><code>.am-container</code> 放到了<a href="/css/grid?_ver=2.x">网格</a>里面。</p>
+<h4><a name="%E6%B0%B4%E5%B9%B3%E6%BB%9A%E5%8A%A8" class="anchor" href="#%E6%B0%B4%E5%B9%B3%E6%BB%9A%E5%8A%A8"><span class="header-link"></span></a>水平滚动</h4><p><code>.am-scrollable-horizontal</code> 内容超出容器宽度时显示水平滚动条。</p>
+<div class="doc-example"><div class="am-scrollable-horizontal">
+  <table class="am-table am-table-bd am-table-striped am-text-nowrap">
+    <thead>
+    <tr>
+      <th>-= 表格标题 =-</th>
+      <th>-= 表格标题 =-</th>
+      <th>-= 表格标题 =-</th>
+      <th>-= 表格标题 =-</th>
+      <th>-= 表格标题 =-</th>
+      <th>-= 表格标题 =-</th>
+      <th>-= 表格标题 =-</th>
+      <th>-= 表格标题 =-</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <td>表格数据</td>
+      <td>表格数据</td>
+      <td>表格数据</td>
+      <td>表格数据</td>
+      <td>表格数据</td>
+      <td>表格数据</td>
+      <td>表格数据</td>
+      <td>表格数据</td>
+    </tr>
+    <tr>
+      <td>表格数据</td>
+      <td>表格数据</td>
+      <td>表格数据</td>
+      <td>表格数据</td>
+      <td>表格数据</td>
+      <td>表格数据</td>
+      <td>表格数据</td>
+      <td>表格数据</td>
+    </tr>
+    <tr>
+      <td>表格数据</td>
+      <td>表格数据</td>
+      <td>表格数据</td>
+      <td>表格数据</td>
+      <td>表格数据</td>
+      <td>表格数据</td>
+      <td>表格数据</td>
+      <td>表格数据</td>
+    </tr>
+    </tbody>
+  </table>
+</div></div><div class="doc-code demo-highlight"><pre><code class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-scrollable-horizontal"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">table</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-table am-table-bd am-table-striped am-text-nowrap"</span>&gt;</span>
+    ...
+  <span class="hljs-tag">&lt;/<span class="hljs-title">table</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span></code></pre></div><h4><a name="%E5%9E%82%E7%9B%B4%E6%BB%9A%E5%8A%A8" class="anchor" href="#%E5%9E%82%E7%9B%B4%E6%BB%9A%E5%8A%A8"><span class="header-link"></span></a>垂直滚动</h4><p><code>.am-scrollable-vertical</code> 内容超过设置的高度以后显示滚动条，默认设置的高度为 <code>240px</code>。</p>
+<div class="doc-example"><div class="am-scrollable-vertical">
+  <p>《你不懂我，我不怪你》<br>
+    作者：莫言 </p>
+    <p>每个人都有一个死角， 自己走不出来，别人也闯不进去。<br>
+      我把最深沉的秘密放在那里。<br>
+      你不懂我，我不怪你。 </p>
+    <p>每个人都有一道伤口， 或深或浅，盖上布，以为不存在。<br>
+      我把最殷红的鲜血涂在那里。<br>
+      你不懂我，我不怪你。 </p>
+    <p>每个人都有一场爱恋， 用心、用情、用力，感动也感伤。<br>
+      我把最炙热的心情 藏在那里。<br>
+      你不懂我，我不怪你。 </p>
+    <p>每个人都有 一行眼泪， 喝下的冰冷的水，酝酿成的热泪。<br>
+      我把最心酸的委屈汇在那里。<br>
+      你不懂我，我不怪你。 </p>
+    <p>每个人都有一段告白， 忐忑、不安，却饱含真心和勇气。<br>
+      我把最抒情的语言用在那里。<br>
+      你不懂我，我不怪你。 </p>
+</div></div><h3><a name="%E6%B5%AE%E5%8A%A8%E7%9B%B8%E5%85%B3" class="anchor" href="#%E6%B5%AE%E5%8A%A8%E7%9B%B8%E5%85%B3"><span class="header-link"></span></a>浮动相关</h3><ul>
+<li><p><code>.am-cf</code> - 清除浮动</p>
+</li>
+<li><p><code>.am-nbfc</code> - 使用 <code>overflow: hidden;</code> 创建新的 <abbr title="Block formatting context">BFC</abbr> 清除浮动（<a href="https://developer.mozilla.org/en-US/docs/Web/Guide/CSS/Block_formatting_context">参考</a>）</p>
+</li>
+</ul>
+<div class="doc-code demo-highlight"><pre><code class="css">.am-cf {
+  .clearfix();
+}</code></pre></div><ul>
+<li><code>.am-fl</code> - 左浮动</li>
+<li><code>.am-fr</code> - 右浮动</li>
+<li><code>.am-center</code> - 水平居中</li>
+</ul>
+<div class="doc-code demo-highlight"><pre><code class="css"><span class="hljs-class">.am-center</span> <span class="hljs-rules">{
+  <span class="hljs-rule"><span class="hljs-attribute">display</span>:<span class="hljs-value"> block</span></span>;
+  <span class="hljs-rule"><span class="hljs-attribute">margin-left</span>:<span class="hljs-value"> auto</span></span>;
+  <span class="hljs-rule"><span class="hljs-attribute">margin-right</span>:<span class="hljs-value"> auto</span></span>;
+<span class="hljs-rule">}</span></span></code></pre></div><p>示例：</p>
+<div class="doc-example"><div class="am-cf" style="padding: 10px; border: 1px dashed #ddd">
+  <button class="am-btn am-btn-success am-fl">向左浮动</button>
+  <button class="am-btn am-btn-success am-fr">向右浮动</button>
+</div></div><div class="doc-code demo-highlight"><pre><code class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-cf"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">button</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-btn am-btn-success am-fl"</span>&gt;</span>向左浮动<span class="hljs-tag">&lt;/<span class="hljs-title">button</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">button</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-btn am-btn-success am-fr"</span>&gt;</span>向右浮动<span class="hljs-tag">&lt;/<span class="hljs-title">button</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span></code></pre></div><h3><a name="%E5%9E%82%E7%9B%B4%E5%AF%B9%E9%BD%90" class="anchor" href="#%E5%9E%82%E7%9B%B4%E5%AF%B9%E9%BD%90"><span class="header-link"></span></a>垂直对齐</h3><p>垂直对齐的原理为把父容器内的 “幽灵”元素（使用伪元素）高度设置为 <code>100%</code>，再通过设置需要对齐的元素 <code>vertical-align</code> 属性实现（<a href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/vertical-align">参考</a>）。</p>
+<table class="am-table am-table-bd am-table-striped">
+  <thead>
+  <tr>
+    <th>Class</th>
+    <th>描述</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr>
+    <td><code>.am-vertical-align</code></td>
+    <td>将这个 class 添加到父容器，父容器需要指定高度。</td>
+  </tr>
+  <tr>
+    <td><code>.am-vertical-align-middle</code></td>
+    <td>需要垂直居中的元素</td>
+  </tr>
+  <tr>
+    <td><code>.am-vertical-align-bottom</code></td>
+    <td>添加到需要底部对齐的元素</td>
+  </tr>
+  </tbody>
+</table>
+
+<h4><a name="%E5%9E%82%E7%9B%B4%E5%B1%85%E4%B8%AD%E5%AF%B9%E9%BD%90" class="anchor" href="#%E5%9E%82%E7%9B%B4%E5%B1%85%E4%B8%AD%E5%AF%B9%E9%BD%90"><span class="header-link"></span></a>垂直居中对齐</h4><div class="doc-example"><div class="am-vertical-align" style="height: 150px; border: 1px dashed #ddd;">
+  <div class="am-vertical-align-middle">
+    飘在半空中的 XX
+  </div>
+</div></div><div class="doc-code demo-highlight"><pre><code class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-vertical-align"</span> <span class="hljs-attribute">style</span>=<span class="hljs-value">"height: 150px;"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-vertical-align-middle"</span>&gt;</span>
+    飘在半空中的 XX
+  <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+``</code></pre></div><h4><a name="%E5%BA%95%E9%83%A8%E5%AF%B9%E9%BD%90" class="anchor" href="#%E5%BA%95%E9%83%A8%E5%AF%B9%E9%BD%90"><span class="header-link"></span></a>底部对齐</h4><div class="doc-example"><div class="am-vertical-align" style="height: 150px; border: 1px dashed #ddd;">
+  <div class="am-vertical-align-bottom">
+    DOWN 到了谷底...降到零下几度 C
+  </div>
+</div></div><div class="doc-code demo-highlight"><pre><code class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-vertical-align"</span> <span class="hljs-attribute">style</span>=<span class="hljs-value">"height: 150px;"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-vertical-align-bottom"</span>&gt;</span>
+    DOWN 到了谷底...降到零下几度 C
+  <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+``</code></pre></div><h4><a name="%E5%8F%82%E8%80%83%E9%93%BE%E6%8E%A5" class="anchor" href="#%E5%8F%82%E8%80%83%E9%93%BE%E6%8E%A5"><span class="header-link"></span></a>参考链接</h4><ul>
+<li><a href="http://coding.smashingmagazine.com/2013/08/09/absolute-horizontal-vertical-centering-css/">CSS 实现水平、垂直居中</a></li>
+<li><a href="http://css-tricks.com/centering-in-the-unknown/">Centering in the Unknown
+</a></li>
+<li><a href="http://thx.alibaba-inc.com/cube/doc/layout/">Cube Layout.css</a></li>
+</ul>
+<h3><a name="%E5%85%83%E7%B4%A0%E6%98%BE%E7%A4%BA" class="anchor" href="#%E5%85%83%E7%B4%A0%E6%98%BE%E7%A4%BA"><span class="header-link"></span></a>元素显示</h3><h4><a name="%E6%98%BE%E7%A4%BA%E5%B1%9E%E6%80%A7" class="anchor" href="#%E6%98%BE%E7%A4%BA%E5%B1%9E%E6%80%A7"><span class="header-link"></span></a>显示属性</h4><ul>
+<li><code>.am-block</code> - <code>display</code> 设置为 <code>block</code></li>
+<li><code>.am-inline</code> - <code>display</code> 设置为 <code>inline</code></li>
+<li><code>.am-inline-block</code> - <code>display</code> 设置为 <code>inline-block</code></li>
+</ul>
+<h4><a name="%E9%9A%90%E8%97%8F%E5%85%83%E7%B4%A0" class="anchor" href="#%E9%9A%90%E8%97%8F%E5%85%83%E7%B4%A0"><span class="header-link"></span></a>隐藏元素</h4><p>添加 <code>.am-hide</code> class。</p>
+<div class="doc-code demo-highlight"><pre><code class="css"><span class="hljs-class">.am-hide</span> <span class="hljs-rules">{
+  <span class="hljs-rule"><span class="hljs-attribute">display</span>:<span class="hljs-value"> none <span class="hljs-important">!important</span></span></span>;
+  <span class="hljs-rule"><span class="hljs-attribute">visibility</span>:<span class="hljs-value"> hidden <span class="hljs-important">!important</span></span></span>;
+<span class="hljs-rule">}</span></span></code></pre></div><div class="doc-example"><button class="am-btn am-btn-danger am-hide">I'm hidden.....</button></div><div class="doc-code demo-highlight"><pre><code class="xml"><span class="hljs-comment">&lt;!-- 隐藏了，Demo 里看不到按钮 --&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">button</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-btn am-btn-danger am-hide"</span>&gt;</span>I'm hidden.....<span class="hljs-tag">&lt;/<span class="hljs-title">button</span>&gt;</span></code></pre></div><h3><a name="%E5%86%85%E5%A4%96%E8%BE%B9%E8%B7%9D" class="anchor" href="#%E5%86%85%E5%A4%96%E8%BE%B9%E8%B7%9D"><span class="header-link"></span></a>内外边距</h3><h4><a name="%E5%B0%BA%E5%AF%B8" class="anchor" href="#%E5%B0%BA%E5%AF%B8"><span class="header-link"></span></a>尺寸</h4><ul>
+<li><code>xs</code> - 5px</li>
+<li><code>sm</code> - 10px</li>
+<li>default - 16px</li>
+<li><code>lg</code> - 24px</li>
+<li><code>xl</code> - 32px</li>
+</ul>
+<h4><a name="class%20%E5%88%97%E8%A1%A8" class="anchor" href="#class%20%E5%88%97%E8%A1%A8"><span class="header-link"></span></a>class 列表</h4><p>不加尺寸为默认大小（16px），<code>{size}</code> 可以为 <code>xs, sm, lg, xl</code> 中之一。</p>
+<table class="am-table am-table-bd am-table-striped">
+  <thead>
+    <tr>
+      <th>Margin</th>
+      <th>Padding</th>
+    </tr>
+  </thead>
+  <tr>
+    <td>
+      <code>.am-margin</code> <br/>
+      <code>.am-margin-{size}</code>
+    </td>
+    <td>
+      <code>.am-padding</code> <br/>
+      <code>.am-padding-{size}</code>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      水平方向外边距 <br/>
+      <code>.am-margin-horizontal</code> <br/>
+      <code>.am-margin-horizontal-{size}</code>
+    </td>
+    <td>
+      水平方向内边距 <br/>
+      <code>.am-padding-horizontal</code> <br/>
+      <code>.am-padding-horizontal-{size}</code>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      垂直方向外边距 <br/>
+      <code>.am-margin-vertical</code> <br/>
+      <code>.am-margin-vertical-{size}</code>
+    </td>
+    <td>
+      垂直方向内边距 <br/>
+      <code>.am-padding-vertical</code> <br/>
+      <code>.am-padding-vertical-{size}</code>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      左外边距 <br/>
+      <code>.am-margin-left</code> <br/>
+      <code>.am-margin-left-{size}</code>
+    </td>
+    <td>
+      左内边距 <br/>
+      <code>.am-padding-left</code> <br/>
+      <code>.am-padding-left-{size}</code>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      右外边距 <br/>
+      <code>.am-margin-right</code> <br/>
+      <code>.am-margin-right-{size}</code>
+    </td>
+    <td>
+      右内边距 <br/>
+      <code>.am-padding-right</code> <br/>
+      <code>.am-padding-right-{size}</code>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      上外边距 <br/>
+      <code>.am-margin-top</code> <br/>
+      <code>.am-margin-top-{size}</code>
+    </td>
+    <td>
+      上内边距 <br/>
+      <code>.am-padding-top</code> <br/>
+      <code>.am-padding-top-{size}</code>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      下外边距 <br/>
+      <code>.am-margin-bottom</code> <br/>
+      <code>.am-margin-bottom-{size}</code>
+    </td>
+    <td>
+      下内边距 <br/>
+      <code>.am-padding-bottom</code> <br/>
+      <code>.am-padding-bottom-{size}</code>
+    </td>
+  </tr>
+</table>
+
+
+<h2><a name="%E6%96%87%E6%9C%AC%E5%B7%A5%E5%85%B7" class="anchor" href="#%E6%96%87%E6%9C%AC%E5%B7%A5%E5%85%B7"><span class="header-link"></span></a>文本工具</h2><h3><a name="%E5%AD%97%E4%BD%93" class="anchor" href="#%E5%AD%97%E4%BD%93"><span class="header-link"></span></a>字体</h3><ul>
+<li><code>.am-sans-serif</code> 非衬线，Amaze UI 主要使用的。</li>
+<li><code>.am-serif</code> 衬线字体，中文为宋体，Amaze UI 中未使用。</li>
+<li><code>.am-kai</code> 应为衬线字体，中文为楷体，Amaze UI <code>&lt;blockquote&gt;</code> 使用此。</li>
+<li><code>.am-monospace</code> 等宽字体，Amaze UI 源代码中使用。</li>
+</ul>
+<p>下面为几种字体系列演示：</p>
+<div class="doc-example"><p>
+  The quick brown fox jumps over the lazy dog. <br/>
+  千万不要因为走得太久，而忘记了我们为什么出发。 <br/>
+  千萬不要因為走得太久，而忘記了我們為什麼出發。
+</p>
+
+<p class="am-serif">
+  The quick brown fox jumps over the lazy dog. <br/>
+  千万不要因为走得太久，而忘记了我们为什么出发。 <br/>
+  千萬不要因為走得太久，而忘記了我們為什麼出發。
+</p>
+
+<p class="am-kai">
+  The quick brown fox jumps over the lazy dog. <br/>
+  千万不要因为走得太久，而忘记了我们为什么出发。 <br/>
+  千萬不要因為走得太久，而忘記了我們為什麼出發。
+</p>
+
+<p class="am-monospace">
+  The quick brown fox jumps over the lazy dog. <br/>
+  千万不要因为走得太久，而忘记了我们为什么出发。 <br/>
+  千萬不要因為走得太久，而忘記了我們為什麼出發。
+</p></div><div class="doc-code demo-highlight"><pre><code class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span>...<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-title">p</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-serif"</span>&gt;</span>...<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-title">p</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-kai"</span>&gt;</span>...<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-title">p</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-monospace"</span>&gt;</span>...<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span></code></pre></div><h3><a name="%E6%96%87%E6%9C%AC%E9%A2%9C%E8%89%B2" class="anchor" href="#%E6%96%87%E6%9C%AC%E9%A2%9C%E8%89%B2"><span class="header-link"></span></a>文本颜色</h3><div class="doc-example"><p>千万不要因为走得太久，而忘记了我们为什么出发。</p>
+<p class="am-text-primary">千万不要因为走得太久，而忘记了我们为什么出发。</p>
+<p class="am-text-secondary">千万不要因为走得太久，而忘记了我们为什么出发。</p>
+<p class="am-text-success">千万不要因为走得太久，而忘记了我们为什么出发。</p>
+<p class="am-text-warning">千万不要因为走得太久，而忘记了我们为什么出发。</p>
+<p class="am-text-danger">千万不要因为走得太久，而忘记了我们为什么出发。</p></div><div class="doc-code demo-highlight"><pre><code class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span>...<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">p</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-text-primary"</span>&gt;</span>...<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">p</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-text-secondary"</span>&gt;</span>...<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">p</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-text-success"</span>&gt;</span>...<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">p</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-text-warning"</span>&gt;</span>...<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">p</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-text-danger"</span>&gt;</span>...<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span></code></pre></div><h3><a name="%E9%93%BE%E6%8E%A5%E9%A2%9C%E8%89%B2%E5%87%8F%E6%B7%A1" class="anchor" href="#%E9%93%BE%E6%8E%A5%E9%A2%9C%E8%89%B2%E5%87%8F%E6%B7%A1"><span class="header-link"></span></a>链接颜色减淡</h3><p>超链接颜色默认为主色（蓝色），添加 <code>.am-link-muted</code> class 将链接颜色设置为灰色。</p>
+<div class="doc-example"><a href="##" class="am-link-muted">超级链接</a>
+
+<h3 class="am-link-muted"><a href="##">超级链接</a></h3>
+
+<ul class="am-link-muted">
+  <li><a href="##">超级链接</a></li>
+  <li><a href="##">超级链接</a></li>
+</ul></div><div class="doc-code demo-highlight"><pre><code class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">""</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-link-muted"</span>&gt;</span>...<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-title">h3</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-link-muted"</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">""</span>&gt;</span>...<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">h3</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-title">ul</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-link-muted"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">""</span>&gt;</span>...<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">ul</span>&gt;</span>
+``</code></pre></div><h3><a name="%E6%96%87%E5%AD%97%E5%A4%A7%E5%B0%8F" class="anchor" href="#%E6%96%87%E5%AD%97%E5%A4%A7%E5%B0%8F"><span class="header-link"></span></a>文字大小</h3><ul>
+<li><code>.am-text-xs</code> - 12px</li>
+<li><code>.am-text-sm</code> - 14px</li>
+<li><code>.am-text-default</code> - 16px</li>
+<li><code>.am-text-lg</code> - 18px</li>
+<li><code>.am-text-xl</code> - 24px</li>
+<li><code>.am-text-xxl</code> - 32px</li>
+<li><code>.am-text-xxxl</code> - 42px</li>
+</ul>
+<div class="doc-example"><p class="am-text-xs am-text-truncate">千万不要因为走得太久，而忘记了我们为什么出发。</p>
+<p class="am-text-sm am-text-truncate">千万不要因为走得太久，而忘记了我们为什么出发。</p>
+<p class="am-text-default am-text-truncate">千万不要因为走得太久，而忘记了我们为什么出发。</p>
+<p class="am-text-lg am-text-truncate">千万不要因为走得太久，而忘记了我们为什么出发。</p>
+<p class="am-text-xl am-text-truncate">千万不要因为走得太久，而忘记了我们为什么出发。</p>
+<p class="am-text-xxl am-text-truncate">千万不要因为走得太久，而忘记了我们为什么出发。</p>
+<p class="am-text-xxxl am-text-truncate">千万不要因为走得太久，而忘记了我们为什么出发。</p></div><div class="doc-code demo-highlight"><pre><code class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">p</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-text-xs"</span>&gt;</span>...<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">p</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-text-sm"</span>&gt;</span>...<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">p</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-text-default"</span>&gt;</span>...<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">p</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-text-lg"</span>&gt;</span>...<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">p</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-text-xl"</span>&gt;</span>...<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">p</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-text-xxl"</span>&gt;</span>...<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">p</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-text-xxxl"</span>&gt;</span>...<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span></code></pre></div><p>常用字号参考：</p>
+<table class="am-table am-table-bd am-table-striped">
+  <thead>
+  <tr>
+    <th class="text-center">REMs</th>
+    <th class="text-center">Pixels</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr>
+    <td>6.8rem</td>
+    <td>68px</td>
+  </tr>
+  <tr>
+    <td>5rem</td>
+    <td>50px</td>
+  </tr>
+  <tr>
+    <td>3.8rem</td>
+    <td>38px</td>
+  </tr>
+  <tr>
+    <td>3.2rem</td>
+    <td>32px</td>
+  </tr>
+  <tr>
+    <td>2.8rem</td>
+    <td>28px</td>
+  </tr>
+  <tr>
+    <td>2.4rem</td>
+    <td>24px</td>
+  </tr>
+  <tr>
+    <td>2.2rem</td>
+    <td>22px</td>
+  </tr>
+  <tr>
+    <td>1.8rem</td>
+    <td>18px</td>
+  </tr>
+  <tr>
+    <td><strong>1.6rem (base)</strong></td>
+    <td><strong>16px (base)</strong></td>
+  </tr>
+  <tr>
+    <td>1.4rem</td>
+    <td>14px</td>
+  </tr>
+  <tr>
+    <td>1.2rem</td>
+    <td>12px</td>
+  </tr>
+  <tr>
+    <td>1rem</td>
+    <td>10px</td>
+  </tr>
+  <tr>
+    <td>0.8rem</td>
+    <td>8px</td>
+  </tr>
+  <tr>
+    <td>0.5rem</td>
+    <td>5px</td>
+  </tr>
+  </tbody>
+</table>
+
+
+<h3><a name="%E6%96%87%E6%9C%AC%E5%B7%A6%E5%8F%B3%E5%AF%B9%E9%BD%90" class="anchor" href="#%E6%96%87%E6%9C%AC%E5%B7%A6%E5%8F%B3%E5%AF%B9%E9%BD%90"><span class="header-link"></span></a>文本左右对齐</h3><p>文字对齐辅助 class，可设置为响应式。</p>
+<table class="am-table am-table-bd am-table-striped">
+  <thead>
+    <tr><th>左对齐</th>
+    <th>右对齐</th>
+    <th>居中</th>
+    <th>自适应</th></tr>
+  </thead>
+  <tbody>
+  <tr>
+    <td><code>.am-text-left</code></td>
+    <td><code>.am-text-right</code></td>
+    <td><code>.am-text-center</code></td>
+    <td><code>.am-text-justify</code></td>
+  </tr>
+  <tr>
+    <td><code>.am-sm-text-left</code></td>
+    <td><code>.am-sm-text-right</code></td>
+    <td><code>.am-sm-text-center</code></td>
+    <td><code>.am-sm-text-justify</code></td>
+  </tr>
+  <tr>
+    <td><code>.am-sm-only-text-left</code></td>
+    <td><code>.am-sm-only-text-right</code></td>
+    <td><code>.am-sm-only-text-center</code></td>
+    <td><code>.am-sm-only-text-justify</code></td>
+  </tr>
+  <tr>
+    <td><code>.am-md-text-left</code></td>
+    <td><code>.am-md-text-right</code></td>
+    <td><code>.am-md-text-center</code></td>
+    <td><code>.am-md-text-justify</code></td>
+  </tr>
+  <tr>
+    <td><code>.am-md-only-text-left</code></td>
+    <td><code>.am-md-only-text-right</code></td>
+    <td><code>.am-md-only-text-center</code></td>
+    <td><code>.am-md-only-text-justify</code></td>
+  </tr>
+  <tr>
+    <td><code>.am-lg-text-left</code></td>
+    <td><code>.am-lg-text-right</code></td>
+    <td><code>.am-lg-text-center</code></td>
+    <td><code>.am-lg-text-justify</code></td>
+  </tr>
+ </tbody>
+</table>
+
+<h3><a name="%E6%96%87%E6%9C%AC%E5%9E%82%E7%9B%B4%E5%AF%B9%E9%BD%90" class="anchor" href="#%E6%96%87%E6%9C%AC%E5%9E%82%E7%9B%B4%E5%AF%B9%E9%BD%90"><span class="header-link"></span></a>文本垂直对齐</h3><ul>
+<li><code>.am-text-top</code> - 顶对齐</li>
+<li><code>.am-text-middle</code> - 居中对齐</li>
+<li><code>.am-text-bottom</code> - 底对齐</li>
+</ul>
+<div class="doc-example"><div class="am-g">
+  <div class="am-u-md-4">
+    <img src="http://amui.qiniudn.com/bw-2014-06-19.jpg?imageView/1/w/120/h/120" alt="" width="48" height="48"/>
+    <span class="am-text-top">顶部对齐</span>
+  </div>
+
+  <div class="am-u-md-4">
+    <img src="http://amui.qiniudn.com/bw-2014-06-19.jpg?imageView/1/w/120/h/120" alt="" width="48" height="48"/>
+    <span class="am-text-middle">居中对齐</span>
+  </div>
+
+  <div class="am-u-md-4">
+    <img src="http://amui.qiniudn.com/bw-2014-06-19.jpg?imageView/1/w/120/h/120" alt="" width="48" height="48"/>
+    <span class="am-text-bottom">底部对齐</span>
+  </div>
+</div></div><h3><a name="%E6%96%87%E5%AD%97%E6%8D%A2%E8%A1%8C%E5%8F%8A%E6%88%AA%E6%96%AD" class="anchor" href="#%E6%96%87%E5%AD%97%E6%8D%A2%E8%A1%8C%E5%8F%8A%E6%88%AA%E6%96%AD"><span class="header-link"></span></a>文字换行及截断</h3><table class="am-table am-table-bd am-table-striped">
+  <thead>
+  <tr>
+    <th style="min-width: 130px">Class</th>
+    <th>描述</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr>
+    <td><code>.am-text-truncate</code></td>
+    <td>禁止换行，超出容器部分截断（以 <code>...</code> 结束）</td>
+  </tr>
+  <tr>
+    <td><code>.am-text-break</code></td>
+    <td>超出文字容器宽度时强制换行，主要用于英文排版</td>
+  </tr>
+  <tr>
+    <td><code>.am-text-nowrap</code></td>
+    <td>禁止换行，不截断超出容器宽度部分</td>
+  </tr>
+  </tbody>
+</table>
+
+<h4><a name="%E5%8D%95%E8%A1%8C%E6%96%87%E5%AD%97%E6%88%AA%E6%96%AD" class="anchor" href="#%E5%8D%95%E8%A1%8C%E6%96%87%E5%AD%97%E6%88%AA%E6%96%AD"><span class="header-link"></span></a>单行文字截断</h4><p><code>.am-text-truncate</code>，元素 <code>display</code> 属性需为 <code>block</code> 或 <code>inline-block</code>。</p>
+<div class="doc-code demo-highlight"><pre><code class="css"><span class="hljs-class">.am-text-truncate</span> <span class="hljs-rules">{
+  <span class="hljs-rule"><span class="hljs-attribute">word-wrap</span>:<span class="hljs-value"> normal</span></span>; <span class="hljs-comment">/* for IE */</span>
+  <span class="hljs-rule"><span class="hljs-attribute">text-overflow</span>:<span class="hljs-value"> ellipsis</span></span>;
+  <span class="hljs-rule"><span class="hljs-attribute">white-space</span>:<span class="hljs-value"> nowrap</span></span>;
+  <span class="hljs-rule"><span class="hljs-attribute">overflow</span>:<span class="hljs-value"> hidden</span></span>;
+<span class="hljs-rule">}</span></span></code></pre></div><div class="doc-example"><div class="am-text-truncate" style="width: 250px; padding: 10px; border: 1px dashed #ddd;">千万不要因为走得太久，而忘记了我们为什么出发</div></div><div class="doc-code demo-highlight"><pre><code class="xml"><span class="hljs-comment">&lt;!-- 超出 200px 的文字将会被截断 --&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-text-truncate"</span> <span class="hljs-attribute">style</span>=<span class="hljs-value">"width: 250px; padding: 10px;"</span>&gt;</span>千万不要因为走得太久，而忘记了我们为什么出发<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span></code></pre></div><p>参考链接：</p>
+<ul>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/white-space">https://developer.mozilla.org/en-US/docs/Web/CSS/white-space</a></li>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/text-overflow">https://developer.mozilla.org/en-US/docs/Web/CSS/text-overflow</a></li>
+<li><a href="http://www.99css.com/archives/811">IE8 &amp; 9 white-space nowrap 失效</a></li>
+</ul>
+<h4><a name="%E5%A4%9A%E8%A1%8C%E6%96%87%E5%AD%97%E6%88%AA%E6%96%AD" class="anchor" href="#%E5%A4%9A%E8%A1%8C%E6%96%87%E5%AD%97%E6%88%AA%E6%96%AD"><span class="header-link"></span></a>多行文字截断</h4><p>在只针对 PC 端开发的年代，可以通过后端控制输出文字的长度来实现固定行数的效果。</p>
+<p>但在响应式页面，这可能不再适用，只能输出足够多的文字，然后通过前端截取需要的行数。</p>
+<p>Webkit 内核的浏览器可以通过 <code>-webkit-line-clamp</code> 私有属性实现多行文字截取。其他浏览器没有这个属性，我的做法通常是把容器的高度限定为 <code>行高 * 显示的行数</code>，超出的部分隐藏，勉强达到目的。</p>
+<div class="doc-code demo-highlight"><pre><code class="css"><span class="hljs-class">.line-clamp</span> <span class="hljs-rules">{
+  <span class="hljs-rule"><span class="hljs-attribute">overflow </span>:<span class="hljs-value"> hidden</span></span>;
+  <span class="hljs-rule"><span class="hljs-attribute">text-overflow</span>:<span class="hljs-value"> ellipsis</span></span>;
+  <span class="hljs-rule"><span class="hljs-attribute">display</span>:<span class="hljs-value"> -webkit-box</span></span>;
+  <span class="hljs-rule"><span class="hljs-attribute">-webkit-line-clamp</span>:<span class="hljs-value"> <span class="hljs-number">2</span></span></span>; <span class="hljs-rule">// 这里修改为要显示的行数
+  <span class="hljs-attribute">-webkit-box-orient</span>:<span class="hljs-value"> vertical</span></span>;
+<span class="hljs-rule">}</span></span></code></pre></div><p>如果需要考虑其他内核的浏览器，可以使用 Amaze UI 封装的 Mixin:</p>
+<div class="doc-code demo-highlight"><pre><code class="css"><span class="hljs-tag">line-clamp</span>(<span class="hljs-at_rule">@<span class="hljs-keyword">lines,</span> @line-height: <span class="hljs-number">1.3em</span>) </span>{
+  <span class="hljs-tag">text-overflow</span>: <span class="hljs-tag">ellipsis</span>;
+  <span class="hljs-tag">display</span>: <span class="hljs-tag">-webkit-box</span>;
+  <span class="hljs-tag">-webkit-box-orient</span>: <span class="hljs-tag">vertical</span>;
+  <span class="hljs-tag">-webkit-line-clamp</span>: <span class="hljs-at_rule">@<span class="hljs-keyword">lines;</span> // number of lines to show
+  overflow: hidden</span>;
+  <span class="hljs-tag">line-height</span>: <span class="hljs-at_rule">@<span class="hljs-keyword">line-height;</span>
+  max-height: @line-height * @lines</span>;
+}</code></pre></div><p>当然，也有一些 JS 插件可以跨浏览器实现，但个人并不推荐在这种场合使用 JS。</p>
+<p><strong>参考链接</strong></p>
+<ul>
+<li><a href="http://dropshado.ws/post/1015351370/webkit-line-clamp">-webkit-line-clamp</a></li>
+<li><a href="http://css-tricks.com/line-clampin/">Line Clampin’ - Truncating Multiple Line Text</a></li>
+<li><a href="http://www.mobify.com/blog/multiline-ellipsis-in-pure-css/">CSS Ellipsis: How to Manage Multi-Line Ellipsis in Pure CSS</a></li>
+<li><a href="https://github.com/josephschmitt/Clamp.js">Clamp.js</a></li>
+<li><a href="https://github.com/jpntex/TextTailor.js">TextTailor.JS</a></li>
+</ul>
+<h3><a name="%E5%9B%BE%E7%89%87%E6%9B%BF%E6%8D%A2" class="anchor" href="#%E5%9B%BE%E7%89%87%E6%9B%BF%E6%8D%A2"><span class="header-link"></span></a>图片替换</h3><p>CSS Image Replacement 是一个历史悠久的技术，也随着前端技术的发展不断进化。</p>
+<p>图片替换技术兼顾显示效果、可访性、SEO，推荐开发者在网站 Logo 、设计特殊的栏目标题等场合使用。</p>
+<p>使用 <code>.am-text-ir</code> class 结合背景图片实现图片替换。</p>
+<div class="doc-example"><header class="doc-ir-demo">
+  <h1><a href="/" class="am-text-ir">Amaze UI</a></h1>
+</header></div><div class="doc-code demo-highlight"><pre><code class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">header</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"doc-ir-demo"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">h1</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"/"</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-text-ir"</span>&gt;</span>Amaze UI<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">h1</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">header</span>&gt;</span></code></pre></div><div class="doc-code demo-highlight"><pre><code class="css"><span class="hljs-class">.doc-ir-demo</span> <span class="hljs-rules">{
+  <span class="hljs-rule"><span class="hljs-attribute">background</span>:<span class="hljs-value"> <span class="hljs-hexcolor">#3bb4f2</span></span></span>;
+<span class="hljs-rule">}</span></span>
+
+<span class="hljs-class">.doc-ir-demo</span> <span class="hljs-tag">h1</span> <span class="hljs-rules">{
+  <span class="hljs-rule"><span class="hljs-attribute">margin</span>:<span class="hljs-value"> <span class="hljs-number">0</span></span></span>;
+  <span class="hljs-rule"><span class="hljs-attribute">padding</span>:<span class="hljs-value"> <span class="hljs-number">10px</span></span></span>;
+<span class="hljs-rule">}</span></span>
+
+<span class="hljs-class">.doc-ir-demo</span> <span class="hljs-tag">a</span> <span class="hljs-rules">{
+  <span class="hljs-rule"><span class="hljs-attribute">display</span>:<span class="hljs-value"> block</span></span>;
+  <span class="hljs-rule"><span class="hljs-attribute">height</span>:<span class="hljs-value"> <span class="hljs-number">29px</span></span></span>;
+  <span class="hljs-rule"><span class="hljs-attribute">width</span>:<span class="hljs-value"> <span class="hljs-number">125px</span></span></span>;
+  <span class="hljs-rule"><span class="hljs-attribute">background</span>:<span class="hljs-value"> <span class="hljs-function">url</span>(/i/landing/logo.png) no-repeat left center</span></span>;
+  <span class="hljs-rule"><span class="hljs-attribute">-webkit-background-size</span>:<span class="hljs-value"> <span class="hljs-number">125px</span> <span class="hljs-number">24px</span></span></span>;
+  <span class="hljs-rule"><span class="hljs-attribute">background-size</span>:<span class="hljs-value"> <span class="hljs-number">125px</span> <span class="hljs-number">24px</span></span></span>;
+<span class="hljs-rule">}</span></span></code></pre></div><ul>
+<li><a href="https://github.com/h5bp/html5-boilerplate/commit/aa0396eae757">Update CSS image replacement technique</a></li>
+<li><a href="http://css-tricks.com/search-results/?q=image++replace">CSS-Tricks | Search Results for &#39;image replace&#39;</a></li>
+</ul>
+<h3><a name="%E5%9B%BE%E6%96%87%E6%B7%B7%E6%8E%92%E8%BE%85%E5%8A%A9" class="anchor" href="#%E5%9B%BE%E6%96%87%E6%B7%B7%E6%8E%92%E8%BE%85%E5%8A%A9"><span class="header-link"></span></a>图文混排辅助</h3><p>使用 <code>float</code> 实现的类似 HTML <code>align</code> 属性的效果，父容器要清除浮动。与 <code>.am-fl</code>、<code>.am-fr</code> 相比，浮动的元素加了 <code>margin</code>。</p>
+<ul>
+<li><code>.am-align-left</code></li>
+<li><code>.am-align-right</code></li>
+</ul>
+<div class="doc-example"><div class="am-cf">
+  <p class="am-align-left">
+    <img src="http://s.cn.bing.net/az/hprichbg/rb/DongBaSymbols_ZH-CN10223363633_1366x768.jpg" alt="" width="240"/>
+  </p>
+  <p style="margin-top: 0">那时候刚好下着雨，柏油路面湿冷冷的，还闪烁着青、黄、红颜色的灯火。我们就在骑楼下躲雨，看绿色的邮筒孤独地站在街的对面。我白色风衣的大口袋里有一封要寄给南部的母亲的信。樱子说她可以撑伞过去帮我寄信。我默默点头。</p>
+
+  <p>“谁叫我们只带来一把小伞哪。”她微笑着说，一面撑起伞，准备过马路帮我寄信。从她伞骨渗下来的小雨点，溅在我的眼镜玻璃上。</p>
+
+  <p>随着一阵拔尖的煞车声，樱子的一生轻轻地飞了起来。缓缓地，飘落在湿冷的街面上，好像一只夜晚的蝴蝶。</p>
+
+  <p>虽然是春天，好像已是秋深了。</p>
+
+  <div class="am-align-right">
+    <img src="http://s.cn.bing.net/az/hprichbg/rb/DongBaSymbols_ZH-CN10223363633_1366x768.jpg" alt="" width="240"/>
+  </div>
+
+  <p>
+    她只是过马路去帮我寄信。这简单的行动，却要叫我终身难忘了。我缓缓睁开眼，茫然站在骑楼下，眼里裹着滚烫的泪水。世上所有的车子都停了下来，人潮涌向马路中央。没有人知道那躺在街面的，就是我的，蝴蝶。这时她只离我五公尺，竟是那么遥远。更大的雨点溅在我的眼镜上，溅到我的生命里来。</p>
+
+  <p>为什么呢？只带一把雨伞？</p>
+
+  <p>
+    然而我又看到樱子穿着白色的风衣，撑着伞，静静地过马路了。她是要帮我寄信的。那，那是一封写给南部母亲的信。我茫然站在骑楼下，我又看到永远的樱子走到街心。其实雨下得并不大，却是一生一世中最大的一场雨。而那封信是这样写的，年轻的樱子知不知道呢？</p>
+
+  <p>妈：我打算在下个月和樱子结婚。</p>
+</div></div><div class="doc-code demo-highlight"><pre><code class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-cf"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">p</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-align-left"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">img</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">"..."</span> <span class="hljs-attribute">alt</span>=<span class="hljs-value">""</span>/&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
+  ...
+  <span class="hljs-tag">&lt;<span class="hljs-title">p</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-align-right"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">img</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">"..."</span> <span class="hljs-attribute">alt</span>=<span class="hljs-value">""</span>/&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
+  ...
+<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span></code></pre></div><h2><a name="%E5%93%8D%E5%BA%94%E5%BC%8F%E8%BE%85%E5%8A%A9" class="anchor" href="#%E5%93%8D%E5%BA%94%E5%BC%8F%E8%BE%85%E5%8A%A9"><span class="header-link"></span></a>响应式辅助</h2><h3><a name="%E8%A7%86%E5%8F%A3%E5%A4%A7%E5%B0%8F" class="anchor" href="#%E8%A7%86%E5%8F%A3%E5%A4%A7%E5%B0%8F"><span class="header-link"></span></a>视口大小</h3><p><code>.am-[show|hide]-[sm|md|lg][-up|-down|-only]</code>，调整浏览器窗口大小查看元素的显隐。</p>
+<table class="am-table am-table-bd am-table-striped">
+  <thead>
+  <tr>
+    <th>显示辅助 class</th>
+    <th>隐藏辅助 class</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr>
+    <td>
+      <code>.am-show-sm-only</code> <br/>
+      <code>.am-show-sm-up</code> <br/>
+      <code>.am-show-sm</code> <br/>
+      <code>.am-show-sm-down</code>
+    </td>
+    <td>
+      <code>.am-hide-sm-only</code> <br/>
+      <code>.am-hide-sm-up</code> <br/>
+      <code>.am-hide-sm</code> <br/>
+      <code>.am-hide-sm-down</code>
+    </td>
+  </tr>
+
+  <tr>
+    <td>
+      <code>.am-show-md-only</code> <br/>
+      <code>.am-show-md-up</code> <br/>
+      <code>.am-show-md</code> <br/>
+      <code>.am-show-md-down</code>
+    </td>
+    <td>
+      <code>.am-hide-md-only</code> <br/>
+      <code>.am-hide-md-up</code> <br/>
+      <code>.am-hide-md</code> <br/>
+      <code>.am-hide-md-down</code>
+    </td>
+  </tr>
+
+  <tr>
+    <td>
+      <code>.am-show-lg-only</code> <br/>
+      <code>.am-show-lg-up
+      </code> <br/> <code>.am-show-lg
+    </code> <br/> <code>.am-show-lg-down</code>
+    </td>
+    <td>
+      <code>.am-hide-lg-only</code> <br/>
+      <code>.am-hide-lg-up
+      </code> <br/> <code>.am-hide-lg
+    </code> <br/> <code>.am-hide-lg-down</code>
+    </td>
+  </tr>
+  </tbody>
+</table>
+
+
+<div class="doc-example"><ul>
+  <li class="am-show-sm-only">仅 small 可见</li>
+  <li class="am-show-md-up">medium + 可见</li>
+  <li class="am-show-md-only">仅 medium 可见</li>
+  <li class="am-show-lg-up">large 可见</li>
+  <li class="am-show-lg-only">仅 large 可见</li>
+</ul></div><div class="doc-code demo-highlight"><pre><code class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">ul</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">li</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-show-sm-only"</span>&gt;</span>仅 small 可见<span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">li</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-show-md-up"</span>&gt;</span>medium + 可见<span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">li</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-show-md-only"</span>&gt;</span>仅 medium 可见<span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">li</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-show-lg-up"</span>&gt;</span>large 可见<span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">li</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-show-lg-only"</span>&gt;</span>仅 large 可见<span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">ul</span>&gt;</span></code></pre></div><h3><a name="%E5%B1%8F%E5%B9%95%E6%96%B9%E5%90%91" class="anchor" href="#%E5%B1%8F%E5%B9%95%E6%96%B9%E5%90%91"><span class="header-link"></span></a>屏幕方向</h3><ul>
+<li>横屏：<code>.am-show-landscape</code>, <code>.am-hide-landscape</code></li>
+<li>竖屏：<code>.am-show-portrait</code>, <code>.am-hide-portrait</code></li>
+</ul>
+<div class="doc-example"><ul>
+  <li class="am-show-landscape">横屏可见...</li>
+  <li class="am-show-portrait">竖屏可见...</li>
+</ul></div><div class="doc-code demo-highlight"><pre><code class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">ul</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">li</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-show-landscape"</span>&gt;</span>横屏可见...<span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">li</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-show-portrait"</span>&gt;</span>竖屏可见...<span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">ul</span>&gt;</span></code></pre></div>
+
+  <nav class="amp-pager">
+  </nav>
+</section>
+
+<script>
+  var _hmt = _hmt || [];
+  (function() {
+    var hm = document.createElement("script");
+    hm.src = "//hm.baidu.com/hm.js?b424d39312c46404f15e22574a531fbb";
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(hm);
+  })();
+
+  (function(w, d, s) {
+    function gs(){
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){ (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o), m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(w , d, s ,'//www.google-analytics.com/analytics.js','ga');
+      ga('create', 'UA-34196034-8', 'amazeui.org');
+      ga('send', 'pageview');
+    }
+    if (w.addEventListener) { w.addEventListener('load', gs, false); }
+    else if (w.attachEvent) { w.attachEvent('onload',gs); }
+  }(window, document, 'script'));
+</script>
+</body>
+</html>

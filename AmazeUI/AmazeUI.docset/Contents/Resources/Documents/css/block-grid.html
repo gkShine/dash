@@ -1,0 +1,268 @@
+<!doctype html>
+<html class="no-js">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <title>AVG-Grid | Amaze UI Dash Docsets</title>
+  <link rel="stylesheet" href="../assets/css/amazeui.min.css">
+  <link rel="stylesheet" href="../assets/css/app.css">
+  <script src="../assets/js/jquery.min.js"></script>
+  <script src="../assets/js/amazeui.min.js"></script>
+  
+</head>
+<body class="am-doc">
+<section class="doc-main am-padding-lg">
+    <h1><a name="AVG-Grid" class="anchor" href="#AVG-Grid"><span class="header-link"></span></a>AVG-Grid</h1><hr>
+<p>Average Grid，均分网格（原 Block Grid），使用 <code>ul</code> / <code>ol</code> 创建等分列，用于内容的排列。</p>
+<p>响应式断点为：</p>
+<table class="am-table am-table-bordered am-table-striped">
+  <thead>
+  <tr>
+    <th style="width: 160px">Class</th>
+    <th>区间</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr>
+    <td><code>.am-avg-sm-*</code></td>
+    <td><code>0 - 640px</code></td>
+  </tr>
+  <tr>
+    <td><code>.am-avg-md-*</code></td>
+    <td><code>641px - 1024px</code></td>
+  </tr>
+  <tr>
+    <td><code>.am-avg-lg-*</code></td>
+    <td><code>1025px + </code></td>
+  </tr>
+  </tbody>
+</table>
+
+<p>与布局网格不同的是，这里的<strong>数字表示几等分</strong>，而不是占 12 等分中的几列，比如 <code>.am-avg-sm-2</code> 会将子元素 <code>&lt;li&gt;</code> 的宽度设置为 <code>50%</code>。</p>
+<p>考虑到通用性（菜单、图片）等，<code>&lt;li&gt;</code> 没有设置 <code>padding</code>，使用时需根据需求自行设置。</p>
+<p>另外需要注意的 AVG Grid <strong>只能用于 <code>&lt;ul&gt;</code> / <code>&lt;ol&gt;</code> 结构</strong>。</p>
+<p><del>下面的演示中，添加了以下自定义样式（Less）：</del></p>
+<p>这部分代码已经整合到<a href="/css/thumbnail?_ver=2.x">缩略图</a>，无需再添加。</p>
+<div class="doc-code demo-highlight"><pre><code class="css">.doc-block-grid {
+  margin-left: -5px;
+  margin-right: -5px;
+  &gt; li {
+    padding: 0 5px 10px 5px;
+    img {
+      border: 1px solid #CCC;
+      padding: 2px;
+      background: #FFF;
+    }
+  }
+}</code></pre></div><h2><a name="%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8" class="anchor" href="#%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8"><span class="header-link"></span></a>基本使用</h2><p>只添加 <code>.am-avg-sm-*</code>，应用于所有屏幕尺寸。</p>
+<div class="doc-example"><ul class="am-avg-sm-4 am-thumbnails">
+  <li><img class="am-thumbnail" src="http://cn.bing.com/az/hprichv/LondonTrainStation_GettyRR_139321755_ZH-CN742316019.jpg" /></li>
+  <li><img class="am-thumbnail" src="http://s.cn.bing.net/az/hprichbg/rb/CardinalsBerries_ZH-CN10679090179_1366x768.jpg" /></li>
+  <li><img class="am-thumbnail" src="http://s.cn.bing.net/az/hprichbg/rb/QingdaoJiaozhou_ZH-CN10690497202_1366x768.jpg" /></li>
+  <li><img class="am-thumbnail" src="http://s.cn.bing.net/az/hprichbg/rb/FennecFox_ZH-CN13720911949_1366x768.jpg" /></li>
+</ul></div><div class="doc-code demo-highlight"><pre><code class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">ul</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-avg-sm-4 am-thumbnails"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">img</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-thumbnail"</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">"http://cn.bing.com/az/hprichv/LondonTrainStation_GettyRR_139321755_ZH-CN742316019.jpg"</span> /&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">img</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-thumbnail"</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">"http://s.cn.bing.net/az/hprichbg/rb/CardinalsBerries_ZH-CN10679090179_1366x768.jpg"</span> /&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">img</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-thumbnail"</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">"http://s.cn.bing.net/az/hprichbg/rb/QingdaoJiaozhou_ZH-CN10690497202_1366x768.jpg"</span> /&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">img</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-thumbnail"</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">"http://s.cn.bing.net/az/hprichbg/rb/FennecFox_ZH-CN13720911949_1366x768.jpg"</span> /&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">ul</span>&gt;</span></code></pre></div><h2><a name="%E5%93%8D%E5%BA%94%E5%BC%8F" class="anchor" href="#%E5%93%8D%E5%BA%94%E5%BC%8F"><span class="header-link"></span></a>响应式</h2><p>按需增加更多响应式 class，缩放窗口可以查看响应效果。</p>
+<div class="doc-example"><ul class="am-avg-sm-2 am-avg-md-3 am-avg-lg-4 am-thumbnails">
+  <li><img class="am-thumbnail" src="http://cn.bing.com/az/hprichv/LondonTrainStation_GettyRR_139321755_ZH-CN742316019.jpg" /></li>
+  <li><img class="am-thumbnail" src="http://s.cn.bing.net/az/hprichbg/rb/CardinalsBerries_ZH-CN10679090179_1366x768.jpg" /></li>
+  <li><img class="am-thumbnail" src="http://s.cn.bing.net/az/hprichbg/rb/QingdaoJiaozhou_ZH-CN10690497202_1366x768.jpg" /></li>
+  <li><img class="am-thumbnail" src="http://s.cn.bing.net/az/hprichbg/rb/FennecFox_ZH-CN13720911949_1366x768.jpg" /></li>
+  <li><img class="am-thumbnail" src="http://cn.bing.com/az/hprichv/LondonTrainStation_GettyRR_139321755_ZH-CN742316019.jpg" /></li>
+  <li><img class="am-thumbnail" src="http://s.cn.bing.net/az/hprichbg/rb/CardinalsBerries_ZH-CN10679090179_1366x768.jpg" /></li>
+  <li><img class="am-thumbnail" src="http://s.cn.bing.net/az/hprichbg/rb/QingdaoJiaozhou_ZH-CN10690497202_1366x768.jpg" /></li>
+  <li><img class="am-thumbnail" src="http://s.cn.bing.net/az/hprichbg/rb/FennecFox_ZH-CN13720911949_1366x768.jpg" /></li>
+</ul></div><div class="doc-code demo-highlight"><pre><code class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">ul</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-avg-sm-2 am-avg-md-3 am-avg-lg-4 am-thumbnails"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">img</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-thumbnail"</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">"http://cn.bing.com/az/hprichv/LondonTrainStation_GettyRR_139321755_ZH-CN742316019.jpg"</span> /&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">img</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-thumbnail"</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">"http://s.cn.bing.net/az/hprichbg/rb/CardinalsBerries_ZH-CN10679090179_1366x768.jpg"</span> /&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">img</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-thumbnail"</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">"http://s.cn.bing.net/az/hprichbg/rb/QingdaoJiaozhou_ZH-CN10690497202_1366x768.jpg"</span> /&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">img</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-thumbnail"</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">"http://s.cn.bing.net/az/hprichbg/rb/FennecFox_ZH-CN13720911949_1366x768.jpg"</span> /&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">img</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-thumbnail"</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">"http://cn.bing.com/az/hprichv/LondonTrainStation_GettyRR_139321755_ZH-CN742316019.jpg"</span> /&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">img</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-thumbnail"</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">"http://s.cn.bing.net/az/hprichbg/rb/CardinalsBerries_ZH-CN10679090179_1366x768.jpg"</span> /&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">img</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-thumbnail"</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">"http://s.cn.bing.net/az/hprichbg/rb/QingdaoJiaozhou_ZH-CN10690497202_1366x768.jpg"</span> /&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">img</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-thumbnail"</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">"http://s.cn.bing.net/az/hprichbg/rb/FennecFox_ZH-CN13720911949_1366x768.jpg"</span> /&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">ul</span>&gt;</span></code></pre></div><h2><a name="%E4%B9%9D%E5%AE%AB%E6%A0%BC" class="anchor" href="#%E4%B9%9D%E5%AE%AB%E6%A0%BC"><span class="header-link"></span></a>九宫格</h2><p>看到同学提这样的需求，就简单写一个示例。</p>
+<style>
+  .boxes {
+    width: 300px;
+  }
+
+  .boxes .box {
+    height: 100px;
+    color: #eee;
+    line-height: 100px;
+    text-align: center;
+    font-weight: bold;
+    transition: transform .25s ease;
+  }
+
+  .boxes .box:hover {
+    font-size: 250%;
+    transform: rotate(360deg);
+    -webkit-animation: heart .45s ease-in-out .15s infinite;
+    animation: heart .45s ease-in-out .15s infinite;
+  }
+
+  .box-1 {
+    background-color: red;
+  }
+
+  .box-2 {
+    background-color: orange;
+  }
+
+  .box-3 {
+    background-color: #0000ff;
+  }
+
+  .box-4 {
+    background-color: #008000;
+  }
+
+  .box-5 {
+    background-color: red;
+  }
+
+  .box-6 {
+    background-color: orange;
+  }
+
+  .box-7 {
+    background-color: #0000ff;
+  }
+
+  .box-8 {
+    background-color: #008000;
+  }
+
+  .box-9 {
+    background-color: red;
+  }
+
+  @-webkit-keyframes heart {
+    0% {
+      font-size: 150%;
+    }
+
+    100% {
+      font-size: 300%;
+    }
+  }
+
+  @keyframes heart {
+    0% {
+      font-size: 150%;
+    }
+
+    100% {
+      font-size: 300%;
+    }
+  }
+</style>
+
+<div class="doc-example"><ul class="am-avg-sm-3 boxes">
+  <li class="box box-1">1</li>
+  <li class="box box-2">2</li>
+  <li class="box box-3">3</li>
+  <li class="box box-4">4</li>
+  <li class="box box-5">5</li>
+  <li class="box box-6">6</li>
+  <li class="box box-7">7</li>
+  <li class="box box-8">8</li>
+  <li class="box box-9">9</li>
+</ul></div><div class="doc-code demo-highlight"><pre><code class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">ul</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-avg-sm-3 boxes"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">li</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"box box-1"</span>&gt;</span>1<span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">li</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"box box-2"</span>&gt;</span>2<span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">li</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"box box-3"</span>&gt;</span>3<span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">li</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"box box-4"</span>&gt;</span>4<span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">li</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"box box-5"</span>&gt;</span>5<span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">li</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"box box-6"</span>&gt;</span>6<span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">li</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"box box-7"</span>&gt;</span>7<span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">li</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"box box-8"</span>&gt;</span>8<span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">li</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"box box-9"</span>&gt;</span>9<span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">ul</span>&gt;</span></code></pre></div><div class="doc-code demo-highlight"><pre><code class="css"><span class="hljs-class">.boxes</span> <span class="hljs-rules">{
+  <span class="hljs-rule"><span class="hljs-attribute">width</span>:<span class="hljs-value"> <span class="hljs-number">300px</span></span></span>;
+<span class="hljs-rule">}</span></span>
+
+<span class="hljs-class">.boxes</span> <span class="hljs-class">.box</span> <span class="hljs-rules">{
+  <span class="hljs-rule"><span class="hljs-attribute">height</span>:<span class="hljs-value"> <span class="hljs-number">100px</span></span></span>;
+  <span class="hljs-rule"><span class="hljs-attribute">color</span>:<span class="hljs-value"> <span class="hljs-hexcolor">#eee</span></span></span>;
+  <span class="hljs-rule"><span class="hljs-attribute">line-height</span>:<span class="hljs-value"> <span class="hljs-number">100px</span></span></span>;
+  <span class="hljs-rule"><span class="hljs-attribute">text-align</span>:<span class="hljs-value"> center</span></span>;
+  <span class="hljs-rule"><span class="hljs-attribute">font-weight</span>:<span class="hljs-value"> bold</span></span>;
+  <span class="hljs-rule"><span class="hljs-attribute">transition</span>:<span class="hljs-value"> all .<span class="hljs-number">2s</span> ease</span></span>;
+<span class="hljs-rule">}</span></span>
+
+<span class="hljs-class">.boxes</span> <span class="hljs-class">.box</span><span class="hljs-pseudo">:hover</span> <span class="hljs-rules">{
+  <span class="hljs-rule"><span class="hljs-attribute">font-size</span>:<span class="hljs-value"> <span class="hljs-number">250%</span></span></span>;
+  <span class="hljs-rule"><span class="hljs-attribute">transform</span>:<span class="hljs-value"> <span class="hljs-function">rotate</span>(<span class="hljs-number">360deg</span>)</span></span>;
+<span class="hljs-rule">}</span></span>
+
+<span class="hljs-class">.box-1</span> <span class="hljs-rules">{
+  <span class="hljs-rule"><span class="hljs-attribute">background-color</span>:<span class="hljs-value"> red</span></span>;
+<span class="hljs-rule">}</span></span>
+
+<span class="hljs-class">.box-2</span> <span class="hljs-rules">{
+  <span class="hljs-rule"><span class="hljs-attribute">background-color</span>:<span class="hljs-value"> orange</span></span>;
+<span class="hljs-rule">}</span></span>
+
+<span class="hljs-class">.box-3</span> <span class="hljs-rules">{
+  <span class="hljs-rule"><span class="hljs-attribute">background-color</span>:<span class="hljs-value"> <span class="hljs-hexcolor">#0000ff</span></span></span>;
+<span class="hljs-rule">}</span></span>
+
+<span class="hljs-class">.box-4</span> <span class="hljs-rules">{
+  <span class="hljs-rule"><span class="hljs-attribute">background-color</span>:<span class="hljs-value"> <span class="hljs-hexcolor">#008000</span></span></span>;
+<span class="hljs-rule">}</span></span>
+
+<span class="hljs-class">.box-5</span> <span class="hljs-rules">{
+  <span class="hljs-rule"><span class="hljs-attribute">background-color</span>:<span class="hljs-value"> red</span></span>;
+<span class="hljs-rule">}</span></span>
+
+<span class="hljs-class">.box-6</span> <span class="hljs-rules">{
+  <span class="hljs-rule"><span class="hljs-attribute">background-color</span>:<span class="hljs-value"> orange</span></span>;
+<span class="hljs-rule">}</span></span>
+
+<span class="hljs-class">.box-7</span> <span class="hljs-rules">{
+  <span class="hljs-rule"><span class="hljs-attribute">background-color</span>:<span class="hljs-value"> <span class="hljs-hexcolor">#0000ff</span></span></span>;
+<span class="hljs-rule">}</span></span>
+
+<span class="hljs-class">.box-8</span> <span class="hljs-rules">{
+  <span class="hljs-rule"><span class="hljs-attribute">background-color</span>:<span class="hljs-value"> <span class="hljs-hexcolor">#008000</span></span></span>;
+<span class="hljs-rule">}</span></span>
+
+<span class="hljs-class">.box-9</span> <span class="hljs-rules">{
+  <span class="hljs-rule"><span class="hljs-attribute">background-color</span>:<span class="hljs-value"> red</span></span>;
+<span class="hljs-rule">}</span></span></code></pre></div>
+
+  <nav class="amp-pager">
+  </nav>
+</section>
+
+<script>
+  var _hmt = _hmt || [];
+  (function() {
+    var hm = document.createElement("script");
+    hm.src = "//hm.baidu.com/hm.js?b424d39312c46404f15e22574a531fbb";
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(hm);
+  })();
+
+  (function(w, d, s) {
+    function gs(){
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){ (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o), m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(w , d, s ,'//www.google-analytics.com/analytics.js','ga');
+      ga('create', 'UA-34196034-8', 'amazeui.org');
+      ga('send', 'pageview');
+    }
+    if (w.addEventListener) { w.addEventListener('load', gs, false); }
+    else if (w.attachEvent) { w.attachEvent('onload',gs); }
+  }(window, document, 'script'));
+</script>
+</body>
+</html>

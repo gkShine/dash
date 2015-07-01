@@ -1,0 +1,119 @@
+<!doctype html>
+<html class="no-js">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <title>Web App 相关 | Amaze UI Dash Docsets</title>
+  <link rel="stylesheet" href="../assets/css/amazeui.min.css">
+  <link rel="stylesheet" href="../assets/css/app.css">
+  <script src="../assets/js/jquery.min.js"></script>
+  <script src="../assets/js/amazeui.min.js"></script>
+  
+</head>
+<body class="am-doc">
+<section class="doc-main am-padding-lg">
+    <h1><a name="Web%20App%20%E7%9B%B8%E5%85%B3" class="anchor" href="#Web%20App%20%E7%9B%B8%E5%85%B3"><span class="header-link"></span></a>Web App 相关</h1><hr>
+<h2><a name="%E6%A1%8C%E9%9D%A2%E5%9B%BE%E6%A0%87" class="anchor" href="#%E6%A1%8C%E9%9D%A2%E5%9B%BE%E6%A0%87"><span class="header-link"></span></a>桌面图标</h2><p>在开发网站的过程中我们常常会设置一个 Touch Icon。由于系统的差异性，添加到桌面图标并没有统一的标准。iOS 最早支持 Touch Icon，并有明确的规范，其他系统一定程度上支持 iOS 的规范。</p>
+<h3><a name="%E7%BB%88%E6%9E%81%E6%96%B9%E6%A1%88" class="anchor" href="#%E7%BB%88%E6%9E%81%E6%96%B9%E6%A1%88"><span class="header-link"></span></a>终极方案</h3><p>下面是兼容 iOS 4.2+ 及 Android 2.1+ 的通用写法：</p>
+<div class="doc-code demo-highlight"><pre><code class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">link</span> <span class="hljs-attribute">rel</span>=<span class="hljs-value">"apple-touch-icon-precomposed"</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"/path/to/icon72x72@2x.png"</span>&gt;</span></code></pre></div><ul>
+<li><code>rel=&quot;apple-touch-icon-precomposed&quot;</code>：不给 Icon 添加额外的效果；兼容 Android 1.5 - 2.1。</li>
+<li>Icon 尺寸：144px * 144px，兼容 iPhone、iPad 及绝大部分安卓设备。</li>
+</ul>
+<p>如果想了解更多细节，可以继续阅读后面的内容。</p>
+<h3><a name="iOS" class="anchor" href="#iOS"><span class="header-link"></span></a>iOS</h3><div class="doc-code demo-highlight"><pre><code class="xml"><span class="hljs-comment">&lt;!-- Add to homescreen for Safari on iOS --&gt;</span>
+<span class="hljs-comment">&lt;!-- 添加至主屏, 从主屏进入会隐藏地址栏和状态栏, 全屏(content="yes") --&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">meta</span> <span class="hljs-attribute">name</span>=<span class="hljs-value">"apple-mobile-web-app-capable"</span> <span class="hljs-attribute">content</span>=<span class="hljs-value">"yes"</span>&gt;</span>
+
+<span class="hljs-comment">&lt;!-- 系统顶栏的颜色(content = black、white 和 black-translucent)选其一就可以 --&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">meta</span> <span class="hljs-attribute">name</span>=<span class="hljs-value">"apple-mobile-web-app-status-bar-style"</span> <span class="hljs-attribute">content</span>=<span class="hljs-value">"black"</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">meta</span> <span class="hljs-attribute">name</span>=<span class="hljs-value">"apple-mobile-web-app-status-bar-style"</span> <span class="hljs-attribute">content</span>=<span class="hljs-value">"white"</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">meta</span> <span class="hljs-attribute">name</span>=<span class="hljs-value">"apple-mobile-web-app-status-bar-style"</span> <span class="hljs-attribute">content</span>=<span class="hljs-value">"black-translucent"</span>&gt;</span>
+
+<span class="hljs-comment">&lt;!-- 指定标题 --&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">meta</span> <span class="hljs-attribute">name</span>=<span class="hljs-value">"apple-mobile-web-app-title"</span> <span class="hljs-attribute">content</span>=<span class="hljs-value">"Web Starter Kit"</span>&gt;</span>
+
+<span class="hljs-comment">&lt;!-- 指定icon, 建议PNG格式--&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">link</span> <span class="hljs-attribute">rel</span>=<span class="hljs-value">"apple-touch-icon"</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"touch-icon-iphone.png"</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">link</span> <span class="hljs-attribute">rel</span>=<span class="hljs-value">"apple-touch-icon"</span> <span class="hljs-attribute">sizes</span>=<span class="hljs-value">"76x76"</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"touch-icon-ipad.png"</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">link</span> <span class="hljs-attribute">rel</span>=<span class="hljs-value">"apple-touch-icon"</span> <span class="hljs-attribute">sizes</span>=<span class="hljs-value">"120x120"</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"touch-icon-iphone-retina.png"</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">link</span> <span class="hljs-attribute">rel</span>=<span class="hljs-value">"apple-touch-icon"</span> <span class="hljs-attribute">sizes</span>=<span class="hljs-value">"152x152"</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"touch-icon-ipad-retina.png"</span>&gt;</span>
+
+<span class="hljs-comment">&lt;!--
+ 使用rel="apple-touch-icon"属性为“增加高光光亮的图标”, 系统会自动为图标添加圆角及高光；
+ 使用rel="apple-touch-icon-precomposed"属性为“设计原图图标”；
+--&gt;</span></code></pre></div><p>尺寸说明：</p>
+<table class="am-table am-table-bd am-table-striped" style="text-align: center;">
+  <thead style="text-align: center;">
+  <tr>
+    <th style="width:100px; text-align: center">机型</th>
+    <th>iPhone 5 and iPod touch (高分辨率)</th>
+    <th>iPhone and iPod touch (高分辨率)</th>
+    <th>iPad and iPad mini (高分辨率)</th>
+    <th>iPad 2 and iPad mini (标准分辨率)</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr>
+    <td>尺寸 (px)</td>
+    <td>120 x 120</td>
+    <td>120 x 120</td>
+    <td>152 x 152</td>
+    <td>76 x 76</td>
+  </tr>
+  </tbody>
+</table>
+
+<p><strong>参考链接：</strong></p>
+<ul>
+<li><a href="https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/MobileHIG/IconMatrix.html">iOS Human Interface Guidelines - Icon and Image Sizes
+</a></li>
+<li><a href="http://mathiasbynens.be/notes/touch-icons">Everything you always wanted to know about touch icons</a></li>
+<li><a href="https://developer.apple.com/library/ios/documentation/AppleApplications/Reference/SafariWebContent/ConfiguringWebApplications/ConfiguringWebApplications.html">Configuring Web Applications</a></li>
+</ul>
+<h3><a name="Android%20Chrome" class="anchor" href="#Android%20Chrome"><span class="header-link"></span></a>Android Chrome</h3><p>Android 下目前只有 Chrome 31 支持 Add to Homescreen。</p>
+<div class="doc-code demo-highlight"><pre><code class="xml"><span class="hljs-comment">&lt;!-- Add to homescreen for Chrome on Android --&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">meta</span> <span class="hljs-attribute">name</span>=<span class="hljs-value">"mobile-web-app-capable"</span> <span class="hljs-attribute">content</span>=<span class="hljs-value">"yes"</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">link</span> <span class="hljs-attribute">rel</span>=<span class="hljs-value">"icon"</span> <span class="hljs-attribute">sizes</span>=<span class="hljs-value">"196x196"</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"images/touch/chrome-touch-icon-196x196.png"</span>&gt;</span></code></pre></div><p><strong>参考链接：</strong></p>
+<ul>
+<li><a href="https://developer.chrome.com/multidevice/android/installtohomescreen">Chrome Add to Homescreen</a></li>
+</ul>
+<h3><a name="Win%208" class="anchor" href="#Win%208"><span class="header-link"></span></a>Win 8</h3><div class="doc-code demo-highlight"><pre><code class="xml"><span class="hljs-comment">&lt;!-- Tile icon for Win8 (144x144 + tile color) --&gt;</span>
+<span class="hljs-comment">&lt;!-- win 8 磁贴图标 --&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">meta</span> <span class="hljs-attribute">name</span>=<span class="hljs-value">"msapplication-TileImage"</span> <span class="hljs-attribute">content</span>=<span class="hljs-value">"images/touch/ms-touch-icon-144x144-precomposed.png"</span>&gt;</span>
+<span class="hljs-comment">&lt;!-- win 8 磁贴颜色 --&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">meta</span> <span class="hljs-attribute">name</span>=<span class="hljs-value">"msapplication-TileColor"</span> <span class="hljs-attribute">content</span>=<span class="hljs-value">"#3372DF"</span>&gt;</span></code></pre></div><p><strong>参考链接：</strong></p>
+<ul>
+<li><a href="http://msdn.microsoft.com/en-us/library/ie/hh772707(v=vs.85).aspx">Pinned Sites</a></li>
+<li><a href="http://msdn.microsoft.com/zh-cn/library/ie/dn255024(v=vs.85).aspx">MSDN - Pinned site metadata reference</a></li>
+</ul>
+
+
+  <nav class="amp-pager">
+  </nav>
+</section>
+
+<script>
+  var _hmt = _hmt || [];
+  (function() {
+    var hm = document.createElement("script");
+    hm.src = "//hm.baidu.com/hm.js?b424d39312c46404f15e22574a531fbb";
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(hm);
+  })();
+
+  (function(w, d, s) {
+    function gs(){
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){ (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o), m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(w , d, s ,'//www.google-analytics.com/analytics.js','ga');
+      ga('create', 'UA-34196034-8', 'amazeui.org');
+      ga('send', 'pageview');
+    }
+    if (w.addEventListener) { w.addEventListener('load', gs, false); }
+    else if (w.attachEvent) { w.attachEvent('onload',gs); }
+  }(window, document, 'script'));
+</script>
+</body>
+</html>

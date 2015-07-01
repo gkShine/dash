@@ -1,0 +1,143 @@
+<!doctype html>
+<html class="no-js">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <title>基于 Amaze UI 进阶开发 | Amaze UI Dash Docsets</title>
+  <link rel="stylesheet" href="../assets/css/amazeui.min.css">
+  <link rel="stylesheet" href="../assets/css/app.css">
+  <script src="../assets/js/jquery.min.js"></script>
+  <script src="../assets/js/amazeui.min.js"></script>
+  
+</head>
+<body class="am-doc">
+<section class="doc-main am-padding-lg">
+    <h1><a name="%E5%9F%BA%E4%BA%8E%20Amaze%20UI%20%E8%BF%9B%E9%98%B6%E5%BC%80%E5%8F%91" class="anchor" href="#%E5%9F%BA%E4%BA%8E%20Amaze%20UI%20%E8%BF%9B%E9%98%B6%E5%BC%80%E5%8F%91"><span class="header-link"></span></a>基于 Amaze UI 进阶开发</h1><hr>
+<p>使用中有何问题，请直接在<a href="#ds-thread">评论</a>中留言，我们会不断补充完善文档。</p>
+<h2><a name="%E9%A1%B9%E7%9B%AE%E7%BB%93%E6%9E%84" class="anchor" href="#%E9%A1%B9%E7%9B%AE%E7%BB%93%E6%9E%84"><span class="header-link"></span></a>项目结构</h2><pre>Amaze UI
+|-- HISTORY.md
+|-- LICENSE
+|-- README.md
+|-- package.json
+|-- dist        # 部署目录
+|-- docs        # 文档
+|-- fonts       # Icon font，目前使用了 http://staticfile.org/
+|-- gulpfile.js # 构建配置文件
+|-- js          # JS 文件
+|-- less        # LESS 文件
+|-- tools       # 相关工具
+|-- vendor      # 第三方文件
+`-- widget      # Web 组件</pre><h2><a name="LESS" class="anchor" href="#LESS"><span class="header-link"></span></a>LESS</h2><p><code>less</code> 文件中存放了所有 LESS 源文件，其中以 <code>ui.</code> 开头的为 JS 插件相关的样式。</p>
+<p>下面两个文件为开发中可能需要关注的：</p>
+<ul>
+<li><code>mixins.less</code> - LESS 常用函数封装</li>
+<li><code>variables.less</code> - 所有变量列表</li>
+</ul>
+<pre>less
+|-- amazeui.less          // 引入了 Amaze UI 所有样式文件
+|-- amazeui.widgets.less  // gulp 自动生成，Web 组件及依赖的样式
+|-- amui.less             // CSS 部分的样式
+├── animation.less
+├── article.less
+├── badge.less
+├── base.less
+├── block-grid.less
+├── breadcrumb.less
+├── button-group.less
+├── button.less
+├── close.less
+├── code.less
+├── comment.less
+├── form.less
+├── grid.less
+├── icon.less
+├── image.less
+├── input-group.less
+├── legacy.ie.less
+├── list.less
+├── mixins.less
+├── nav.less
+├── pagination.less
+├── panel.less
+├── print.less
+├── progress.less
+├── table.less
+├── themes       // 主题，暂未用到
+├── thumbnail.less
+├── topbar.less
+├── ui.add2home.less
+├── ui.alert.less
+├── ui.component.less
+├── ui.dropdown.less
+├── ui.flexslider.less
+├── ui.modal.less
+├── ui.offcanvas.less
+├── ui.popover.less
+├── ui.progress.less
+├── ui.pureview.less
+├── ui.share.less
+├── ui.tabs.less
+├── utility.less
+└── variables.less</pre><h2><a name="JavaScript" class="anchor" href="#JavaScript"><span class="header-link"></span></a>JavaScript</h2><p>JS 文件分三类：</p>
+<ul>
+<li><code>ui.</code> 开头的为 <a href="/javascript">JS 插件</a>中的【UI 增强】部分；</li>
+<li><code>util.</code> 开头的为 <a href="/javascript">JS 插件</a>中的 【实用工具】部分。</li>
+</ul>
+<pre>js
+├── amazeui.legacy.js // 针对 IE 8 打包的 JS
+├── core.js
+├── ui.add2home.js
+├── ui.alert.js
+├── ui.button.js
+├── ui.collapse.js
+├── ui.dimmer.js
+├── ui.dropdown.js
+├── ui.flexslider.js
+├── ui.iscroll-lite.js
+├── ui.modal.js
+├── ui.offcanvas.js
+├── ui.pinchzoom.js
+├── ui.popover.js
+├── ui.progress.js
+├── ui.pureview.js
+├── ui.scrollspy.js
+├── ui.scrollspynav.js
+├── ui.share.js
+├── ui.smooth-scroll.js
+├── ui.sticky.js
+├── ui.tabs.js
+├── util.cookie.js
+├── util.fastclick.js
+├── util.fullscreen.js
+├── util.hammer.js
+└── util.qrcode.js</pre>
+
+  <nav class="amp-pager">
+  </nav>
+</section>
+
+<script>
+  var _hmt = _hmt || [];
+  (function() {
+    var hm = document.createElement("script");
+    hm.src = "//hm.baidu.com/hm.js?b424d39312c46404f15e22574a531fbb";
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(hm);
+  })();
+
+  (function(w, d, s) {
+    function gs(){
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){ (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o), m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(w , d, s ,'//www.google-analytics.com/analytics.js','ga');
+      ga('create', 'UA-34196034-8', 'amazeui.org');
+      ga('send', 'pageview');
+    }
+    if (w.addEventListener) { w.addEventListener('load', gs, false); }
+    else if (w.attachEvent) { w.attachEvent('onload',gs); }
+  }(window, document, 'script'));
+</script>
+</body>
+</html>

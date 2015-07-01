@@ -1,0 +1,60 @@
+<!doctype html>
+<html class="no-js">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <title>Close | Amaze UI Dash Docsets</title>
+  <link rel="stylesheet" href="../assets/css/amazeui.min.css">
+  <link rel="stylesheet" href="../assets/css/app.css">
+  <script src="../assets/js/jquery.min.js"></script>
+  <script src="../assets/js/amazeui.min.js"></script>
+  
+</head>
+<body class="am-doc">
+<section class="doc-main am-padding-lg">
+    <h1><a name="Close" class="anchor" href="#Close"><span class="header-link"></span></a>Close</h1><hr>
+<p>关闭按钮样式，可以结合其他不同组件使用。对 <code>&lt;a&gt;</code> 或者 <code>&lt;button&gt;</code> 添加 <code>.am-close</code> class。</p>
+<h2><a name="%E5%9F%BA%E6%9C%AC%E6%A0%B7%E5%BC%8F" class="anchor" href="#%E5%9F%BA%E6%9C%AC%E6%A0%B7%E5%BC%8F"><span class="header-link"></span></a>基本样式</h2><p>在元素上添加 <code>.am-close</code> class。</p>
+<div class="doc-example"><a href="#" class="am-close">&times;</a>
+<br />
+<button type="button" class="am-close">&times;</button></div><div class="doc-code demo-highlight"><pre><code class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"#"</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-close"</span>&gt;</span>&amp;times;<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-title">button</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"button"</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-close"</span>&gt;</span>&amp;times;<span class="hljs-tag">&lt;/<span class="hljs-title">button</span>&gt;</span></code></pre></div><h2><a name="%E5%B8%A6%E8%BE%B9%E6%A1%86%E6%A0%B7%E5%BC%8F" class="anchor" href="#%E5%B8%A6%E8%BE%B9%E6%A1%86%E6%A0%B7%E5%BC%8F"><span class="header-link"></span></a>带边框样式</h2><p>添加 <code>.am-close-alt</code> class。</p>
+<h3><a name="%E4%BD%BF%E7%94%A8%20x" class="anchor" href="#%E4%BD%BF%E7%94%A8%20x"><span class="header-link"></span></a>使用 x</h3><div class="doc-example"><a href="" class="am-close am-close-alt">&times;</a></div><div class="doc-code demo-highlight"><pre><code class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">""</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-close am-close-alt"</span>&gt;</span>&amp;times;<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span></code></pre></div><h3><a name="%E4%BD%BF%E7%94%A8%20Icon%20Font" class="anchor" href="#%E4%BD%BF%E7%94%A8%20Icon%20Font"><span class="header-link"></span></a>使用 Icon Font</h3><div class="doc-example">  <a href="" class="am-close am-close-alt am-icon-times"></a></div><div class="doc-code demo-highlight"><pre><code class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">""</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-close am-close-alt am-icon-times"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span></code></pre></div><h3><a name="%E5%9E%82%E7%9B%B4%E5%B1%85%E4%B8%AD%E6%80%9D%E5%AF%86%E8%BE%BE" class="anchor" href="#%E5%9E%82%E7%9B%B4%E5%B1%85%E4%B8%AD%E6%80%9D%E5%AF%86%E8%BE%BE"><span class="header-link"></span></a>垂直居中思密达</h3><div class="am-alert am-alert-warning">
+这个问题有点头疼，不同字体对齐方式有差异，很难做到所有字体都垂直居中。现在增加了使用 Icon Font 样式（貌似还行，看得我眼睛都眨巴了），大家如果有好的解决方案也可以提供给我们。
+</div>
+
+<h2><a name="hover%20%E6%97%8B%E8%BD%AC" class="anchor" href="#hover%20%E6%97%8B%E8%BD%AC"><span class="header-link"></span></a>hover 旋转</h2><p>添加 <code>.am-close-spin</code> class（需支持 <a href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/transform#.E6.97.8B.E8.BD.AC">CSS3 transform</a>）。</p>
+<div class="doc-example"><a href="" class="am-close am-close-alt am-close-spin">&times;</a>
+<a href="" class="am-close am-close-alt am-close-spin am-icon-times"></a></div><div class="doc-code demo-highlight"><pre><code class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">""</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-close am-close-alt am-close-spin"</span>&gt;</span>&amp;times;<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">""</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-close am-close-alt am-close-spin am-icon-times"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span></code></pre></div>
+
+  <nav class="amp-pager">
+  </nav>
+</section>
+
+<script>
+  var _hmt = _hmt || [];
+  (function() {
+    var hm = document.createElement("script");
+    hm.src = "//hm.baidu.com/hm.js?b424d39312c46404f15e22574a531fbb";
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(hm);
+  })();
+
+  (function(w, d, s) {
+    function gs(){
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){ (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o), m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(w , d, s ,'//www.google-analytics.com/analytics.js','ga');
+      ga('create', 'UA-34196034-8', 'amazeui.org');
+      ga('send', 'pageview');
+    }
+    if (w.addEventListener) { w.addEventListener('load', gs, false); }
+    else if (w.attachEvent) { w.attachEvent('onload',gs); }
+  }(window, document, 'script'));
+</script>
+</body>
+</html>

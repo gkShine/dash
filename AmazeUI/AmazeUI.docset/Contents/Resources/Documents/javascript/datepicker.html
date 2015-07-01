@@ -1,0 +1,372 @@
+<!doctype html>
+<html class="no-js">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <title>日期选择 | Amaze UI Dash Docsets</title>
+  <link rel="stylesheet" href="../assets/css/amazeui.min.css">
+  <link rel="stylesheet" href="../assets/css/app.css">
+  <script src="../assets/js/jquery.min.js"></script>
+  <script src="../assets/js/amazeui.min.js"></script>
+  
+</head>
+<body class="am-doc">
+<section class="doc-main am-padding-lg">
+    <h1><a name="Datepicker" class="anchor" href="#Datepicker"><span class="header-link"></span></a>Datepicker</h1><hr>
+<p>日期选择插件。<strong>需要时间选择的参见</strong>：<a href="https://github.com/amazeui/datetimepicker">DateTimePicker - 日期时间选择插件</a>。</p>
+<p><strong>注意：</strong></p>
+<p>在触控设备上， <code>&lt;input&gt;</code> 获得焦点时会激活键盘，部分浏览器添加 <code>readonly</code> 属性以后可禁止键盘激活。</p>
+<h2><a name="%E4%BD%BF%E7%94%A8%E6%BC%94%E7%A4%BA" class="anchor" href="#%E4%BD%BF%E7%94%A8%E6%BC%94%E7%A4%BA"><span class="header-link"></span></a>使用演示</h2><h3><a name="%E5%9F%BA%E6%9C%AC%E5%BD%A2%E5%BC%8F" class="anchor" href="#%E5%9F%BA%E6%9C%AC%E5%BD%A2%E5%BC%8F"><span class="header-link"></span></a>基本形式</h3><p>在 <code>&lt;input&gt;</code> 上增加 <code>.data-am-datepicker</code> 属性，调用日期插件。</p>
+<div class="doc-example"><p><input type="text" class="am-form-field" placeholder="日历组件" data-am-datepicker readonly/></p></div><div class="doc-code demo-highlight"><pre><code class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"text"</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-form-field"</span> <span class="hljs-attribute">placeholder</span>=<span class="hljs-value">"日历组件"</span> <span class="hljs-attribute">data-am-datepicker</span> <span class="hljs-attribute">readonly</span>/&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span></code></pre></div><h3><a name="%E7%BB%93%E5%90%88%E7%BB%84%E4%BB%B6%E4%BD%BF%E7%94%A8" class="anchor" href="#%E7%BB%93%E5%90%88%E7%BB%84%E4%BB%B6%E4%BD%BF%E7%94%A8"><span class="header-link"></span></a>结合组件使用</h3><p>结合 <code>.am-input-group</code> 使用，父类添加 class <code>.am-datepicker-date</code> ，非 <code>&lt;input&gt;</code> 触发元素需增加 <code>.am-datepicker-add-on</code> class。</p>
+<div class="doc-example"><div class="am-input-group am-datepicker-date" data-am-datepicker="{format: 'dd-mm-yyyy'}">
+  <input type="text" class="am-form-field" placeholder="日历组件" readonly>
+  <span class="am-input-group-btn am-datepicker-add-on">
+    <button class="am-btn am-btn-default" type="button"><span class="am-icon-calendar"></span> </button>
+  </span>
+</div></div><div class="doc-code demo-highlight"><pre><code class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-input-group am-datepicker-date"</span> <span class="hljs-attribute">data-am-datepicker</span>=<span class="hljs-value">"{format: 'dd-mm-yyyy'}"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"text"</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-form-field"</span> <span class="hljs-attribute">placeholder</span>=<span class="hljs-value">"日历组件"</span> <span class="hljs-attribute">readonly</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-input-group-btn am-datepicker-add-on"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">button</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-btn am-btn-default"</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"button"</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-icon-calendar"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span> <span class="hljs-tag">&lt;/<span class="hljs-title">button</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span></code></pre></div><h3><a name="%E6%9B%B4%E6%94%B9%E9%A2%9C%E8%89%B2" class="anchor" href="#%E6%9B%B4%E6%94%B9%E9%A2%9C%E8%89%B2"><span class="header-link"></span></a>更改颜色</h3><p>默认为蓝色，设置 <code>theme</code> 选项可改变颜色：</p>
+<ul>
+<li><code>success</code>: 绿色</li>
+<li><code>warning</code>: 橙色</li>
+<li><code>danger</code>: 红色</li>
+</ul>
+<div class="doc-example"><p>
+  <input type="text" class="am-form-field" placeholder="日历组件"
+         data-am-datepicker="{theme: 'success', weekStart: 6}" readonly/>
+</p></div><div class="doc-code demo-highlight"><pre><code class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"text"</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-form-field"</span> <span class="hljs-attribute">placeholder</span>=<span class="hljs-value">"日历组件"</span> <span class="hljs-attribute">data-am-datepicker</span>=<span class="hljs-value">"{theme: 'success'}"</span> <span class="hljs-attribute">readonly</span>/&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span></code></pre></div><h3><a name="%E8%A7%86%E5%9B%BE%E6%A8%A1%E5%BC%8F" class="anchor" href="#%E8%A7%86%E5%9B%BE%E6%A8%A1%E5%BC%8F"><span class="header-link"></span></a>视图模式</h3><p>通过参数 <code>viewMode</code> 设置日历初始视图模式：</p>
+<ul>
+<li><code>days</code>: 显示天（默认）</li>
+<li><code>months</code>: 显示月</li>
+<li><code>years</code>: 显示年</li>
+</ul>
+<div class="doc-example"><div class="am-input-group am-datepicker-date" data-am-datepicker="{format: 'yyyy-mm-dd', viewMode: 'years'}">
+  <input type="text" class="am-form-field" placeholder="日历组件" readonly>
+  <span class="am-input-group-btn am-datepicker-add-on">
+    <button class="am-btn am-btn-default" type="button"><span class="am-icon-calendar"></span> </button>
+  </span>
+</div></div><div class="doc-code demo-highlight"><pre><code class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-input-group am-datepicker-date"</span> <span class="hljs-attribute">data-am-datepicker</span>=<span class="hljs-value">"{format: 'yyyy-mm-dd', viewMode: 'years'}"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"text"</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-form-field"</span> <span class="hljs-attribute">placeholder</span>=<span class="hljs-value">"日历组件"</span> <span class="hljs-attribute">readonly</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-input-group-btn am-datepicker-add-on"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">button</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-btn am-btn-default"</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"button"</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-icon-calendar"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span> <span class="hljs-tag">&lt;/<span class="hljs-title">button</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span></code></pre></div><h3><a name="%E9%99%90%E5%88%B6%E8%A7%86%E5%9B%BE%E6%A8%A1%E5%BC%8F" class="anchor" href="#%E9%99%90%E5%88%B6%E8%A7%86%E5%9B%BE%E6%A8%A1%E5%BC%8F"><span class="header-link"></span></a>限制视图模式</h3><p>设置参数 <code>minViewMode</code> 可以限制视图模式。下面的示例中限制了只能选择到月份：</p>
+<div class="doc-example"><div class="am-input-group am-datepicker-date" data-am-datepicker="{format: 'yyyy-mm', viewMode: 'years', minViewMode: 'months'}">
+  <input type="text" class="am-form-field" placeholder="日历组件" readonly>
+  <span class="am-input-group-btn am-datepicker-add-on">
+    <button class="am-btn am-btn-default" type="button"><span class="am-icon-calendar"></span> </button>
+  </span>
+</div></div><div class="doc-code demo-highlight"><pre><code class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-input-group am-datepicker-date"</span> <span class="hljs-attribute">data-am-datepicker</span>=<span class="hljs-value">"{format: 'yyyy-mm', viewMode: 'years', minViewMode: 'months'}"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"text"</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-form-field"</span> <span class="hljs-attribute">placeholder</span>=<span class="hljs-value">"日历组件"</span> <span class="hljs-attribute">readonly</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-input-group-btn am-datepicker-add-on"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">button</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-btn am-btn-default"</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"button"</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-icon-calendar"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span> <span class="hljs-tag">&lt;/<span class="hljs-title">button</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span></code></pre></div><h3><a name="%E8%87%AA%E5%AE%9A%E4%B9%89%E4%BA%8B%E4%BB%B6" class="anchor" href="#%E8%87%AA%E5%AE%9A%E4%B9%89%E4%BA%8B%E4%BB%B6"><span class="header-link"></span></a>自定义事件</h3><p>通过监听自定义事件 <code>changeDate</code>，可以在回调函数中进行验证等操作。通过 <code>$().data(&#39;date&#39;)</code> 获取改变后的日期。</p>
+<div class="doc-example"><div class="am-alert am-alert-danger" id="my-alert" style="display: none">
+  <p>开始日期应小于结束日期！</p>
+</div>
+<div class="am-g">
+  <div class="am-u-sm-6">
+    <button type="button" class="am-btn am-btn-default am-margin-right" id="my-start">开始日期</button><span id="my-startDate">2014-12-20</span>
+  </div>
+  <div class="am-u-sm-6">
+    <button type="button" class="am-btn am-btn-default am-margin-right" id="my-end">结束日期</button><span id="my-endDate">2014-12-25</span>
+  </div>
+</div>
+<script>
+  $(function() {
+    var startDate = new Date(2014, 11, 20);
+    var endDate = new Date(2014, 11, 25);
+    var $alert = $('#my-alert');
+    $('#my-start').datepicker().
+      on('changeDate.datepicker.amui', function(event) {
+        if (event.date.valueOf() > endDate.valueOf()) {
+          $alert.find('p').text('开始日期应小于结束日期！').end().show();
+        } else {
+          $alert.hide();
+          startDate = new Date(event.date);
+          $('#my-startDate').text($('#my-start').data('date'));
+        }
+        $(this).datepicker('close');
+      });
+
+    $('#my-end').datepicker().
+      on('changeDate.datepicker.amui', function(event) {
+        if (event.date.valueOf() < startDate.valueOf()) {
+          $alert.find('p').text('结束日期应大于开始日期！').end().show();
+        } else {
+          $alert.hide();
+          endDate = new Date(event.date);
+          $('#my-endDate').text($('#my-end').data('date'));
+        }
+        $(this).datepicker('close');
+      });
+  });
+</script></div><div class="doc-code demo-highlight"><pre><code class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-alert am-alert-danger"</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"my-alert"</span> <span class="hljs-attribute">style</span>=<span class="hljs-value">"display: none"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span>开始日期应小于结束日期！<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-g"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-u-sm-6"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">button</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"button"</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-btn am-btn-default am-margin-right"</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"my-start"</span>&gt;</span>开始日期<span class="hljs-tag">&lt;/<span class="hljs-title">button</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"my-startDate"</span>&gt;</span>2014-12-20<span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-u-sm-6"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">button</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"button"</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-btn am-btn-default am-margin-right"</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"my-end"</span>&gt;</span>结束日期<span class="hljs-tag">&lt;/<span class="hljs-title">button</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"my-endDate"</span>&gt;</span>2014-12-25<span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">script</span>&gt;</span><span class="javascript">
+  $(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> </span>{
+    <span class="hljs-keyword">var</span> startDate = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Date</span>(<span class="hljs-number">2014</span>, <span class="hljs-number">11</span>, <span class="hljs-number">20</span>);
+    <span class="hljs-keyword">var</span> endDate = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Date</span>(<span class="hljs-number">2014</span>, <span class="hljs-number">11</span>, <span class="hljs-number">25</span>);
+    <span class="hljs-keyword">var</span> $alert = $(<span class="hljs-string">'#my-alert'</span>);
+    $(<span class="hljs-string">'#my-start'</span>).datepicker().
+      on(<span class="hljs-string">'changeDate.datepicker.amui'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(event)</span> </span>{
+        <span class="hljs-keyword">if</span> (event.date.valueOf() &gt; endDate.valueOf()) {
+          $alert.find(<span class="hljs-string">'p'</span>).text(<span class="hljs-string">'开始日期应小于结束日期！'</span>).end().show();
+        } <span class="hljs-keyword">else</span> {
+          $alert.hide();
+          startDate = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Date</span>(event.date);
+          $(<span class="hljs-string">'#my-startDate'</span>).text($(<span class="hljs-string">'#my-start'</span>).data(<span class="hljs-string">'date'</span>));
+        }
+        $(<span class="hljs-keyword">this</span>).datepicker(<span class="hljs-string">'close'</span>);
+      });
+
+    $(<span class="hljs-string">'#my-end'</span>).datepicker().
+      on(<span class="hljs-string">'changeDate.datepicker.amui'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(event)</span> </span>{
+        <span class="hljs-keyword">if</span> (event.date.valueOf() &lt; startDate.valueOf()) {
+          $alert.find(<span class="hljs-string">'p'</span>).text(<span class="hljs-string">'结束日期应大于开始日期！'</span>).end().show();
+        } <span class="hljs-keyword">else</span> {
+          $alert.hide();
+          endDate = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Date</span>(event.date);
+          $(<span class="hljs-string">'#my-endDate'</span>).text($(<span class="hljs-string">'#my-end'</span>).data(<span class="hljs-string">'date'</span>));
+        }
+        $(<span class="hljs-keyword">this</span>).datepicker(<span class="hljs-string">'close'</span>);
+      });
+  });
+</span><span class="hljs-tag">&lt;/<span class="hljs-title">script</span>&gt;</span></code></pre></div><h3><a name="%E8%AE%BE%E7%BD%AE%E7%A6%81%E6%AD%A2%E9%80%89%E6%8B%A9%E6%97%A5%E6%9C%9F" class="anchor" href="#%E8%AE%BE%E7%BD%AE%E7%A6%81%E6%AD%A2%E9%80%89%E6%8B%A9%E6%97%A5%E6%9C%9F"><span class="header-link"></span></a>设置禁止选择日期</h3><p>初始化的时候通过 <code>onRender</code> 选项设置禁用日期。</p>
+<div class="doc-example"><div class="am-g">
+  <div class="am-u-sm-6">
+    设置禁用日期<br/>
+    <p><input type="text" class="am-form-field" placeholder="今天之前的日期被禁用" id="my-start-2"/></p>
+  </div>
+  <div class="am-u-sm-6">
+    禁用日期<br/>
+    <p><input type="text" class="am-form-field" id="my-end-2" /></p>
+  </div>
+</div>
+<script>
+  $(function() {
+    var nowTemp = new Date();
+    var now = new Date(nowTemp.getFullYear(), nowTemp.getMonth(), nowTemp.getDate(), 0, 0, 0, 0);
+    var $myStart2 = $('#my-start-2');
+
+    var checkin = $myStart2.datepicker({
+      onRender: function(date) {
+        return date.valueOf() < now.valueOf() ? 'am-disabled' : '';
+      }
+    }).on('changeDate.datepicker.amui', function(ev) {
+        if (ev.date.valueOf() > checkout.date.valueOf()) {
+          var newDate = new Date(ev.date)
+          newDate.setDate(newDate.getDate() + 1);
+          checkout.setValue(newDate);
+        }
+        checkin.close();
+        $('#my-end-2')[0].focus();
+    }).data('amui.datepicker');
+
+    var checkout = $('#my-end-2').datepicker({
+      onRender: function(date) {
+        return date.valueOf() <= checkin.date.valueOf() ? 'am-disabled' : '';
+      }
+    }).on('changeDate.datepicker.amui', function(ev) {
+      checkout.close();
+    }).data('amui.datepicker');
+
+  })
+</script></div><div class="doc-code demo-highlight"><pre><code class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-g"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-u-sm-6"</span>&gt;</span>
+    设置禁用日期<span class="hljs-tag">&lt;<span class="hljs-title">br</span>/&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"text"</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-form-field"</span> <span class="hljs-attribute">placeholder</span>=<span class="hljs-value">"今天之前的日期被禁用"</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"my-start-2"</span>/&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-u-sm-6"</span>&gt;</span>
+    禁用日期<span class="hljs-tag">&lt;<span class="hljs-title">br</span>/&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"text"</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-form-field"</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"my-end-2"</span> /&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">script</span>&gt;</span><span class="javascript">
+  $(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> </span>{
+    <span class="hljs-keyword">var</span> nowTemp = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Date</span>();
+    <span class="hljs-keyword">var</span> now = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Date</span>(nowTemp.getFullYear(), nowTemp.getMonth(), nowTemp.getDate(), <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>);
+    <span class="hljs-keyword">var</span> $myStart2 = $(<span class="hljs-string">'#my-start-2'</span>);
+
+    <span class="hljs-keyword">var</span> checkin = $myStart2.datepicker({
+      onRender: <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(date)</span> </span>{
+        <span class="hljs-keyword">return</span> date.valueOf() &lt; now.valueOf() ? <span class="hljs-string">'am-disabled'</span> : <span class="hljs-string">''</span>;
+      }
+    }).on(<span class="hljs-string">'changeDate.datepicker.amui'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(ev)</span> </span>{
+        <span class="hljs-keyword">if</span> (ev.date.valueOf() &gt; checkout.date.valueOf()) {
+          <span class="hljs-keyword">var</span> newDate = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Date</span>(ev.date)
+          newDate.setDate(newDate.getDate() + <span class="hljs-number">1</span>);
+          checkout.setValue(newDate);
+        }
+        checkin.close();
+        $(<span class="hljs-string">'#my-end-2'</span>)[<span class="hljs-number">0</span>].focus();
+    }).data(<span class="hljs-string">'amui.datepicker'</span>);
+
+    <span class="hljs-keyword">var</span> checkout = $(<span class="hljs-string">'#my-end-2'</span>).datepicker({
+      onRender: <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(date)</span> </span>{
+        <span class="hljs-keyword">return</span> date.valueOf() &lt;= checkin.date.valueOf() ? <span class="hljs-string">'am-disabled'</span> : <span class="hljs-string">''</span>;
+      }
+    }).on(<span class="hljs-string">'changeDate.datepicker.amui'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(ev)</span> </span>{
+      checkout.close();
+    }).data(<span class="hljs-string">'amui.datepicker'</span>);
+
+  })
+</span><span class="hljs-tag">&lt;/<span class="hljs-title">script</span>&gt;</span></code></pre></div><h2><a name="%E8%B0%83%E7%94%A8%E6%96%B9%E5%BC%8F" class="anchor" href="#%E8%B0%83%E7%94%A8%E6%96%B9%E5%BC%8F"><span class="header-link"></span></a>调用方式</h2><h3><a name="%E9%80%9A%E8%BF%87%20Data%20API" class="anchor" href="#%E9%80%9A%E8%BF%87%20Data%20API"><span class="header-link"></span></a>通过 Data API</h3><p>添加 <code>data-am-datepicker</code> 属性，并设置相关选项。</p>
+<div class="doc-code demo-highlight"><pre><code class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">""</span> <span class="hljs-attribute">data-am-datepicker</span>=<span class="hljs-value">"{format: 'yyyy-mm'}"</span>/&gt;</span></code></pre></div><h4><a name="JS%20%E8%B0%83%E7%94%A8" class="anchor" href="#JS%20%E8%B0%83%E7%94%A8"><span class="header-link"></span></a>JS 调用</h4><p>通过 <code>$().datepicker(options)</code> 调用。</p>
+<div class="doc-code demo-highlight"><pre><code class="javascript">$(<span class="hljs-string">'#my-datepicker'</span>).datepicker({format: <span class="hljs-string">'yyyy-mm'</span>});</code></pre></div><h4><a name="%E6%96%B9%E6%B3%95%E8%AF%B4%E6%98%8E" class="anchor" href="#%E6%96%B9%E6%B3%95%E8%AF%B4%E6%98%8E"><span class="header-link"></span></a>方法说明</h4><table class="am-table am-table-bd am-table-striped">
+  <thead>
+  <tr>
+    <th>方法名称</th>
+    <th>描述</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr>
+    <td><code>.datepicker('open')</code></td>
+    <td>显示日历</td>
+  </tr>
+  <tr>
+    <td><code>.datepicker('close')</code></td>
+    <td>隐藏日历</td>
+  </tr>
+  <tr>
+    <td><code>.datepicker('place')</code></td>
+    <td>更新调用<code>datepicker</code>的相对位置</td>
+  </tr>
+  <tr>
+    <td><code>.datepicker('setValue', value)</code></td>
+    <td>设置<code>Datepicker</code>新值</td>
+  </tr>
+  </tbody>
+</table>
+
+<h4><a name="%E9%80%89%E9%A1%B9%E8%AF%B4%E6%98%8E" class="anchor" href="#%E9%80%89%E9%A1%B9%E8%AF%B4%E6%98%8E"><span class="header-link"></span></a>选项说明</h4><ul>
+<li><code>format</code>: 日期格式，默认为 <code>yyyy-mm-dd</code>，可以选择 <code>yy/mm/dd</code> 、<code>mm/dd</code>、<code>dd/mm/yyyy</code>、<code>dd/mm/yy</code>、<code>dd/mm</code>等，中间分隔符可以使用 <code>/</code>、<code>-</code>、<code> </code>。</li>
+<li><code>viewMode</code>: 日期选择器初始视图模式，<code>string</code>|<code>integer</code>， 默认为 0，可选值 <code>days</code>、<code>months</code>、<code>years</code>或者对应的 <code>0</code>、<code>1</code>、<code>2</code>。</li>
+<li><code>minViewMode</code>: 日期选择器初始视图模式限制，<code>string</code>|<code>integer</code>， 默认为 <code>0</code>，可选值<code>days</code>、<code>months</code>、<code>years</code>或者对应的 <code>0</code>、<code>1</code>、<code>2</code>。</li>
+<li><code>onRender</code>: 渲染日历时调用的函数，比如 <code>.am-disabled</code> 设置禁用日期。</li>
+<li><code>theme</code>: 设置日期颜色主题，可选值为 <code>success</code>、<code>danger</code>、<code>warning</code>，对应为绿色、红色、橙色，默认为蓝色。</li>
+<li><code>locale</code>: 语言设置, 可选值为 <code>zh_CN</code>、<code>en_US</code>，默认为中文。</li>
+<li><code>autoClose</code>: 日期选定以后是否自动关闭日期选择器, 默认为 <code>true</code> (仅在 <code>days</code> 视图有效)。</li>
+</ul>
+<p>设置 <code>viewMode</code> 和 <code>minViewMode</code> 需要注意日期格式 <code>format</code> 的设置。</p>
+<h4><a name="%E4%BA%8B%E4%BB%B6%E8%AF%B4%E6%98%8E" class="anchor" href="#%E4%BA%8B%E4%BB%B6%E8%AF%B4%E6%98%8E"><span class="header-link"></span></a>事件说明</h4><p>选择日期时，通过查看控制台选择的日期。</p>
+<div class="doc-example"><p><input type="text" class="am-form-field" placeholder="日历组件" id="doc-datepicker"/></p>
+<script>
+$(function() {
+  $('#doc-datepicker').datepicker().
+    on('changeDate.datepicker.amui', function(event) {
+      console.log(event.date);
+    });
+});
+</script></div><div class="doc-code demo-highlight"><pre><code class="javascript">$(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> </span>{
+  $(<span class="hljs-string">'#doc-datepicker'</span>).datepicker().
+    on(<span class="hljs-string">'changeDate.datepicker.amui'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(event)</span> </span>{
+      <span class="hljs-built_in">console</span>.log(event.date);
+    });
+});</code></pre></div><table class="am-table am-table-bd am-table-striped">
+  <thead>
+  <tr>
+    <th>事件名称</th>
+    <th>描述</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr>
+    <td><code>changeDate.datepicker.amui</code></td>
+    <td>日期改变时触发</td>
+  </tr>
+  </tbody>
+</table>
+
+<h3><a name="%E8%AF%AD%E8%A8%80%E6%89%A9%E5%B1%95" class="anchor" href="#%E8%AF%AD%E8%A8%80%E6%89%A9%E5%B1%95"><span class="header-link"></span></a>语言扩展</h3><p>内置英语和简体中文支持，默认为中文，要支持更多语言可以通过 <code>Datepicker.locales</code> 扩展。</p>
+<p><strong>设置语言：</strong></p>
+<div class="doc-example"><p>
+  <input type="text" class="am-form-field" placeholder="YYYY-MM-DD"
+         data-am-datepicker="{locale: 'en_US'}" readonly/>
+</p></div><div class="doc-code demo-highlight"><pre><code class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"text"</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-form-field"</span> <span class="hljs-attribute">placeholder</span>=<span class="hljs-value">"YYYY-MM-DD"</span>
+         <span class="hljs-attribute">data-am-datepicker</span>=<span class="hljs-value">"{locale: 'en_US'}"</span> <span class="hljs-attribute">readonly</span>/&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span></code></pre></div><p><strong>扩展语言：</strong></p>
+<script>
+(function($) {
+  $.AMUI && $.AMUI.datepicker && ($.AMUI.datepicker.locales.fr = {
+    days: ["Dimanche", "Lundi", "Mardi", "Mercredi", "Jeudi", "Vendredi", "Samedi"],
+    daysShort: ["Dim", "Lun", "Mar", "Mer", "Jeu", "Ven", "Sam"],
+    daysMin: ["D", "L", "Ma", "Me", "J", "V", "S"],
+    months: ["Janvier", "Février", "Mars", "Avril", "Mai", "Juin", "Juillet", "Août", "Septembre", "Octobre", "Novembre", "Décembre"],
+    monthsShort: ["Jan", "Fev", "Mar", "Avr", "Mai", "Jui", "Jul", "Aou", "Sep", "Oct", "Nov", "Dec"],
+    weekStart: 1
+  });
+})(window.jQuery);
+</script>
+
+<div class="doc-example"><p>
+  <input type="text" class="am-form-field" placeholder="来一丢丢 French"
+         data-am-datepicker="{locale: 'fr', autoClose: 0}" readonly/>
+</p></div><div class="doc-code demo-highlight"><pre><code class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"text"</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-form-field"</span> <span class="hljs-attribute">placeholder</span>=<span class="hljs-value">"来一丢丢 French"</span>
+         <span class="hljs-attribute">data-am-datepicker</span>=<span class="hljs-value">"{locale: 'fr', autoClose: 0}"</span> <span class="hljs-attribute">readonly</span>/&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-title">script</span>&gt;</span><span class="javascript">
+(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">($)</span> </span>{
+  $.AMUI &amp;&amp; $.AMUI.datepicker &amp;&amp; ($.AMUI.datepicker.locales.fr = {
+    days: [<span class="hljs-string">"Dimanche"</span>, <span class="hljs-string">"Lundi"</span>, <span class="hljs-string">"Mardi"</span>, <span class="hljs-string">"Mercredi"</span>, <span class="hljs-string">"Jeudi"</span>, <span class="hljs-string">"Vendredi"</span>, <span class="hljs-string">"Samedi"</span>, <span class="hljs-string">"Dimanche"</span>],
+    daysShort: [<span class="hljs-string">"Dim"</span>, <span class="hljs-string">"Lun"</span>, <span class="hljs-string">"Mar"</span>, <span class="hljs-string">"Mer"</span>, <span class="hljs-string">"Jeu"</span>, <span class="hljs-string">"Ven"</span>, <span class="hljs-string">"Sam"</span>, <span class="hljs-string">"Dim"</span>],
+    daysMin: [<span class="hljs-string">"D"</span>, <span class="hljs-string">"L"</span>, <span class="hljs-string">"Ma"</span>, <span class="hljs-string">"Me"</span>, <span class="hljs-string">"J"</span>, <span class="hljs-string">"V"</span>, <span class="hljs-string">"S"</span>, <span class="hljs-string">"D"</span>],
+    months: [<span class="hljs-string">"Janvier"</span>, <span class="hljs-string">"Février"</span>, <span class="hljs-string">"Mars"</span>, <span class="hljs-string">"Avril"</span>, <span class="hljs-string">"Mai"</span>, <span class="hljs-string">"Juin"</span>, <span class="hljs-string">"Juillet"</span>, <span class="hljs-string">"Août"</span>, <span class="hljs-string">"Septembre"</span>, <span class="hljs-string">"Octobre"</span>, <span class="hljs-string">"Novembre"</span>, <span class="hljs-string">"Décembre"</span>],
+    monthsShort: [<span class="hljs-string">"Jan"</span>, <span class="hljs-string">"Fev"</span>, <span class="hljs-string">"Mar"</span>, <span class="hljs-string">"Avr"</span>, <span class="hljs-string">"Mai"</span>, <span class="hljs-string">"Jui"</span>, <span class="hljs-string">"Jul"</span>, <span class="hljs-string">"Aou"</span>, <span class="hljs-string">"Sep"</span>, <span class="hljs-string">"Oct"</span>, <span class="hljs-string">"Nov"</span>, <span class="hljs-string">"Dec"</span>],
+    weekStart: <span class="hljs-number">1</span>
+  });
+})(<span class="hljs-built_in">window</span>.jQuery);
+</span><span class="hljs-tag">&lt;/<span class="hljs-title">script</span>&gt;</span></code></pre></div>
+
+  <nav class="amp-pager">
+        <ul class="am-pagination">
+          <li class="am-pagination-prev"><a href="javascript/tabs.html">&laquo; Prev</a>
+          </li>
+              <li class="am-pagination-next"><a href="javascript/selected.html">Next &raquo;</a>
+              </li>
+        </ul>
+  </nav>
+</section>
+
+<script>
+  var _hmt = _hmt || [];
+  (function() {
+    var hm = document.createElement("script");
+    hm.src = "//hm.baidu.com/hm.js?b424d39312c46404f15e22574a531fbb";
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(hm);
+  })();
+
+  (function(w, d, s) {
+    function gs(){
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){ (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o), m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(w , d, s ,'//www.google-analytics.com/analytics.js','ga');
+      ga('create', 'UA-34196034-8', 'amazeui.org');
+      ga('send', 'pageview');
+    }
+    if (w.addEventListener) { w.addEventListener('load', gs, false); }
+    else if (w.attachEvent) { w.attachEvent('onload',gs); }
+  }(window, document, 'script'));
+</script>
+</body>
+</html>

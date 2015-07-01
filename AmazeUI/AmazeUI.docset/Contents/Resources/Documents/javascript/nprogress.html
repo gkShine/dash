@@ -1,0 +1,171 @@
+<!doctype html>
+<html class="no-js">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <title>加载进度条 | Amaze UI Dash Docsets</title>
+  <link rel="stylesheet" href="../assets/css/amazeui.min.css">
+  <link rel="stylesheet" href="../assets/css/app.css">
+  <script src="../assets/js/jquery.min.js"></script>
+  <script src="../assets/js/amazeui.min.js"></script>
+  
+</head>
+<body class="am-doc">
+<section class="doc-main am-padding-lg">
+    <h1><a name="Progress" class="anchor" href="#Progress"><span class="header-link"></span></a>Progress</h1><hr>
+<p>类似 Google、Youtube、Medium 的进度条，源自 <a href="http://ricostacruz.com/nprogress">NProgress</a>。</p>
+<h2><a name="%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8" class="anchor" href="#%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8"><span class="header-link"></span></a>基本使用</h2><hr>
+<p>调用 <code>start()</code> 、 <code>done()</code> 控制进度条。</p>
+<div class="doc-code demo-highlight"><pre><code class="javascript">$.AMUI.progress.start();
+$.AMUI.progress.done();</code></pre></div><div class="doc-example"><button id="np-s" class="am-btn am-btn-primary">$.AMUI.progress.start();</button> <button id="np-d" class="am-btn am-btn-success">$.AMUI.progress.done();</button></div><div class="doc-code demo-highlight"><pre><code class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">button</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"np-s"</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-btn am-btn-primary"</span>&gt;</span>$.AMUI.progress.start();<span class="hljs-tag">&lt;/<span class="hljs-title">button</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">button</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"np-d"</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-btn am-btn-success"</span>&gt;</span>$.AMUI.progress.done();<span class="hljs-tag">&lt;/<span class="hljs-title">button</span>&gt;</span></code></pre></div><div class="doc-code demo-highlight"><pre><code class="javascript">$(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span></span>{
+  <span class="hljs-keyword">var</span> progress = $.AMUI.progress;
+
+  $(<span class="hljs-string">'#np-s'</span>).on(<span class="hljs-string">'click'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> </span>{
+    progress.start();
+  });
+
+  $(<span class="hljs-string">'#np-d'</span>).on(<span class="hljs-string">'click'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> </span>{
+    progress.done();
+  });
+});</code></pre></div><p>如果使用 <a href="https://github.com/rails/turbolinks">Turbolinks</a> 1.3.0+ 或者类似的库，可以在自定义事件回调中调用 Progress。</p>
+<div class="doc-code demo-highlight"><pre><code class="javascript">$(<span class="hljs-built_in">document</span>).on(<span class="hljs-string">'page:fetch'</span>,   <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> </span>{ $.AMUI.progress.start(); });
+$(<span class="hljs-built_in">document</span>).on(<span class="hljs-string">'page:change'</span>,  <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> </span>{ $.AMUI.progress.done(); });
+$(<span class="hljs-built_in">document</span>).on(<span class="hljs-string">'page:restore'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> </span>{ $.AMUI.progress.remove(); });</code></pre></div><h2><a name="%E4%BD%BF%E7%94%A8%E5%9C%BA%E6%99%AF" class="anchor" href="#%E4%BD%BF%E7%94%A8%E5%9C%BA%E6%99%AF"><span class="header-link"></span></a>使用场景</h2><ul>
+<li><p>在 Ajax 应用中添加进度条，绑定到 Zepto（jQuery） <code>ajaxStart</code> 和
+<code>ajaxStop</code> 事件中。</p>
+</li>
+<li><p>没有使用 Turbolinks/Pjax 也可以添加高大上的进度条，绑定到
+<code>$(document).ready</code> 和 <code>$(window).load</code> 即可。</p>
+</li>
+</ul>
+<h2><a name="%E9%AB%98%E7%BA%A7%E4%BD%BF%E7%94%A8" class="anchor" href="#%E9%AB%98%E7%BA%A7%E4%BD%BF%E7%94%A8"><span class="header-link"></span></a>高级使用</h2><p><strong>设置百分比</strong>: 调用 <code>.set(n)</code> 可以设置进度百分比, <em>n</em> 的取值区间为 <code>0..1</code>。</p>
+<div class="doc-code demo-highlight"><pre><code class="javascript">$.AMUI.progress.set(<span class="hljs-number">0.0</span>);     <span class="hljs-comment">// Sorta same as .start()</span>
+$.AMUI.progress.set(<span class="hljs-number">0.4</span>);
+$.AMUI.progress.set(<span class="hljs-number">1.0</span>);     <span class="hljs-comment">// Sorta same as .done()</span></code></pre></div><p><strong>增加进度</strong>: 调用 <code>.inc()</code>，进度将会增加一个随机的数量，但不会到达 100%。</p>
+<div class="doc-code demo-highlight"><pre><code class="javascript">$.AMUI.progress.inc();</code></pre></div><p>也可以给 <code>.inc()</code> 传递一个数值参数:</p>
+<div class="doc-code demo-highlight"><pre><code class="javascript">$.AMUI.progress.inc(<span class="hljs-number">0.2</span>);    <span class="hljs-comment">// This will get the current status value and adds 0.2 until status is 0.994</span></code></pre></div><p><code>.inc()</code> 方法会获取当前进度值并增加 0.2，但最多只到达 0.994。</p>
+<p><strong>强制结束</strong>: 传递 <code>true</code> 给 <code>done()</code>，强制显示进度条（默认情况是如果没有 <em>.start()</em>，<em>.done()</em> 执行任何操作）。</p>
+<div class="doc-code demo-highlight"><pre><code class="javascript">$.AMUI.progress.done(<span class="hljs-literal">true</span>);</code></pre></div><p><strong>获取进度值</strong>: 使用 <code>.status</code> 属性。</p>
+<div class="doc-example"><button id="np-set" class="am-btn am-btn-primary">$.AMUI.progress.set(0.4);</button>
+<button id="np-inc" class="am-btn am-btn-warning">$.AMUI.progress.inc();</button>
+<button id="np-fd" class="am-btn am-btn-success">$.AMUI.progress.done(true);</button>
+<button id="np-status" class="am-btn am-btn-danger">$.AMUI.progress.status;</button></div><div class="doc-code demo-highlight"><pre><code class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">button</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"np-set"</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-btn am-btn-primary"</span>&gt;</span>$.AMUI.progress.set(0.4);<span class="hljs-tag">&lt;/<span class="hljs-title">button</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">button</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"np-inc"</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-btn am-btn-warning"</span>&gt;</span>$.AMUI.progress.inc();<span class="hljs-tag">&lt;/<span class="hljs-title">button</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">button</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"np-fd"</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-btn am-btn-success"</span>&gt;</span>$.AMUI.progress.done(true);<span class="hljs-tag">&lt;/<span class="hljs-title">button</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">button</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"np-status"</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-btn am-btn-danger"</span>&gt;</span>$.AMUI.progress.status;<span class="hljs-tag">&lt;/<span class="hljs-title">button</span>&gt;</span></code></pre></div><div class="doc-code demo-highlight"><pre><code class="javascript">$(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span></span>{
+  <span class="hljs-keyword">var</span> progress = $.AMUI.progress;
+
+  $(<span class="hljs-string">'#np-set'</span>).on(<span class="hljs-string">'click'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> </span>{
+    progress.set(<span class="hljs-number">0.4</span>);
+  });
+
+  $(<span class="hljs-string">'#np-inc'</span>).on(<span class="hljs-string">'click'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> </span>{
+    progress.inc();
+  });
+
+  $(<span class="hljs-string">'#np-fd'</span>).on(<span class="hljs-string">'click'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> </span>{
+    progress.done(<span class="hljs-literal">true</span>);
+  });
+
+  $(<span class="hljs-string">'#np-status'</span>).on(<span class="hljs-string">'click'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> </span>{
+    $(<span class="hljs-keyword">this</span>).text(<span class="hljs-string">'Status: '</span> + progress.status);
+  });
+});</code></pre></div><h2><a name="%E5%8F%82%E6%95%B0%E8%AE%BE%E7%BD%AE" class="anchor" href="#%E5%8F%82%E6%95%B0%E8%AE%BE%E7%BD%AE"><span class="header-link"></span></a>参数设置</h2><h3><a name="%E9%BB%98%E8%AE%A4%E5%8F%82%E6%95%B0" class="anchor" href="#%E9%BB%98%E8%AE%A4%E5%8F%82%E6%95%B0"><span class="header-link"></span></a>默认参数</h3><div class="doc-code demo-highlight"><pre><code class="javascript">  {
+    minimum: <span class="hljs-number">0.08</span>,
+    easing: <span class="hljs-string">'ease'</span>,
+    positionUsing: <span class="hljs-string">''</span>,
+    speed: <span class="hljs-number">200</span>,
+    trickle: <span class="hljs-literal">true</span>,
+    trickleRate: <span class="hljs-number">0.02</span>,
+    trickleSpeed: <span class="hljs-number">800</span>,
+    showSpinner: <span class="hljs-literal">true</span>,
+    barSelector: <span class="hljs-string">'[role="nprogress-bar"]'</span>,
+    spinnerSelector: <span class="hljs-string">'[role="nprogress-spinner"]'</span>,
+    parent: <span class="hljs-string">'body'</span>,
+    template: <span class="hljs-string">'&lt;div class="nprogress-bar" role="nprogress-bar"&gt;'</span> +
+        <span class="hljs-string">'&lt;div class="nprogress-peg"&gt;&lt;/div&gt;&lt;/div&gt;'</span> +
+        <span class="hljs-string">'&lt;div class="nprogress-spinner" role="nprogress-spinner"&gt;'</span> +
+        <span class="hljs-string">'&lt;div class="nprogress-spinner-icon"&gt;&lt;/div&gt;&lt;/div&gt;'</span>
+  }</code></pre></div><h3><a name="%E5%8F%82%E6%95%B0%E8%A7%A3%E9%87%8A" class="anchor" href="#%E5%8F%82%E6%95%B0%E8%A7%A3%E9%87%8A"><span class="header-link"></span></a>参数解释</h3><p><code>minimum</code>: 设置最小百分比。</p>
+<div class="doc-code demo-highlight"><pre><code class="javascript">$.AMUI.progress.configure({ minimum: <span class="hljs-number">0.1</span> });</code></pre></div><p><code>template</code>: 设置模板，注意相应更改 <code>barSelector</code>、<code>spinnerSelector</code>。</p>
+<div class="doc-code demo-highlight"><pre><code class="javascript">$.AMUI.progress.configure({
+  template: <span class="hljs-string">"&lt;div class='....'&gt;...&lt;/div&gt;"</span>
+});</code></pre></div><p><code>ease</code>、<code>speed</code>: 设置动画缓动函数和速度（<code>ms</code>）</p>
+<div class="doc-code demo-highlight"><pre><code class="javascript">$.AMUI.progress.configure({ ease: <span class="hljs-string">'ease'</span>, speed: <span class="hljs-number">500</span> });</code></pre></div><p><code>trickle</code>、<code>trickleRate</code>、<code>trickleSpeed</code>:</p>
+<div class="doc-code demo-highlight"><pre><code class="javascript">$.AMUI.progress.configure({ trickle: <span class="hljs-literal">false</span> });</code></pre></div><div class="doc-code demo-highlight"><pre><code class="javascript">$.AMUI.progress.configure({ trickleRate: <span class="hljs-number">0.02</span>, trickleSpeed: <span class="hljs-number">800</span> });</code></pre></div><p><code>showSpinner</code>:</p>
+<div class="doc-code demo-highlight"><pre><code class="javascript">NProgress.configure({ showSpinner: <span class="hljs-literal">false</span> });</code></pre></div><p><code>parent</code>:</p>
+<p>设置插入进度条的父容器，默认为 <code>body</code>。</p>
+<div class="doc-code demo-highlight"><pre><code class="javascript">$.AMUI.progress.configure({ parent: <span class="hljs-string">'#container'</span> });</code></pre></div><h2><a name="%E8%87%AA%E5%AE%9A%E4%B9%89" class="anchor" href="#%E8%87%AA%E5%AE%9A%E4%B9%89"><span class="header-link"></span></a>自定义</h2><p>通过更改 css 改变进度条样式，对应的样式为 <code>less</code> 目录下面的 <code>ui.progress.less</code>。</p>
+<h2><a name="%E5%8F%82%E8%80%83%E9%93%BE%E6%8E%A5" class="anchor" href="#%E5%8F%82%E8%80%83%E9%93%BE%E6%8E%A5"><span class="header-link"></span></a>参考链接</h2><ul>
+<li><a href="http://www.usabilitypost.com/2013/08/19/new-ui-pattern-website-loading-bars/">New UI Pattern: Website Loading
+Bars</a></li>
+</ul>
+<script>
+$(function(){
+  var progress = $.AMUI.progress;
+
+  $('#np-s').on('click', function() {
+    progress.start();
+  });
+
+  $('#np-d').on('click', function() {
+    progress.done();
+  });
+
+  $('#np-set').on('click', function() {
+    progress.set(0.4);
+  });
+
+  $('#np-inc').on('click', function() {
+    progress.inc();
+  });
+
+  $('#np-fd').on('click', function() {
+    progress.done(true);
+  });
+
+  $('#np-status').on('click', function() {
+    $(this).text('Status: ' + progress.status);
+  });
+});
+</script>
+
+
+
+
+  <nav class="amp-pager">
+        <ul class="am-pagination">
+          <li class="am-pagination-prev"><a href="javascript/popover.html">&laquo; Prev</a>
+          </li>
+              <li class="am-pagination-next"><a href="javascript/slider.html">Next &raquo;</a>
+              </li>
+        </ul>
+  </nav>
+</section>
+
+<script>
+  var _hmt = _hmt || [];
+  (function() {
+    var hm = document.createElement("script");
+    hm.src = "//hm.baidu.com/hm.js?b424d39312c46404f15e22574a531fbb";
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(hm);
+  })();
+
+  (function(w, d, s) {
+    function gs(){
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){ (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o), m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(w , d, s ,'//www.google-analytics.com/analytics.js','ga');
+      ga('create', 'UA-34196034-8', 'amazeui.org');
+      ga('send', 'pageview');
+    }
+    if (w.addEventListener) { w.addEventListener('load', gs, false); }
+    else if (w.attachEvent) { w.attachEvent('onload',gs); }
+  }(window, document, 'script'));
+</script>
+</body>
+</html>

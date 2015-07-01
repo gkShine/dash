@@ -1,0 +1,226 @@
+<!doctype html>
+<html class="no-js">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <title>JS 插件 | Amaze UI Dash Docsets</title>
+  <link rel="stylesheet" href="assets/css/amazeui.min.css">
+  <link rel="stylesheet" href="assets/css/app.css">
+  <script src="assets/js/jquery.min.js"></script>
+  <script src="assets/js/amazeui.min.js"></script>
+  
+</head>
+<body class="am-doc">
+<section class="doc-main am-padding-lg">
+    <h1><a name="JavaScript" class="anchor" href="#JavaScript"><span class="header-link"></span></a>JavaScript</h1><hr>
+<h2><a name="%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8" class="anchor" href="#%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8"><span class="header-link"></span></a>基本使用</h2><h3><a name="%E5%9F%BA%E4%BA%8E%20jQuery" class="anchor" href="#%E5%9F%BA%E4%BA%8E%20jQuery"><span class="header-link"></span></a>基于 jQuery</h3><p>从 2.0 开始，Amaze UI JavaScript 组件转向基于 <a href="http://jquery.com/">jQuery</a> 开发，使用时确保在 Amaze UI 的脚本之前引入了 jQuery 最新正式版。</p>
+<h3><a name="%E7%BB%84%E4%BB%B6%E8%B0%83%E7%94%A8" class="anchor" href="#%E7%BB%84%E4%BB%B6%E8%B0%83%E7%94%A8"><span class="header-link"></span></a>组件调用</h3><p>组件的调用方式普通 jQuery 插件一样，具体细节请查看各个组件的文档。</p>
+<h3><a name="jQuery%20%E5%92%8C%20Zepto.js%20%E7%9A%84%E4%B8%80%E4%BA%9B%E5%B7%AE%E5%BC%82" class="anchor" href="#jQuery%20%E5%92%8C%20Zepto.js%20%E7%9A%84%E4%B8%80%E4%BA%9B%E5%B7%AE%E5%BC%82"><span class="header-link"></span></a>jQuery 和 Zepto.js 的一些差异</h3><p>jQuery 和 Zepto.js 表面看起来差不多，其实一些细节上差异很大，同时支持 jQuery 和 Zepto.js 是一件吃力不讨好的事情，这应该也是 <a href="http://zurb.com/article/1293/why-we-dropped-zepto">Foundation 5 放弃支持 Zepto</a> 的一个原因。（<a href="http://jsbin.com/noxuvi/1/edit?html,css,js,console">下面列举的差异 Demo</a>）</p>
+<h4><a name="%3Ccode%3Ewidth()%3C%2Fcode%3E%2F%3Ccode%3Eheight()%3C%2Fcode%3E" class="anchor" href="#%3Ccode%3Ewidth()%3C%2Fcode%3E%2F%3Ccode%3Eheight()%3C%2Fcode%3E"><span class="header-link"></span></a><code>width()</code>/<code>height()</code></h4><ul>
+<li>Zepto.js: 由盒模型（<code>box-sizing</code>）决定</li>
+<li>jQuery: 忽略盒模型，始终返回内容区域的宽/高（不包含 <code>padding</code>、<code>border</code>）</li>
+</ul>
+<p>jQuery <a href="http://api.jquery.com/width/#width">官方的说明</a>：</p>
+<blockquote>
+<p>Note that <code>.width()</code> will always return the content width, regardless of the value of the CSS <code>box-sizing</code> property. As of jQuery 1.8, this may require retrieving the CSS width plus <code>box-sizing</code> property and then subtracting any potential border and padding on each element when the element has <code>box-sizing: border-box</code>. To avoid this penalty, use <code>.css(&quot;width&quot;)</code> rather than <code>.width()</code>.</p>
+</blockquote>
+<p>解决方式就是在 jQuery 中使用 <code>.css(&#39;width&#39;)</code>，而不是 <code>.width()</code>。</p>
+<p><strong>这点上 jQuery 的处理方式是值得商榷的</strong>，比如下面的例子，<code>$(&#39;.box&#39;).css(&#39;height&#39;)</code> 仍然返回 <code>20px</code>，<strong>这不是扯蛋么</strong>：</p>
+<div class="doc-code demo-highlight"><pre><code class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">style</span>&gt;</span><span class="css">
+  <span class="hljs-class">.box</span> <span class="hljs-rules">{
+    <span class="hljs-rule"><span class="hljs-attribute">box-sizing</span>:<span class="hljs-value"> border-box</span></span>;
+    <span class="hljs-rule"><span class="hljs-attribute">padding</span>:<span class="hljs-value"> <span class="hljs-number">10px</span></span></span>;
+    <span class="hljs-rule"><span class="hljs-attribute">height</span>:<span class="hljs-value"> <span class="hljs-number">0</span></span></span>;
+  <span class="hljs-rule">}</span></span>
+</span><span class="hljs-tag">&lt;/<span class="hljs-title">style</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"box"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span></code></pre></div><h5><a name="%E8%BE%B9%E6%A1%86%E4%B8%89%E8%A7%92%E5%BD%A2%E5%AE%BD%E9%AB%98%E7%9A%84%E8%8E%B7%E5%8F%96" class="anchor" href="#%E8%BE%B9%E6%A1%86%E4%B8%89%E8%A7%92%E5%BD%A2%E5%AE%BD%E9%AB%98%E7%9A%84%E8%8E%B7%E5%8F%96"><span class="header-link"></span></a>边框三角形宽高的获取</h5><p>假设用下面的 HTML 和 CSS 画了一个小三角形：</p>
+<div class="doc-code demo-highlight"><pre><code class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"caret"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span></code></pre></div><div class="doc-code demo-highlight"><pre><code class="css"><span class="hljs-class">.caret</span> <span class="hljs-rules">{
+  <span class="hljs-rule"><span class="hljs-attribute">width</span>:<span class="hljs-value"> <span class="hljs-number">0</span></span></span>;
+  <span class="hljs-rule"><span class="hljs-attribute">height</span>:<span class="hljs-value"> <span class="hljs-number">0</span></span></span>;
+  <span class="hljs-rule"><span class="hljs-attribute">border-width</span>:<span class="hljs-value"> <span class="hljs-number">0</span> <span class="hljs-number">20px</span> <span class="hljs-number">20px</span></span></span>;
+  <span class="hljs-rule"><span class="hljs-attribute">border-color</span>:<span class="hljs-value"> transparent transparent blue</span></span>;
+  <span class="hljs-rule"><span class="hljs-attribute">border-style</span>:<span class="hljs-value"> none dotted solid</span></span>;
+<span class="hljs-rule">}</span></span></code></pre></div><ul>
+<li>jQuery 使用 <code>.width()</code> 和 <code>.css(&#39;width&#39;)</code> 都返回 <code>0</code>，高度也一样；</li>
+<li>Zepto 使用 <code>.width()</code> 返回 <code>40</code>，使用 <code>.css(&#39;width&#39;)</code> 返回 <code>0px</code>。</li>
+</ul>
+<p>所以，这种场景，<strong>jQuery 使用 <code>.outerWidth()</code>/<code>.outerHeight()</code>；Zepto 使用 <code>.width()</code>/<code>.height()</code></strong>。</p>
+<h4><a name="%3Ccode%3Eoffset()%3C%2Fcode%3E" class="anchor" href="#%3Ccode%3Eoffset()%3C%2Fcode%3E"><span class="header-link"></span></a><code>offset()</code></h4><ul>
+<li>Zepto.js: 返回 <code>top</code>、<code>left</code>、<code>width</code>、<code>height</code></li>
+<li>jQuery: 返回 <code>width</code>、<code>height</code></li>
+</ul>
+<h4><a name="%3Ccode%3E%24(htmlString%2C%20attributes)%3C%2Fcode%3E" class="anchor" href="#%3Ccode%3E%24(htmlString%2C%20attributes)%3C%2Fcode%3E"><span class="header-link"></span></a><code>$(htmlString, attributes)</code></h4><ul>
+<li><a href="http://api.jquery.com/jQuery/#jQuery-html-attributes">jQuery 文档</a></li>
+<li><a href="http://zeptojs.com/#$(">Zepto 文档</a>)</li>
+</ul>
+<h5><a name="DOM%20%E6%93%8D%E4%BD%9C%E5%8C%BA%E5%88%AB" class="anchor" href="#DOM%20%E6%93%8D%E4%BD%9C%E5%8C%BA%E5%88%AB"><span class="header-link"></span></a>DOM 操作区别</h5><div class="doc-code demo-highlight"><pre><code class="javascript">$(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> </span>{
+  <span class="hljs-keyword">var</span> $list = $(<span class="hljs-string">'&lt;ul&gt;&lt;li&gt;jQuery 插入&lt;/li&gt;&lt;/ul&gt;'</span>, {
+    id: <span class="hljs-string">'insert-by-jquery'</span>
+  });
+  $list.appendTo($(<span class="hljs-string">'body'</span>));
+});</code></pre></div><p>jQuery 操作 <code>ul</code> 上的 <code>id</code> 不会被添加；Zepto 可以在 <code>ul</code> 上添加 <code>id</code>。</p>
+<h5><a name="%E4%BA%8B%E4%BB%B6%E8%A7%A6%E5%8F%91%E5%8C%BA%E5%88%AB" class="anchor" href="#%E4%BA%8B%E4%BB%B6%E8%A7%A6%E5%8F%91%E5%8C%BA%E5%88%AB"><span class="header-link"></span></a>事件触发区别</h5><div class="doc-code demo-highlight"><pre><code class="javascript">$script = $(<span class="hljs-string">'&lt;script /&gt;'</span>, {
+  src: <span class="hljs-string">'http://cdn.amazeui.org/amazeui/1.0.1/js/amazeui.min.js'</span>,
+  id: <span class="hljs-string">'ui-jquery'</span>
+});
+
+$script.appendTo($(<span class="hljs-string">'body'</span>));
+
+$script.on(<span class="hljs-string">'load'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> </span>{
+  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'jQ script loaded'</span>);
+});</code></pre></div><p>使用 jQuery 时 <code>load</code> 事件的处理函数<strong>不会</strong>执行；使用 Zepto 时 <code>load</code> 事件的处理函数<strong>会</strong>执行。</p>
+<p><strong>其他参考链接：</strong></p>
+<ul>
+<li><a href="http://w3techs.com/technologies/overview/javascript_library/all">jQuery 市场份额</a></li>
+<li><a href="http://jsperf.com/zepto-vs-jquery-2013/82">jQuery vs Zepto 性能比较</a></li>
+</ul>
+<h2><a name="%E9%AB%98%E7%BA%A7%E4%BD%BF%E7%94%A8" class="anchor" href="#%E9%AB%98%E7%BA%A7%E4%BD%BF%E7%94%A8"><span class="header-link"></span></a>高级使用</h2><h3><a name="%E9%BB%98%E8%AE%A4%E5%88%9D%E5%A7%8B%E5%8C%96%E4%BA%8B%E4%BB%B6%E6%8E%A5%E5%8F%A3" class="anchor" href="#%E9%BB%98%E8%AE%A4%E5%88%9D%E5%A7%8B%E5%8C%96%E4%BA%8B%E4%BB%B6%E6%8E%A5%E5%8F%A3"><span class="header-link"></span></a>默认初始化事件接口</h3><p>Amaze UI 通过特定的 HTML 来绑定事件，多数 JS 组件通过 HTML 标记就可以实现调用。</p>
+<p>默认的初始化事件都在 <code>xx.amui.data-api</code> 命名空间下，用户可以自行关闭。</p>
+<p>关闭所有默认事件：</p>
+<div class="doc-code demo-highlight"><pre><code class="javascript">$(<span class="hljs-built_in">document</span>).off(<span class="hljs-string">'.data-api'</span>);</code></pre></div><p>关闭特定组件的默认事件：</p>
+<div class="doc-code demo-highlight"><pre><code class="javascript">$(<span class="hljs-built_in">document</span>).off(<span class="hljs-string">'.modal.amui.data-api'</span>);</code></pre></div><h3><a name="%E8%87%AA%E5%AE%9A%E4%B9%89%E4%BA%8B%E4%BB%B6" class="anchor" href="#%E8%87%AA%E5%AE%9A%E4%B9%89%E4%BA%8B%E4%BB%B6"><span class="header-link"></span></a>自定义事件</h3><p>一些组件提供了自定义事件，命名的方式为 <code>{事件名称}.{组件名称}.amui</code>，用户可以查看组件文档了解、使用这些事件。</p>
+<div class="doc-code demo-highlight"><pre><code class="javascript">$(<span class="hljs-string">'#myAlert'</span>).on(<span class="hljs-string">'close.alert.amui'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> </span>{
+  <span class="hljs-comment">// do something</span>
+});</code></pre></div><h3><a name="MutationObserver" class="anchor" href="#MutationObserver"><span class="header-link"></span></a>MutationObserver</h3><p>双向数据绑定很酷？<a href="http://www.w3.org/TR/dom/#mutation-observers">Mutation Observer</a> 才是（或即将成为）幕后的英雄。</p>
+<p>Amaze UI 2.1 中实验性地引入了 <code>MutationObserver</code>，<strong>请谨慎使用</strong>。</p>
+<h4><a name="%3Ccode%3Edata-am-observe%3C%2Fcode%3E" class="anchor" href="#%3Ccode%3Edata-am-observe%3C%2Fcode%3E"><span class="header-link"></span></a><code>data-am-observe</code></h4><p>在元素上添加 <code>data-am-observe</code> 属性以后，动态插入该元素的 Amaze UI JS 插件会自动初始化（<a href="/javascript/scrollspy#mutationobserver?_ver=2.x">演示</a>），
+  支持的插件包括 Button、Dropdown、Slider、Popover、ScrollSpy、Tabs。</p>
+<h4><a name="%3Ccode%3E%24().DOMObserve(options%2C%20callback)%3C%2Fcode%3E" class="anchor" href="#%3Ccode%3E%24().DOMObserve(options%2C%20callback)%3C%2Fcode%3E"><span class="header-link"></span></a><code>$().DOMObserve(options, callback)</code></h4><ul>
+<li><code>options</code>: 监视的属性（<a href="https://developer.mozilla.org/en-US/docs/Web/API/MutationObserver#MutationObserverInit">具体参见</a>），默认为 <code>{childList: true, subtree: true}</code>；</li>
+<li><code>callback(mutations, observer)</code>: DOM 发生变化时的处理函数，第一个参数为存储 <a href="https://developer.mozilla.org/en-US/docs/Web/API/MutationObserver#MutationRecord">MutationRecord</a> 对象的数组，第二个参数为 MutationObserver 实例本身。</li>
+</ul>
+<div class="doc-example"><p id="js-do-actions">
+  <button class="am-btn am-btn-primary" data-insert>插入 p 元素</button>
+  <button class="am-btn am-btn-secondary" data-addClass>添加 Class</button>
+  <button class="am-btn am-btn-warning" data-remove>移除 p 元素</button>
+</p>
+<div id="js-do-demo">
+  <p>DOM 变化监视演示，打开控制台查看 log</p>
+
+</div>
+<script>
+  $(function() {
+    var $wrapper = $('#js-do-demo');
+    $wrapper.DOMObserve({
+      childList: true,
+      attributes: true,
+      subtree: true
+    }, function(mutations, observer) {
+      console.log(observer.constructor === window.MutationObserver);
+      console.log('#js-do-demo 的 DOM 发生变化鸟：' + mutations[0].type);
+    });
+
+    $('#js-do-actions').find('button').on('click', function(e) {
+      var $t = $(e.target);
+      if ($t.is('[data-insert]')) {
+        $wrapper.append('<p>插入了一个 p</p>');
+      } else if($t.is('[data-remove]')) {
+        $wrapper.find('p').last().remove();
+      } else {
+        $wrapper.addClass('am-text-danger');
+      }
+    });
+  })
+</script></div><div class="doc-code demo-highlight"><pre><code class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">p</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"js-do-actions"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">button</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-btn am-btn-primary"</span> <span class="hljs-attribute">data-insert</span>&gt;</span>插入 p 元素<span class="hljs-tag">&lt;/<span class="hljs-title">button</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">button</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-btn am-btn-secondary"</span> <span class="hljs-attribute">data-addClass</span>&gt;</span>添加 Class<span class="hljs-tag">&lt;/<span class="hljs-title">button</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">button</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-btn am-btn-warning"</span> <span class="hljs-attribute">data-remove</span>&gt;</span>移除 p 元素<span class="hljs-tag">&lt;/<span class="hljs-title">button</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"js-do-demo"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span>DOM 变化监视演示，打开控制台查看 log<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">script</span>&gt;</span><span class="javascript">
+  $(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> </span>{
+    <span class="hljs-keyword">var</span> $wrapper = $(<span class="hljs-string">'#js-do-demo'</span>);
+    $wrapper.DOMObserve({
+      childList: <span class="hljs-literal">true</span>,
+      attributes: <span class="hljs-literal">true</span>,
+      subtree: <span class="hljs-literal">true</span>
+    }, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(mutations, observer)</span> </span>{
+      <span class="hljs-built_in">console</span>.log(observer.constructor === <span class="hljs-built_in">window</span>.MutationObserver);
+      <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'#js-do-demo 的 DOM 发生变化鸟：'</span> + mutations[<span class="hljs-number">0</span>].type);
+    });
+
+    $(<span class="hljs-string">'#js-do-actions'</span>).find(<span class="hljs-string">'button'</span>).on(<span class="hljs-string">'click'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(e)</span> </span>{
+      <span class="hljs-keyword">var</span> $t = $(e.target);
+      <span class="hljs-keyword">if</span> ($t.is(<span class="hljs-string">'[data-insert]'</span>)) {
+        $wrapper.append(<span class="hljs-string">'&lt;p&gt;插入了一个 p&lt;/p&gt;'</span>);
+      } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span>($t.is(<span class="hljs-string">'[data-remove]'</span>)) {
+        $wrapper.find(<span class="hljs-string">'p'</span>).last().remove();
+      } <span class="hljs-keyword">else</span> {
+        $wrapper.addClass(<span class="hljs-string">'am-text-danger'</span>);
+      }
+    });
+  })
+</span><span class="hljs-tag">&lt;/<span class="hljs-title">script</span>&gt;</span></code></pre></div><p><strong>参考链接：</strong></p>
+<ul>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/API/MutationObserver">MDN - MutationObserver</a>；</li>
+<li><a href="http://caniuse.com/#feat=mutationobserver">CIU - Mutation Observer 浏览器支持</a></li>
+<li><a href="https://github.com/webcomponents/webcomponentsjs/blob/master/src/MutationObserver/MutationObserver.js">Polyfill - MutationObserver.js</a></li>
+</ul>
+<h3><a name="%E6%A8%A1%E5%9D%97%E5%8C%96%E5%BC%80%E5%8F%91" class="anchor" href="#%E6%A8%A1%E5%9D%97%E5%8C%96%E5%BC%80%E5%8F%91"><span class="header-link"></span></a>模块化开发</h3><p>关于前端模块化，Amaze UI 1.0 的时候曾做过一个<a href="/javascript?_ver=1.x">关于前端 JS 模块化的调查</a>，截止 2014.11.13 共 1869 个投票：</p>
+<ul>
+<li>CMD - Sea.js  23.86%  (446 votes)</li>
+<li>AMD - RequireJS  24.51%  (458 votes)</li>
+<li>CommonJS - Browserify  9.58%  (179 votes)</li>
+<li>其他加载工具（或者自行开发的）  8.19%  (153 votes)</li>
+<li>什么是 JS 模块化？可以吃吗？  34%  (633 votes)</li>
+</ul>
+<div class="am-progress">
+  <div class="am-progress-bar" style="width: 23.8%" data-am-popover="{content: 'CMD - Sea.js  23.86%  (446 votes)', trigger: 'hover focus'}">CMD</div>
+  <div class="am-progress-bar am-progress-bar-secondary" data-am-popover="{content: 'AMD - RequireJS  24.51%  (458 votes)', trigger: 'hover focus'}" style="width: 24.5%" >AMD</div>
+  <div class="am-progress-bar am-progress-bar-success" style="width: 9.5%" data-am-popover="{content: 'CommonJS - Browserify  9.58%  (179 votes)', trigger: 'hover focus'}">CJS</div>
+  <div class="am-progress-bar am-progress-bar-warning" style="width: 8.2%" data-am-popover="{content: '其他加载工具（或者自行开发的）  8.19%  (153 votes)', trigger: 'hover focus'}">other</div>
+  <div class="am-progress-bar am-progress-bar-danger" style="width: 34%" data-am-popover="{content: '什么是 JS 模块化？可以吃吗？  34%  (633 votes)', trigger: 'hover focus'}">unknown</div>
+</div>
+
+<p>显然，<strong>模块化是必然趋势</strong>，<a href="http://wiki.ecmascript.org/doku.php?id=harmony:modules">ES6</a> 将原生支持模块化。</p>
+<p>Amaze UI 2.0 按照 <a href="http://wiki.commonjs.org/wiki/CommonJS">CommonJS</a> 规范来组织模块（前端也像 Node.js 一样编写模块）。最终如何打包，用户可以自行选择。</p>
+<ul>
+<li><a href="http://browserify.org/">Browserify</a>：结合 NPM，实现前端模块管理。很多前端模块都已经发布到 NPM，可以抛弃 Bower 这类功能很单一的工具了；</li>
+<li><a href="http://duojs.org/">Duo</a>：除管理本地模块以外，还可以从 GitHub 上直接获取开源项目，支持 Javascript、HTML、CSS；</li>
+<li><a href="https://www.npmjs.org/package/gulp-amd-bundler">gulp-amd-bundler</a>：把按照 CJS 编写的模块打包成 AMD 模块;</li>
+<li><a href="https://github.com/webpack/webpack">Webpack</a>。</li>
+</ul>
+<p><a href="http://spmjs.io/">SPM</a> 貌似不支持直接通过源码提取依赖，使用 Sea.js 的用户可能需要自行修改打包工具。</p>
+<p><strong>建议阅读的文章：</strong></p>
+<ul>
+<li><a href="https://github.com/seajs/seajs/issues/588">前端模块化开发那点历史</a></li>
+<li><a href="http://addyosmani.com/writing-modular-js/">Writing Modular JavaScript With AMD, CommonJS &amp; ES Harmony</a></li>
+</ul>
+
+
+  <nav class="amp-pager">
+            <ul class="am-pagination">
+              <li class="am-pagination-next"><a href="javascript/alert.html">Next &raquo;</a>
+              </li>
+            </ul>
+  </nav>
+</section>
+
+<script>
+  var _hmt = _hmt || [];
+  (function() {
+    var hm = document.createElement("script");
+    hm.src = "//hm.baidu.com/hm.js?b424d39312c46404f15e22574a531fbb";
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(hm);
+  })();
+
+  (function(w, d, s) {
+    function gs(){
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){ (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o), m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(w , d, s ,'//www.google-analytics.com/analytics.js','ga');
+      ga('create', 'UA-34196034-8', 'amazeui.org');
+      ga('send', 'pageview');
+    }
+    if (w.addEventListener) { w.addEventListener('load', gs, false); }
+    else if (w.attachEvent) { w.attachEvent('onload',gs); }
+  }(window, document, 'script'));
+</script>
+</body>
+</html>

@@ -1,0 +1,266 @@
+<!doctype html>
+<html class="no-js">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <title>侧边栏 | Amaze UI Dash Docsets</title>
+  <link rel="stylesheet" href="../assets/css/amazeui.min.css">
+  <link rel="stylesheet" href="../assets/css/app.css">
+  <script src="../assets/js/jquery.min.js"></script>
+  <script src="../assets/js/amazeui.min.js"></script>
+  
+</head>
+<body class="am-doc">
+<section class="doc-main am-padding-lg">
+    <h1><a name="OffCanvas" class="anchor" href="#OffCanvas"><span class="header-link"></span></a>OffCanvas</h1><hr>
+<p>侧滑插件。实际使用案例参见菜单组件<a href="/widgets/menu/offcanvas1/0">演示一</a>、<a href="/widgets/menu/offcanvas1/1">演示二</a>。</p>
+<h2><a name="%E4%BD%BF%E7%94%A8%E7%A4%BA%E4%BE%8B" class="anchor" href="#%E4%BD%BF%E7%94%A8%E7%A4%BA%E4%BE%8B"><span class="header-link"></span></a>使用示例</h2><p>该组件由触发器和侧滑元素两部分组成。触发器上添加 <code>data-am-offcanvas</code> 属性，侧滑元素使用固定的 HTML 结构。</p>
+<h3><a name="%E9%BB%98%E8%AE%A4%E6%A0%B7%E5%BC%8F" class="anchor" href="#%E9%BB%98%E8%AE%A4%E6%A0%B7%E5%BC%8F"><span class="header-link"></span></a>默认样式</h3><div class="doc-example"><!-- 链接触发器， href 属性为目标元素 ID -->
+<a href="#doc-oc-demo1" data-am-offcanvas>点击显示侧边栏</a>
+
+<!-- 侧边栏内容 -->
+<div id="doc-oc-demo1" class="am-offcanvas">
+  <div class="am-offcanvas-bar">
+    <div class="am-offcanvas-content">
+      <p>
+        我不愿让你一个人 <br/>
+        承受这世界的残忍 <br/>
+        我不愿眼泪陪你到 永恒
+      </p>
+    </div>
+  </div>
+</div></div><div class="doc-code demo-highlight"><pre><code class="xml"><span class="hljs-comment">&lt;!-- 链接触发器， href 属性为目标元素 ID --&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"#doc-oc-demo1"</span> <span class="hljs-attribute">data-am-offcanvas</span>&gt;</span>点击显示侧边栏<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+
+<span class="hljs-comment">&lt;!-- 侧边栏内容 --&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"doc-oc-demo1"</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-offcanvas"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-offcanvas-bar"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-offcanvas-content"</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span>
+        我不愿让你一个人 <span class="hljs-tag">&lt;<span class="hljs-title">br</span>/&gt;</span>
+        承受这世界的残忍 <span class="hljs-tag">&lt;<span class="hljs-title">br</span>/&gt;</span>
+        我不愿眼泪陪你到 永恒
+      <span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span></code></pre></div><h3><a name="Push%20%E6%95%88%E6%9E%9C" class="anchor" href="#Push%20%E6%95%88%E6%9E%9C"><span class="header-link"></span></a>Push 效果</h3><p>设置 <code>effect: &#39;push&#39;</code>。</p>
+<div class="doc-example"><!-- 按钮触发器， 需要指定 target -->
+<button class="am-btn am-btn-primary" data-am-offcanvas="{target: '#doc-oc-demo2', effect: 'push'}">点击显示侧边栏</button>
+
+<!-- 侧边栏内容 -->
+<div id="doc-oc-demo2" class="am-offcanvas">
+  <div class="am-offcanvas-bar">
+    <div class="am-offcanvas-content">
+      <p>
+        我不愿让你一个人 <br/>
+        承受这世界的残忍 <br/>
+        我不愿眼泪陪你到 永恒
+      </p>
+    </div>
+  </div>
+</div></div><div class="doc-code demo-highlight"><pre><code class="xml"><span class="hljs-comment">&lt;!-- 按钮触发器， 需要指定 target --&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">button</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-btn am-btn-primary"</span> <span class="hljs-attribute">data-am-offcanvas</span>=<span class="hljs-value">"{target: '#doc-oc-demo2', effect: 'push'}"</span>&gt;</span>点击显示侧边栏<span class="hljs-tag">&lt;/<span class="hljs-title">button</span>&gt;</span>
+
+<span class="hljs-comment">&lt;!-- 侧边栏内容 --&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"doc-oc-demo2"</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-offcanvas"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-offcanvas-bar"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-offcanvas-content"</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span>
+        我不愿让你一个人 <span class="hljs-tag">&lt;<span class="hljs-title">br</span>/&gt;</span>
+        承受这世界的残忍 <span class="hljs-tag">&lt;<span class="hljs-title">br</span>/&gt;</span>
+        我不愿眼泪陪你到 永恒
+      <span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span></code></pre></div><h3><a name="%E5%8F%B3%E4%BE%A7%E6%98%BE%E7%A4%BA" class="anchor" href="#%E5%8F%B3%E4%BE%A7%E6%98%BE%E7%A4%BA"><span class="header-link"></span></a>右侧显示</h3><p>边栏默认显示在左侧，在内容容器上添加 <code>.am-offcanvas-bar-flip</code> class 调整为右侧。</p>
+<div class="doc-example"><!-- 按钮触发器， 需要指定 target -->
+<button class="am-btn am-btn-success" data-am-offcanvas="{target: '#doc-oc-demo3'}">右侧显示侧边栏</button>
+
+<!-- 侧边栏内容 -->
+<div id="doc-oc-demo3" class="am-offcanvas">
+  <div class="am-offcanvas-bar am-offcanvas-bar-flip">
+    <div class="am-offcanvas-content">
+      <p>
+        我不愿让你一个人 <br/>
+        承受这世界的残忍 <br/>
+        我不愿眼泪陪你到 永恒 <br/>
+      </p>
+      <p><a href="http://music.163.com/#/song?id=385554" target="_blank">网易音乐</a>      </p>
+    </div>
+  </div>
+</div></div><div class="doc-code demo-highlight"><pre><code class="xml"><span class="hljs-comment">&lt;!-- 按钮触发器， 需要指定 target --&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">button</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-btn am-btn-success"</span> <span class="hljs-attribute">data-am-offcanvas</span>=<span class="hljs-value">"{target: '#doc-oc-demo3'}"</span>&gt;</span>右侧显示边栏<span class="hljs-tag">&lt;/<span class="hljs-title">button</span>&gt;</span>
+
+<span class="hljs-comment">&lt;!-- 侧边栏内容 --&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"doc-oc-demo3"</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-offcanvas"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-offcanvas-bar am-offcanvas-bar-flip"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-offcanvas-content"</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span>
+        我不愿让你一个人 <span class="hljs-tag">&lt;<span class="hljs-title">br</span>/&gt;</span>
+        承受这世界的残忍 <span class="hljs-tag">&lt;<span class="hljs-title">br</span>/&gt;</span>
+        我不愿眼泪陪你到 永恒 <span class="hljs-tag">&lt;<span class="hljs-title">br</span>/&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"http://music.163.com/#/song?id=385554"</span> <span class="hljs-attribute">target</span>=<span class="hljs-value">"_blank"</span>&gt;</span>网易音乐<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>      <span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span></code></pre></div><div class="doc-code demo-highlight"><pre><code class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"my-id"</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-offcanvas"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-offcanvas-bar am-offcanvas-bar-flip"</span>&gt;</span>...<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span></code></pre></div><h2><a name="%E8%B0%83%E7%94%A8%E6%96%B9%E5%BC%8F" class="anchor" href="#%E8%B0%83%E7%94%A8%E6%96%B9%E5%BC%8F"><span class="header-link"></span></a>调用方式</h2><p>首先，按照以下结构组织好侧栏内容：</p>
+<div class="doc-code demo-highlight"><pre><code class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"your-id"</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-offcanvas"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-offcanvas-bar"</span>&gt;</span>
+    <span class="hljs-comment">&lt;!-- 你的内容 --&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span></code></pre></div><h3><a name="%E9%80%9A%E8%BF%87%20Data%20API" class="anchor" href="#%E9%80%9A%E8%BF%87%20Data%20API"><span class="header-link"></span></a>通过 Data API</h3><p>在要触发侧栏的元素上添加 <code>data-am-offcanvas</code> 属性：</p>
+<ul>
+<li>如果是 <code>&lt;a&gt;</code> 元素，则把 <code>href</code> 的值设置为边栏的 ID：<code>href=&quot;#your-id&quot;</code>；</li>
+<li>如果是其他元素，则在 <code>data-am-offcanvas</code> 的值里面指定侧边栏 ID：</li>
+</ul>
+<div class="doc-code demo-highlight"><pre><code class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">button</span> <span class="hljs-attribute">data-am-offcanvas</span>=<span class="hljs-value">"{target: '#your-id'}"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">button</span>&gt;</span></code></pre></div><table class="am-table am-table-bd am-table-striped">
+  <thead>
+  <tr>
+    <th>属性</th>
+    <th>描述</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr>
+    <td><code>{target: '#your-id'}</code></td>
+    <td>指定侧边栏，如果是 <code>a</code> 元素则写在 <code>href</code> 里</td>
+  </tr>
+  <tr>
+    <td><code>{effect: 'push'}</code></td>
+    <td>边栏动画效果，可选的值为 <code>overlay | push</code> 默认为 <code>overlay</code></td>
+  </tr>
+  </tbody>
+</table>
+
+<h3><a name="%E9%80%9A%E8%BF%87%20JS" class="anchor" href="#%E9%80%9A%E8%BF%87%20JS"><span class="header-link"></span></a>通过 JS</h3><p>组织好 OffCanvas HTML 以后，可以通过 Javascript 调用。</p>
+<div class="doc-code demo-highlight"><pre><code class="javascript">$(<span class="hljs-string">'#my-offcanvas'</span>).offCanvas(options);</code></pre></div><p><strong>注意：</strong> 这里 <code>#my-offcanvas</code> 直接指向侧边栏元素，而不是触发器。</p>
+<h4><a name="%E5%8F%82%E6%95%B0%E8%AF%B4%E6%98%8E" class="anchor" href="#%E5%8F%82%E6%95%B0%E8%AF%B4%E6%98%8E"><span class="header-link"></span></a>参数说明</h4><ul>
+<li><code>options.effect</code>，值为 <code>overlay | push</code>，默认为 <code>overlay</code>。</li>
+</ul>
+<div class="doc-code demo-highlight"><pre><code class="javascript">$(<span class="hljs-string">'#my-offcanvas'</span>).offCanvas({effect: <span class="hljs-string">'push'</span>});</code></pre></div><p>通过 <code>$().offCanvas(options)</code> 设置，参数同上。</p>
+<h4><a name="%E6%96%B9%E6%B3%95" class="anchor" href="#%E6%96%B9%E6%B3%95"><span class="header-link"></span></a>方法</h4><ul>
+<li><code>$().offCanvas(options)</code> - 设置边栏参数并打开边栏</li>
+<li><code>$().offCanvas(&#39;open&#39;)</code> - 打开边栏</li>
+<li><code>$().offCanvas(&#39;close&#39;)</code> - 关闭边栏</li>
+</ul>
+<h4><a name="%E8%87%AA%E5%AE%9A%E4%B9%89%E4%BA%8B%E4%BB%B6" class="anchor" href="#%E8%87%AA%E5%AE%9A%E4%B9%89%E4%BA%8B%E4%BB%B6"><span class="header-link"></span></a>自定义事件</h4><table class="am-table am-table-bd am-table-striped">
+  <thead>
+  <tr>
+    <th>事件名称</th>
+    <th>描述</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr>
+    <td><code>open.offcanvas.amui</code></td>
+    <td>打开边栏时立即触发</td>
+  </tr>
+  <tr>
+    <td><code>close.offcanvas.amui</code></td>
+    <td>关闭边栏时立即触发</td>
+  </tr>
+  </tbody>
+</table>
+
+<h4><a name="JS%20%E6%8E%A7%E5%88%B6%E7%A4%BA%E4%BE%8B" class="anchor" href="#JS%20%E6%8E%A7%E5%88%B6%E7%A4%BA%E4%BE%8B"><span class="header-link"></span></a>JS 控制示例</h4><p>下面的示例演示了使用 JS 打开/关闭侧边栏。侧边栏打开以后，关闭按钮无法点击到，可以在控制台输入以下代码模拟点击事件：</p>
+<div class="doc-code demo-highlight"><pre><code class="javascript">$(<span class="hljs-string">'[data-rel="close"]'</span>).click();</code></pre></div><div class="doc-example"><!-- 侧边栏内容 -->
+<div id="my-offcanvas" class="am-offcanvas">
+  <div class="am-offcanvas-bar">
+    <div class="am-offcanvas-content">
+      <p>
+        你那张略带着 <br/>
+        一点点颓废的脸孔 <br/>
+        轻薄的嘴唇 <br/>
+        含着一千个谎言
+      </p>
+    </div>
+  </div>
+</div>
+
+<button class="am-btn am-btn-primary doc-oc-js" data-rel="open">打开侧边栏</button>
+<button class="am-btn am-btn-primary doc-oc-js" data-rel="close">关闭侧边栏</button>
+
+<script>
+  $(function() {
+    var id = '#my-offcanvas';
+    var $myOc = $(id);
+    $('.doc-oc-js').on('click', function() {
+      $myOc.offCanvas($(this).data('rel'));
+    });
+
+    $myOc.on('open.offcanvas.amui', function() {
+      console.log(id + ' 打开了。');
+    }).on('close.offcanvas.amui', function() {
+      console.log(id + ' 关闭了。');
+    });
+  });
+</script></div><div class="doc-code demo-highlight"><pre><code class="xml"><span class="hljs-comment">&lt;!-- 侧边栏内容 --&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"my-offcanvas"</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-offcanvas"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-offcanvas-bar"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-offcanvas-content"</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span>
+        你那张略带着 <span class="hljs-tag">&lt;<span class="hljs-title">br</span>/&gt;</span>
+        一点点颓废的脸孔 <span class="hljs-tag">&lt;<span class="hljs-title">br</span>/&gt;</span>
+        轻薄的嘴唇 <span class="hljs-tag">&lt;<span class="hljs-title">br</span>/&gt;</span>
+        含着一千个谎言
+      <span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-title">button</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-btn am-btn-primary doc-oc-js"</span> <span class="hljs-attribute">data-rel</span>=<span class="hljs-value">"open"</span>&gt;</span>打开侧边栏<span class="hljs-tag">&lt;/<span class="hljs-title">button</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">button</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-btn am-btn-primary doc-oc-js"</span> <span class="hljs-attribute">data-rel</span>=<span class="hljs-value">"close"</span>&gt;</span>关闭侧边栏<span class="hljs-tag">&lt;/<span class="hljs-title">button</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-title">script</span>&gt;</span><span class="javascript">
+  $(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> </span>{
+    <span class="hljs-keyword">var</span> id = <span class="hljs-string">'#my-offcanvas'</span>;
+    <span class="hljs-keyword">var</span> $myOc = $(id);
+    $(<span class="hljs-string">'.doc-oc-js'</span>).on(<span class="hljs-string">'click'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> </span>{
+      $myOc.offCanvas($(<span class="hljs-keyword">this</span>).data(<span class="hljs-string">'rel'</span>));
+    });
+
+    $myOc.on(<span class="hljs-string">'open.offcanvas.amui'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> </span>{
+      <span class="hljs-built_in">console</span>.log(id + <span class="hljs-string">' 打开了。'</span>);
+    }).on(<span class="hljs-string">'close.offcanvas.amui'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> </span>{
+      <span class="hljs-built_in">console</span>.log(id + <span class="hljs-string">' 关闭了。'</span>);
+    });
+  });
+</span><span class="hljs-tag">&lt;/<span class="hljs-title">script</span>&gt;</span></code></pre></div>
+
+  <nav class="amp-pager">
+        <ul class="am-pagination">
+          <li class="am-pagination-prev"><a href="javascript/slider.html">&laquo; Prev</a>
+          </li>
+              <li class="am-pagination-next"><a href="javascript/scrollspy.html">Next &raquo;</a>
+              </li>
+        </ul>
+  </nav>
+</section>
+
+<script>
+  var _hmt = _hmt || [];
+  (function() {
+    var hm = document.createElement("script");
+    hm.src = "//hm.baidu.com/hm.js?b424d39312c46404f15e22574a531fbb";
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(hm);
+  })();
+
+  (function(w, d, s) {
+    function gs(){
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){ (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o), m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(w , d, s ,'//www.google-analytics.com/analytics.js','ga');
+      ga('create', 'UA-34196034-8', 'amazeui.org');
+      ga('send', 'pageview');
+    }
+    if (w.addEventListener) { w.addEventListener('load', gs, false); }
+    else if (w.attachEvent) { w.attachEvent('onload',gs); }
+  }(window, document, 'script'));
+</script>
+</body>
+</html>

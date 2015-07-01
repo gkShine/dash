@@ -1,0 +1,549 @@
+<!doctype html>
+<html class="no-js">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <title>Form 表单元素 | Amaze UI Dash Docsets</title>
+  <link rel="stylesheet" href="../assets/css/amazeui.min.css">
+  <link rel="stylesheet" href="../assets/css/app.css">
+  <script src="../assets/js/jquery.min.js"></script>
+  <script src="../assets/js/amazeui.min.js"></script>
+  
+</head>
+<body class="am-doc">
+<section class="doc-main am-padding-lg">
+    <h1><a name="Form%20%E8%A1%A8%E5%8D%95%E5%85%83%E7%B4%A0" class="anchor" href="#Form%20%E8%A1%A8%E5%8D%95%E5%85%83%E7%B4%A0"><span class="header-link"></span></a>Form 表单元素</h1><hr>
+<p><code>&lt;form&gt;</code> 元素样式。</p>
+<h2><a name="%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8" class="anchor" href="#%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8"><span class="header-link"></span></a>基本使用</h2><h3><a name="%E5%8D%95%E9%80%89%E3%80%81%E5%A4%8D%E9%80%89%E6%A1%86" class="anchor" href="#%E5%8D%95%E9%80%89%E3%80%81%E5%A4%8D%E9%80%89%E6%A1%86"><span class="header-link"></span></a>单选、复选框</h3><p><code>checkbox</code>、<code>radio</code> 类型的 <code>&lt;input&gt;</code> 与其他元素稍有区别：</p>
+<ul>
+<li>块级显示时在容器上添加 <code>.am-checkbox</code>、<code>.am-radio</code> class；</li>
+<li>行内显示时在容器上添加 <code>.am-checkbox-inline</code>、<code>.am-radio-inline</code> class。</li>
+</ul>
+<h3><a name="%E4%B8%8B%E6%8B%89%E9%80%89%E6%A1%86" class="anchor" href="#%E4%B8%8B%E6%8B%89%E9%80%89%E6%A1%86"><span class="header-link"></span></a>下拉选框</h3><p><strong><code>&lt;select&gt;</code> 是一个比较奇葩的元素，长得丑还不让人给它打扮</strong>。</p>
+<p>单使用 CSS， 很难给 <code>select</code> 定义跨浏览器兼容的样式，保留浏览器默认样式可能是它最好的归宿（<a href="http://purecss.io/forms/#stacked-form">Pure CSS 就是这么干的</a>)。Amaze UI 中针对 Webkit 浏览器写了一点样式替换了默认的下上三角形。</p>
+<h3><a name="%E5%9F%BA%E6%9C%AC%E6%BC%94%E7%A4%BA" class="anchor" href="#%E5%9F%BA%E6%9C%AC%E6%BC%94%E7%A4%BA"><span class="header-link"></span></a>基本演示</h3><p>在容器上添加 <code>.am-form</code> class，容器里的子元素才会应用 Amaze UI 定义的样式。</p>
+<div class="doc-example"><form class="am-form">
+  <fieldset>
+    <legend>表单标题</legend>
+
+    <div class="am-form-group">
+      <label for="doc-ipt-email-1">邮件</label>
+      <input type="email" class="" id="doc-ipt-email-1" placeholder="输入电子邮件">
+    </div>
+
+    <div class="am-form-group">
+      <label for="doc-ipt-pwd-1">密码</label>
+      <input type="password" class="" id="doc-ipt-pwd-1" placeholder="设置个密码吧">
+    </div>
+
+    <div class="am-form-group">
+      <label for="doc-ipt-file-1">文件上传域</label>
+      <input type="file" id="doc-ipt-file-1">
+      <p class="am-form-help">请选择要上传的文件...</p>
+    </div>
+
+    <div class="am-checkbox">
+      <label>
+        <input type="checkbox"> 复选框，选我选我选我
+      </label>
+    </div>
+
+    <div class="am-radio">
+      <label>
+        <input type="radio" name="doc-radio-1" value="option1" checked>
+        单选框 - 选项1
+      </label>
+    </div>
+
+    <div class="am-radio">
+      <label>
+        <input type="radio" name="doc-radio-1" value="option2">
+        单选框 - 选项2
+      </label>
+    </div>
+
+    <div class="am-form-group">
+      <label class="am-checkbox-inline">
+        <input type="checkbox" value="option1"> 选我
+      </label>
+      <label class="am-checkbox-inline">
+        <input type="checkbox" value="option2"> 同时可以选我
+      </label>
+      <label class="am-checkbox-inline">
+        <input type="checkbox" value="option3"> 还可以选我
+      </label>
+    </div>
+
+    <div class="am-form-group">
+      <label class="am-radio-inline">
+        <input type="radio"  value="" name="docInlineRadio"> 每一分
+      </label>
+      <label class="am-radio-inline">
+        <input type="radio" name="docInlineRadio"> 每一秒
+      </label>
+      <label class="am-radio-inline">
+        <input type="radio" name="docInlineRadio"> 多好
+      </label>
+    </div>
+
+    <div class="am-form-group am-form-select">
+      <label for="doc-select-1">下拉多选框</label>
+      <select id="doc-select-1">
+        <option value="option1">选项一...</option>
+        <option value="option2">选项二.....</option>
+        <option value="option3">选项三........</option>
+      </select>
+      <span class="am-form-caret"></span>
+    </div>
+
+    <div class="am-form-group">
+      <label for="doc-select-2">多选框</label>
+      <select multiple class="" id="doc-select-2">
+        <option>1</option>
+        <option>2</option>
+        <option>3</option>
+        <option>4</option>
+        <option>5</option>
+      </select>
+    </div>
+
+    <div class="am-form-group">
+      <label for="doc-ta-1">文本域</label>
+      <textarea class="" rows="5" id="doc-ta-1"></textarea>
+    </div>
+
+    <p><button type="submit" class="am-btn am-btn-default">提交</button></p>
+  </fieldset>
+</form></div><div class="doc-code demo-highlight"><pre><code class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">form</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-form"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">fieldset</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">legend</span>&gt;</span>表单标题<span class="hljs-tag">&lt;/<span class="hljs-title">legend</span>&gt;</span>
+
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-form-group"</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">label</span> <span class="hljs-attribute">for</span>=<span class="hljs-value">"doc-ipt-email-1"</span>&gt;</span>邮件<span class="hljs-tag">&lt;/<span class="hljs-title">label</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"email"</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">""</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"doc-ipt-email-1"</span> <span class="hljs-attribute">placeholder</span>=<span class="hljs-value">"输入电子邮件"</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-form-group"</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">label</span> <span class="hljs-attribute">for</span>=<span class="hljs-value">"doc-ipt-pwd-1"</span>&gt;</span>密码<span class="hljs-tag">&lt;/<span class="hljs-title">label</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"password"</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">""</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"doc-ipt-pwd-1"</span> <span class="hljs-attribute">placeholder</span>=<span class="hljs-value">"设置个密码吧"</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-form-group"</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">label</span> <span class="hljs-attribute">for</span>=<span class="hljs-value">"doc-ipt-file-1"</span>&gt;</span>文件上传域<span class="hljs-tag">&lt;/<span class="hljs-title">label</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"file"</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"doc-ipt-file-1"</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">p</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-form-help"</span>&gt;</span>请选择要上传的文件...<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-checkbox"</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">label</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"checkbox"</span>&gt;</span> 复选框，选我选我选我
+      <span class="hljs-tag">&lt;/<span class="hljs-title">label</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-radio"</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">label</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"radio"</span> <span class="hljs-attribute">name</span>=<span class="hljs-value">"doc-radio-1"</span> <span class="hljs-attribute">value</span>=<span class="hljs-value">"option1"</span> <span class="hljs-attribute">checked</span>&gt;</span>
+        单选框 - 选项1
+      <span class="hljs-tag">&lt;/<span class="hljs-title">label</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-radio"</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">label</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"radio"</span> <span class="hljs-attribute">name</span>=<span class="hljs-value">"doc-radio-1"</span> <span class="hljs-attribute">value</span>=<span class="hljs-value">"option2"</span>&gt;</span>
+        单选框 - 选项2
+      <span class="hljs-tag">&lt;/<span class="hljs-title">label</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-form-group"</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">label</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-checkbox-inline"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"checkbox"</span> <span class="hljs-attribute">value</span>=<span class="hljs-value">"option1"</span>&gt;</span> 选我
+      <span class="hljs-tag">&lt;/<span class="hljs-title">label</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">label</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-checkbox-inline"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"checkbox"</span> <span class="hljs-attribute">value</span>=<span class="hljs-value">"option2"</span>&gt;</span> 同时可以选我
+      <span class="hljs-tag">&lt;/<span class="hljs-title">label</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">label</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-checkbox-inline"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"checkbox"</span> <span class="hljs-attribute">value</span>=<span class="hljs-value">"option3"</span>&gt;</span> 还可以选我
+      <span class="hljs-tag">&lt;/<span class="hljs-title">label</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-form-group"</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">label</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-radio-inline"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"radio"</span>  <span class="hljs-attribute">value</span>=<span class="hljs-value">""</span> <span class="hljs-attribute">name</span>=<span class="hljs-value">"docInlineRadio"</span>&gt;</span> 每一分
+      <span class="hljs-tag">&lt;/<span class="hljs-title">label</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">label</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-radio-inline"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"radio"</span> <span class="hljs-attribute">name</span>=<span class="hljs-value">"docInlineRadio"</span>&gt;</span> 每一秒
+      <span class="hljs-tag">&lt;/<span class="hljs-title">label</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">label</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-radio-inline"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"radio"</span> <span class="hljs-attribute">name</span>=<span class="hljs-value">"docInlineRadio"</span>&gt;</span> 多好
+      <span class="hljs-tag">&lt;/<span class="hljs-title">label</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-form-group"</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">label</span> <span class="hljs-attribute">for</span>=<span class="hljs-value">"doc-select-1"</span>&gt;</span>下拉多选框<span class="hljs-tag">&lt;/<span class="hljs-title">label</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">select</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"doc-select-1"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">option</span> <span class="hljs-attribute">value</span>=<span class="hljs-value">"option1"</span>&gt;</span>选项一...<span class="hljs-tag">&lt;/<span class="hljs-title">option</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">option</span> <span class="hljs-attribute">value</span>=<span class="hljs-value">"option2"</span>&gt;</span>选项二.....<span class="hljs-tag">&lt;/<span class="hljs-title">option</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">option</span> <span class="hljs-attribute">value</span>=<span class="hljs-value">"option3"</span>&gt;</span>选项三........<span class="hljs-tag">&lt;/<span class="hljs-title">option</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-title">select</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-form-caret"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-form-group"</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">label</span> <span class="hljs-attribute">for</span>=<span class="hljs-value">"doc-select-2"</span>&gt;</span>多选框<span class="hljs-tag">&lt;/<span class="hljs-title">label</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">select</span> <span class="hljs-attribute">multiple</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">""</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"doc-select-2"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">option</span>&gt;</span>1<span class="hljs-tag">&lt;/<span class="hljs-title">option</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">option</span>&gt;</span>2<span class="hljs-tag">&lt;/<span class="hljs-title">option</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">option</span>&gt;</span>3<span class="hljs-tag">&lt;/<span class="hljs-title">option</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">option</span>&gt;</span>4<span class="hljs-tag">&lt;/<span class="hljs-title">option</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">option</span>&gt;</span>5<span class="hljs-tag">&lt;/<span class="hljs-title">option</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-title">select</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-form-group"</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">label</span> <span class="hljs-attribute">for</span>=<span class="hljs-value">"doc-ta-1"</span>&gt;</span>文本域<span class="hljs-tag">&lt;/<span class="hljs-title">label</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">textarea</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">""</span> <span class="hljs-attribute">rows</span>=<span class="hljs-value">"5"</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"doc-ta-1"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">textarea</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+
+    <span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">button</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"submit"</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-btn am-btn-default"</span>&gt;</span>提交<span class="hljs-tag">&lt;/<span class="hljs-title">button</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">fieldset</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">form</span>&gt;</span></code></pre></div><h3><a name="%E8%A1%A8%E5%8D%95%E5%BD%A2%E7%8A%B6" class="anchor" href="#%E8%A1%A8%E5%8D%95%E5%BD%A2%E7%8A%B6"><span class="header-link"></span></a>表单形状</h3><div class="doc-example"><p><input type="text" class="am-form-field am-radius" placeholder="圆角表单域" /></p>
+<p><input type="text" class="am-form-field am-round" placeholder="椭圆表单域"/></p></div><div class="doc-code demo-highlight"><pre><code class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"text"</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-form-field am-radius"</span> <span class="hljs-attribute">placeholder</span>=<span class="hljs-value">"圆角表单域"</span> /&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"text"</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-form-field am-round"</span> <span class="hljs-attribute">placeholder</span>=<span class="hljs-value">"椭圆表单域"</span>/&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span></code></pre></div><h2><a name="%E8%A1%A8%E5%8D%95%E5%9F%9F%E7%8A%B6%E6%80%81" class="anchor" href="#%E8%A1%A8%E5%8D%95%E5%9F%9F%E7%8A%B6%E6%80%81"><span class="header-link"></span></a>表单域状态</h2><p>设置表单元素的不同状态。</p>
+<h3><a name="%E7%A6%81%E7%94%A8%E5%8D%95%E4%B8%AA%E5%85%83%E7%B4%A0" class="anchor" href="#%E7%A6%81%E7%94%A8%E5%8D%95%E4%B8%AA%E5%85%83%E7%B4%A0"><span class="header-link"></span></a>禁用单个元素</h3><p>给 <code>&lt;input&gt;</code> 添加 <code>disabled</code> 属性以禁用表单元素。</p>
+<div class="doc-example"><form class="am-form">
+  <input class="am-form-field" type="text" placeholder="禁止输入的表单..." disabled>
+</form></div><div class="doc-code demo-highlight"><pre><code class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">form</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-form"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-form-field"</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"text"</span> <span class="hljs-attribute">placeholder</span>=<span class="hljs-value">"禁止输入的表单..."</span> <span class="hljs-attribute">disabled</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">form</span>&gt;</span></code></pre></div><p>给 <code>&lt;fieldset&gt;</code> 元素增加 <code>disabled</code> 属性，禁用所有的子元素。</p>
+<h3><a name="%E7%A6%81%E7%94%A8%E5%9F%9F%E5%86%85%E7%9A%84%E5%85%83%E7%B4%A0" class="anchor" href="#%E7%A6%81%E7%94%A8%E5%9F%9F%E5%86%85%E7%9A%84%E5%85%83%E7%B4%A0"><span class="header-link"></span></a>禁用域内的元素</h3><div class="doc-example"><form class="am-form">
+  <fieldset disabled>
+    <div class="am-form-group">
+      <label for="doc-ds-ipt-1">禁用的文本框</label>
+      <input type="text" id="doc-ds-ipt-1" class="am-form-field" placeholder="禁止输入">
+    </div>
+
+    <div class="am-form-group">
+      <label for="oc-ds-select-1">禁用的下拉选框</label>
+      <select id="oc-ds-select-1" class="am-form-field">
+        <option>禁止选择我</option>
+      </select>
+    </div>
+
+    <div class="am-checkbox">
+      <label>
+        <input type="checkbox"> 无法选中的复选框
+      </label>
+    </div>
+
+    <button type="submit" class="am-btn am-btn-primary">Submit</button>
+  </fieldset>
+</form></div><div class="doc-code demo-highlight"><pre><code class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">form</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-form"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">fieldset</span> <span class="hljs-attribute">disabled</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-form-group"</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">label</span> <span class="hljs-attribute">for</span>=<span class="hljs-value">"doc-ds-ipt-1"</span>&gt;</span>禁用的文本框<span class="hljs-tag">&lt;/<span class="hljs-title">label</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"text"</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"doc-ds-ipt-1"</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-form-field"</span> <span class="hljs-attribute">placeholder</span>=<span class="hljs-value">"禁止输入"</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-form-group"</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">label</span> <span class="hljs-attribute">for</span>=<span class="hljs-value">"oc-ds-select-1"</span>&gt;</span>禁用的下拉选框<span class="hljs-tag">&lt;/<span class="hljs-title">label</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">select</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"oc-ds-select-1"</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-form-field"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">option</span>&gt;</span>禁止选择我<span class="hljs-tag">&lt;/<span class="hljs-title">option</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-title">select</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-checkbox"</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">label</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"checkbox"</span>&gt;</span> 无法选中的复选框
+      <span class="hljs-tag">&lt;/<span class="hljs-title">label</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+
+    <span class="hljs-tag">&lt;<span class="hljs-title">button</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"submit"</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-btn am-btn-primary"</span>&gt;</span>Submit<span class="hljs-tag">&lt;/<span class="hljs-title">button</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">fieldset</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">form</span>&gt;</span></code></pre></div><h3><a name="%E7%A6%81%E7%94%A8%E9%93%BE%E6%8E%A5" class="anchor" href="#%E7%A6%81%E7%94%A8%E9%93%BE%E6%8E%A5"><span class="header-link"></span></a>禁用链接</h3><p><code>&lt;a&gt;</code> 元素设置禁用状态需要加上 <code>.am-disabled</code>  class。</p>
+<div class="doc-example"><a class="am-btn am-btn-primary am-disabled">禁止提交</a></div><div class="doc-code demo-highlight"><pre><code class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-btn am-btn-primary am-disabled"</span>&gt;</span>禁止提交<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span></code></pre></div><h2><a name="%E8%A1%A8%E5%8D%95%E6%8E%92%E5%88%97" class="anchor" href="#%E8%A1%A8%E5%8D%95%E6%8E%92%E5%88%97"><span class="header-link"></span></a>表单排列</h2><h3><a name="%E6%B0%B4%E5%B9%B3%E6%8E%92%E5%88%97" class="anchor" href="#%E6%B0%B4%E5%B9%B3%E6%8E%92%E5%88%97"><span class="header-link"></span></a>水平排列</h3><p>在 <code>&lt;form&gt;</code> 添加 <code>.am-form-horizontal</code> class 并结合网格系统使用。</p>
+<div class="doc-example"><form class="am-form am-form-horizontal">
+  <div class="am-form-group">
+    <label for="doc-ipt-3" class="am-u-sm-2 am-form-label">电子邮件</label>
+    <div class="am-u-sm-10">
+      <input type="email" id="doc-ipt-3" placeholder="输入你的电子邮件">
+    </div>
+  </div>
+
+  <div class="am-form-group">
+    <label for="doc-ipt-pwd-2" class="am-u-sm-2 am-form-label">密码</label>
+    <div class="am-u-sm-10">
+      <input type="password" id="doc-ipt-pwd-2" placeholder="设置一个密码吧">
+    </div>
+  </div>
+
+  <div class="am-form-group">
+    <div class="am-u-sm-offset-2 am-u-sm-10">
+      <div class="checkbox">
+        <label>
+          <input type="checkbox"> 记住十万年
+        </label>
+      </div>
+    </div>
+  </div>
+
+  <div class="am-form-group">
+    <div class="am-u-sm-10 am-u-sm-offset-2">
+      <button type="submit" class="am-btn am-btn-default">提交登入</button>
+    </div>
+  </div>
+</form></div><div class="doc-code demo-highlight"><pre><code class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">form</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-form am-form-horizontal"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-form-group"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">label</span> <span class="hljs-attribute">for</span>=<span class="hljs-value">"doc-ipt-3"</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-u-sm-2 am-form-label"</span>&gt;</span>电子邮件<span class="hljs-tag">&lt;/<span class="hljs-title">label</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-u-sm-10"</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"email"</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"doc-ipt-3"</span> <span class="hljs-attribute">placeholder</span>=<span class="hljs-value">"输入你的电子邮件"</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+
+  <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-form-group"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">label</span> <span class="hljs-attribute">for</span>=<span class="hljs-value">"doc-ipt-pwd-2"</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-u-sm-2 am-form-label"</span>&gt;</span>密码<span class="hljs-tag">&lt;/<span class="hljs-title">label</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-u-sm-10"</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"password"</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"doc-ipt-pwd-2"</span> <span class="hljs-attribute">placeholder</span>=<span class="hljs-value">"设置一个密码吧"</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+
+  <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-form-group"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-u-sm-offset-2 am-u-sm-10"</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"checkbox"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">label</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"checkbox"</span>&gt;</span> 记住十万年
+        <span class="hljs-tag">&lt;/<span class="hljs-title">label</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+
+  <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-form-group"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-u-sm-10 am-u-sm-offset-2"</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">button</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"submit"</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-btn am-btn-default"</span>&gt;</span>提交登入<span class="hljs-tag">&lt;/<span class="hljs-title">button</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">form</span>&gt;</span></code></pre></div><h3><a name="%E8%A1%8C%E5%86%85%E6%8E%92%E5%88%97" class="anchor" href="#%E8%A1%8C%E5%86%85%E6%8E%92%E5%88%97"><span class="header-link"></span></a>行内排列</h3><p>在外围容器上添加 <code>.am-form-inline</code>。 <strong>注意</strong>： 行内排列的元素并没有设置右边距，默认使用 <code>inline-block</code> 元素的间距，压缩 HTML 后行内表单元素的右边距会消失，需要自行处理。</p>
+<div class="doc-example"><form class="am-form-inline" role="form">
+  <div class="am-form-group">
+    <input type="email" class="am-form-field" placeholder="电子邮件">
+  </div>
+
+  &nbsp;
+
+  <div class="am-form-group">
+    <input type="password" class="am-form-field" placeholder="密码">
+  </div>
+
+  &nbsp;
+
+  <div class="am-checkbox">
+    <label>
+      <input type="checkbox"> 记住我
+    </label>
+  </div>
+
+  &nbsp;
+
+  <button type="submit" class="am-btn am-btn-default">登录</button>
+</form></div><div class="doc-code demo-highlight"><pre><code class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">form</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-form-inline"</span> <span class="hljs-attribute">role</span>=<span class="hljs-value">"form"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-form-group"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"email"</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-form-field"</span> <span class="hljs-attribute">placeholder</span>=<span class="hljs-value">"电子邮件"</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+
+  <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-form-group"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"password"</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-form-field"</span> <span class="hljs-attribute">placeholder</span>=<span class="hljs-value">"密码"</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+
+  <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-checkbox"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">label</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"checkbox"</span>&gt;</span> 记住我
+    <span class="hljs-tag">&lt;/<span class="hljs-title">label</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+
+  <span class="hljs-tag">&lt;<span class="hljs-title">button</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"submit"</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-btn am-btn-default"</span>&gt;</span>登录<span class="hljs-tag">&lt;/<span class="hljs-title">button</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">form</span>&gt;</span></code></pre></div><h2><a name="%E8%A1%A8%E5%8D%95%E5%9F%9F%20Icon" class="anchor" href="#%E8%A1%A8%E5%8D%95%E5%9F%9F%20Icon"><span class="header-link"></span></a>表单域 Icon</h2><p>表单 group 元素上添加 <code>.am-form-icon</code>，依赖 <code>icon</code> 组件。</p>
+<div class="doc-example"><form action="" class="am-form am-form-inline">
+  <div class="am-form-group am-form-icon">
+    <i class="am-icon-calendar"></i>
+    <input type="text" class="am-form-field" placeholder="日期">
+  </div>
+  &nbsp;
+  <div class="am-form-group am-form-icon">
+    <i class="am-icon-clock-o"></i>
+    <input type="text" class="am-form-field" placeholder="时间">
+  </div>
+</form></div><div class="doc-code demo-highlight"><pre><code class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">form</span> <span class="hljs-attribute">action</span>=<span class="hljs-value">""</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-form am-form-inline"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-form-group am-form-icon"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">i</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-icon-calendar"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">i</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"text"</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-form-field"</span> <span class="hljs-attribute">placeholder</span>=<span class="hljs-value">"日期"</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+
+  <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-form-group am-form-icon"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">i</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-icon-clock-o"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">i</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"text"</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-form-field"</span> <span class="hljs-attribute">placeholder</span>=<span class="hljs-value">"时间"</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">form</span>&gt;</span></code></pre></div><h2><a name="%E9%AA%8C%E8%AF%81%E7%8A%B6%E6%80%81" class="anchor" href="#%E9%AA%8C%E8%AF%81%E7%8A%B6%E6%80%81"><span class="header-link"></span></a>验证状态</h2><h3><a name="%E6%BC%94%E7%A4%BA" class="anchor" href="#%E6%BC%94%E7%A4%BA"><span class="header-link"></span></a>演示</h3><div class="doc-example"><form action="" class="am-form">
+  <div class="am-form-group am-form-success">
+    <label class="am-form-label" for="doc-ipt-success">验证成功</label>
+    <input type="text" id="doc-ipt-success" class="am-form-field">
+  </div>
+  <div class="am-form-group am-form-warning">
+    <label class="am-form-label" for="doc-ipt-warning">验证警告</label>
+    <input type="text" id="doc-ipt-warning" class="am-form-field">
+  </div>
+  <div class="am-form-group am-form-error">
+    <label class="am-form-label" for="doc-ipt-error">验证失败</label>
+    <input type="text" id="doc-ipt-error" class="am-form-field">
+  </div>
+</form></div><div class="doc-code demo-highlight"><pre><code class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">form</span> <span class="hljs-attribute">action</span>=<span class="hljs-value">""</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-form"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-form-group am-form-success"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">label</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-form-label"</span> <span class="hljs-attribute">for</span>=<span class="hljs-value">"doc-ipt-success"</span>&gt;</span>验证成功<span class="hljs-tag">&lt;/<span class="hljs-title">label</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"text"</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"doc-ipt-success"</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-form-field"</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-form-group am-form-warning"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">label</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-form-label"</span> <span class="hljs-attribute">for</span>=<span class="hljs-value">"doc-ipt-warning"</span>&gt;</span>验证警告<span class="hljs-tag">&lt;/<span class="hljs-title">label</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"text"</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"doc-ipt-warning"</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-form-field"</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-form-group am-form-error"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">label</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-form-label"</span> <span class="hljs-attribute">for</span>=<span class="hljs-value">"doc-ipt-error"</span>&gt;</span>验证失败<span class="hljs-tag">&lt;/<span class="hljs-title">label</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"text"</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"doc-ipt-error"</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-form-field"</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">form</span>&gt;</span></code></pre></div><h3><a name="%E5%B8%A6%E5%9B%BE%E6%A0%87%E7%9A%84%E9%AA%8C%E8%AF%81" class="anchor" href="#%E5%B8%A6%E5%9B%BE%E6%A0%87%E7%9A%84%E9%AA%8C%E8%AF%81"><span class="header-link"></span></a>带图标的验证</h3><p>添加 <code>.am-form-icon</code> 和 <code>am-form-feedback</code>。</p>
+<p><strong><em>注意：Icon 的样式针对 <code>.am-form-group</code> 单行排列编写，多行的时候会出现位置不对的情况。</em></strong></p>
+<div class="doc-example"><form class="am-form">
+  <div class="am-form-group am-form-success am-form-icon am-form-feedback">
+    <input type="text" class="am-form-field" placeholder="验证成功">
+    <span class="am-icon-check"></span>
+  </div>
+  <div class="am-form-group am-form-warning am-form-icon am-form-feedback">
+    <input type="text" class="am-form-field" placeholder="验证警告">
+    <span class="am-icon-warning"></span>
+  </div>
+  <div class="am-form-group am-form-error am-form-icon am-form-feedback">
+    <input type="text" class="am-form-field" placeholder="验证失败">
+    <span class="am-icon-times"></span>
+  </div>
+</form></div><div class="doc-code demo-highlight"><pre><code class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">form</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-form"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-form-group am-form-success am-form-icon am-form-feedback"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"text"</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-form-field"</span> <span class="hljs-attribute">placeholder</span>=<span class="hljs-value">"验证成功"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-icon-check"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-form-group am-form-warning am-form-icon am-form-feedback"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"text"</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-form-field"</span> <span class="hljs-attribute">placeholder</span>=<span class="hljs-value">"验证警告"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-icon-warning"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-form-group am-form-error am-form-icon am-form-feedback"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"text"</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-form-field"</span> <span class="hljs-attribute">placeholder</span>=<span class="hljs-value">"验证失败"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-icon-times"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">form</span>&gt;</span></code></pre></div><h2><a name="%E8%A1%A8%E5%8D%95%E5%9F%9F%E5%A4%A7%E5%B0%8F" class="anchor" href="#%E8%A1%A8%E5%8D%95%E5%9F%9F%E5%A4%A7%E5%B0%8F"><span class="header-link"></span></a>表单域大小</h2><p>在表单元素上添加以下类名：</p>
+<ul>
+<li><code>am-input-lg</code></li>
+<li><code>am-input-sm</code></li>
+</ul>
+<div class="doc-example"><form class="am-form">
+  <input class="am-form-field am-input-lg" type="text" placeholder="添加了 .am-input-lg">
+  <br/>
+  <input class="am-form-field" type="text" placeholder="默认的 input">
+  <br/>
+  <input class="am-form-field am-input-sm" type="text" placeholder="添加了 .am-input-sm">
+  <br/>
+
+  <div class="am-form-group am-form-select">
+    <select class=" am-input-lg">
+      <option value="">添加了 .am-input-lg</option>
+    </select>
+  </div>
+
+  <div class="am-form-group am-form-select">
+    <select class="">
+      <option value="">select 默认大小</option>
+    </select>
+  </div>
+
+  <div class="am-form-group am-form-select">
+    <select class=" am-input-sm">
+      <option value="">添加了 .am-input-sm</option>
+    </select>
+  </div>
+</form></div><div class="doc-code demo-highlight"><pre><code class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">form</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-form"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-form-field am-input-lg"</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"text"</span> <span class="hljs-attribute">placeholder</span>=<span class="hljs-value">"添加了 .am-input-lg"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">br</span>/&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-form-field"</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"text"</span> <span class="hljs-attribute">placeholder</span>=<span class="hljs-value">"默认的 input"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">br</span>/&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-form-field am-input-sm"</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"text"</span> <span class="hljs-attribute">placeholder</span>=<span class="hljs-value">"添加了 .am-input-sm"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">br</span>/&gt;</span>
+
+  <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-form-group am-form-select"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">select</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">" am-input-lg"</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">option</span> <span class="hljs-attribute">value</span>=<span class="hljs-value">""</span>&gt;</span>添加了 .am-input-lg<span class="hljs-tag">&lt;/<span class="hljs-title">option</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">select</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+
+  <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-form-group am-form-select"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">select</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">""</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">option</span> <span class="hljs-attribute">value</span>=<span class="hljs-value">""</span>&gt;</span>select 默认大小<span class="hljs-tag">&lt;/<span class="hljs-title">option</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">select</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+
+  <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-form-group am-form-select"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">select</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">" am-input-sm"</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">option</span> <span class="hljs-attribute">value</span>=<span class="hljs-value">""</span>&gt;</span>添加了 .am-input-sm<span class="hljs-tag">&lt;/<span class="hljs-title">option</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">select</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">form</span>&gt;</span></code></pre></div><h2><a name="%E8%BE%93%E5%85%A5%E6%A1%86%E7%BB%84" class="anchor" href="#%E8%BE%93%E5%85%A5%E6%A1%86%E7%BB%84"><span class="header-link"></span></a>输入框组</h2><p>使用 <code>.am-form-set</code> 嵌套一系列 <code>&lt;input&gt;</code> 元素。</p>
+<div class="doc-example"><div class="am-g">
+  <div class="am-u-md-8 am-u-sm-centered">
+    <form class="am-form">
+      <fieldset class="am-form-set">
+        <input type="text" placeholder="取个名字">
+        <input type="text" placeholder="设个密码">
+        <input type="email" placeholder="填下邮箱">
+      </fieldset>
+      <button type="submit" class="am-btn am-btn-primary am-btn-block">注册个账号</button>
+    </form>
+  </div>
+</div></div><div class="doc-code demo-highlight"><pre><code class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-g"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-u-md-8 am-u-sm-centered"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">form</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-form"</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">fieldset</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-form-set"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"text"</span> <span class="hljs-attribute">placeholder</span>=<span class="hljs-value">"取个名字"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"text"</span> <span class="hljs-attribute">placeholder</span>=<span class="hljs-value">"设个密码"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"email"</span> <span class="hljs-attribute">placeholder</span>=<span class="hljs-value">"填下邮箱"</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-title">fieldset</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">button</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"submit"</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"am-btn am-btn-primary am-btn-block"</span>&gt;</span>注册个账号<span class="hljs-tag">&lt;/<span class="hljs-title">button</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">form</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span></code></pre></div><h2><a name="%E5%8F%82%E8%80%83%E9%93%BE%E6%8E%A5" class="anchor" href="#%E5%8F%82%E8%80%83%E9%93%BE%E6%8E%A5"><span class="header-link"></span></a>参考链接</h2><ul>
+<li><a href="http://jsbin.com/gitovovidu">Webkit 浏览器 Radio/Checkbox 纯 CSS 样式</a></li>
+</ul>
+
+
+  <nav class="amp-pager">
+  </nav>
+</section>
+
+<script>
+  var _hmt = _hmt || [];
+  (function() {
+    var hm = document.createElement("script");
+    hm.src = "//hm.baidu.com/hm.js?b424d39312c46404f15e22574a531fbb";
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(hm);
+  })();
+
+  (function(w, d, s) {
+    function gs(){
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){ (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o), m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(w , d, s ,'//www.google-analytics.com/analytics.js','ga');
+      ga('create', 'UA-34196034-8', 'amazeui.org');
+      ga('send', 'pageview');
+    }
+    if (w.addEventListener) { w.addEventListener('load', gs, false); }
+    else if (w.attachEvent) { w.attachEvent('onload',gs); }
+  }(window, document, 'script'));
+</script>
+</body>
+</html>
